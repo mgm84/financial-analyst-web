@@ -1,0 +1,76 @@
+{
+  "generado_en_utc": "2026-09-15T09:59:51.928808+00:00",
+  "cesta": {
+    "caida_usd_pct": -11.57,
+    "caida_eur_pct": -12.5,
+    "maximo_eur_fecha": "2026-06-22",
+    "eur_usd": 1.15504
+  },
+  "puerta_1": {
+    "umbral_pct": 10,
+    "accion_sugerida": "MEDIO tramo",
+    "estado": "DISPARADO",
+    "cooldown_ok": true,
+    "cooldown_msg": "",
+    "escalones_usados": [],
+    "ultima_aceleracion": null
+  },
+  "posiciones": [
+    {
+      "ticker": "EQIX",
+      "peso_pct": 17,
+      "precio": 998.72,
+      "max_52s": 1115.94,
+      "caida_pct": -10.5,
+      "senal_idiosincratica": false
+    },
+    {
+      "ticker": "ASML",
+      "peso_pct": 16,
+      "precio": 1575.15,
+      "max_52s": 1989.44,
+      "caida_pct": -20.8,
+      "senal_idiosincratica": false
+    },
+    {
+      "ticker": "TSM",
+      "peso_pct": 15,
+      "precio": 418.01,
+      "max_52s": 477.57,
+      "caida_pct": -12.5,
+      "senal_idiosincratica": false
+    },
+    {
+      "ticker": "PWR",
+      "peso_pct": 14,
+      "precio": 622.02,
+      "max_52s": 785.24,
+      "caida_pct": -20.8,
+      "senal_idiosincratica": false
+    },
+    {
+      "ticker": "ANET",
+      "peso_pct": 14,
+      "precio": 187.81,
+      "max_52s": 210.5,
+      "caida_pct": -10.8,
+      "senal_idiosincratica": false
+    },
+    {
+      "ticker": "AVGO",
+      "peso_pct": 13,
+      "precio": 344.72,
+      "max_52s": 481.57,
+      "caida_pct": -28.4,
+      "senal_idiosincratica": true
+    },
+    {
+      "ticker": "ETN",
+      "peso_pct": 11,
+      "precio": 393.16,
+      "max_52s": 459.96,
+      "caida_pct": -14.5,
+      "senal_idiosincratica": false
+    }
+  ]
+}
