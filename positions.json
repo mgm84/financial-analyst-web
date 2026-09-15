@@ -1,0 +1,25 @@
+{
+  "_comentario": "Cantidades de titulos por posicion, mantenido a mano por Mariano -- NO lo toca ningun script automatico. Editar aqui cuando compres/vendas y hacer commit; la siguiente ejecucion diaria ya lo recoge en dashboard y correo. null = cantidad sin confirmar todavia, se excluye del calculo de patrimonio (nunca se asume 0). PLTR: vendida en su totalidad (2026-09-15) -- eliminada de Equity_DEGIRO, no puesta a 0.",
+  "IA": {
+    "EQIX": 6,
+    "ASML": 4,
+    "AVGO": 17,
+    "TSM": 13,
+    "PWR": 4,
+    "ETN": 3,
+    "ANET": 6
+  },
+  "Equity_DEGIRO": {
+    "GOOGL": 53,
+    "MSFT": 15,
+    "AMD": 20,
+    "EQQQ": 66,
+    "VUSA": 148
+  },
+  "Equity_GBM": {
+    "VOO": 9,
+    "QQQ": 3,
+    "QQQM": 11,
+    "IVW": 1
+  }
+}
