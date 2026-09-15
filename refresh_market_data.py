@@ -72,7 +72,7 @@ TICKERS = [
 
 # Sufijo .AS = Euronext Amsterdam (EUR) -- confirmado por Mariano.
 EU_TICKERS = {
-    "EQQQ": "EQQQ.AS",   # Invesco EQQQ Nasdaq-100 UCITS ETF (DEGIRO)
+    "EQQQ": "EQQQ.DE",   # Invesco EQQQ Nasdaq-100 UCITS ETF (DEGIRO)
     "VUSA": "VUSA.AS",   # Vanguard S&P 500 UCITS ETF (DEGIRO)
 }
 
