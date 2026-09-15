@@ -110,15 +110,63 @@ def kpi_cards(bloque_total, bloque_ia, bloque_eq, label_periodo):
     </tr></table>'''
 
 
-def perf_vs_52w_table(market, positions):
-    rows = []
-    grupos = [("Capas sectoriales IA", positions["IA"]),
-              ("Equity — DEGIRO", positions["Equity_DEGIRO"]),
-              ("Equity — GBM México", positions["Equity_GBM"])]
-    for grupo_label, pos in grupos:
-        rows.append(f'<tr><td colspan="4" style="padding:10px 8px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:#8a8677;{FONT}">{grupo_label}</td></tr>')
-        for t in pos:
+def compute_portfolio_weights(market, positions, eur_usd):
+    """Valor en EUR de cada posición (titulos x precio, convertido si hace
+    falta) + peso dentro de su subcartera y dentro de la cartera total.
+    Devuelve {grupo_label: {"total": float, "rows": [{ticker, info, value_eur,
+    peso_sub, peso_total}, ...]}} con las filas de cada grupo ordenadas de
+    mayor a menor peso dentro de esa subcartera; las posiciones sin datos de
+    mercado van al final con value_eur=None y no cuentan para los totales."""
+    grupos_def = [("Capas sectoriales IA", "IA"),
+                  ("Equity — DEGIRO", "Equity_DEGIRO"),
+                  ("Equity — GBM México", "Equity_GBM")]
+    grupos = {}
+    for label, key in grupos_def:
+        rows = []
+        for t, shares in positions[key].items():
             info = market.get(t)
+            if not info or shares is None:
+                rows.append({"ticker": t, "info": info, "value_eur": None})
+                continue
+            value_native = info["price"] * shares
+            value_eur = value_native if info["currency"] == "EUR" else value_native / eur_usd
+            rows.append({"ticker": t, "info": info, "value_eur": value_eur})
+        total = sum(r["value_eur"] for r in rows if r["value_eur"] is not None)
+        rows.sort(key=lambda r: (r["value_eur"] is None, -(r["value_eur"] or 0)))
+        grupos[label] = {"total": total, "rows": rows}
+    grand_total = sum(g["total"] for g in grupos.values())
+    for g in grupos.values():
+        for r in g["rows"]:
+            if r["value_eur"] is not None:
+                r["peso_sub"] = r["value_eur"] / g["total"] * 100 if g["total"] else None
+                r["peso_total"] = r["value_eur"] / grand_total * 100 if grand_total else None
+            else:
+                r["peso_sub"] = r["peso_total"] = None
+    return grupos, grand_total
+
+
+def peso_line(r):
+    if r["value_eur"] is None:
+        return ""
+    return f'{eur(r["value_eur"], 0)} · {pct(r["peso_sub"], False)} subcartera · {pct(r["peso_total"], False)} total'
+
+
+def subtotal_row(ncols, total_eur, grand_total):
+    peso_total = pct(total_eur / grand_total * 100, False) if grand_total else "—"
+    return f'''<tr>
+      <td style="padding:6px 8px;border-top:1px solid #ddd;{FONT}font-size:13px;font-weight:700;">Subtotal</td>
+      <td colspan="{ncols-2}" style="padding:6px 8px;border-top:1px solid #ddd;{FONT}font-size:13px;font-weight:700;text-align:right;">{eur(total_eur)}</td>
+      <td style="padding:6px 8px;border-top:1px solid #ddd;{FONT}font-size:13px;font-weight:700;text-align:right;">{peso_total} cartera</td>
+    </tr>'''
+
+
+def perf_vs_52w_table(market, positions, eur_usd):
+    grupos, grand_total = compute_portfolio_weights(market, positions, eur_usd)
+    rows = []
+    for grupo_label, g in grupos.items():
+        rows.append(f'<tr><td colspan="4" style="padding:10px 8px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:#8a8677;{FONT}">{grupo_label}</td></tr>')
+        for r in g["rows"]:
+            t, info = r["ticker"], r["info"]
             if not info:
                 rows.append(f'<tr><td style="padding:6px 8px;{FONT}font-size:13px;">{NOMBRES.get(t,t)} ({t})</td><td colspan="3" style="padding:6px 8px;color:#8a8677;{FONT}font-size:13px;">sin datos de mercado</td></tr>')
                 continue
@@ -126,34 +174,34 @@ def perf_vs_52w_table(market, positions):
             chg1d = info["chg"].get("1D")
             precio_fmt = eur(info["price"], 2) if info["currency"] == "EUR" else f'${info["price"]:,.2f}'
             rows.append(f'''<tr>
-              <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;">{NOMBRES.get(t,t)} ({t})</td>
+              <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;">{NOMBRES.get(t,t)} ({t})<div style="font-size:11px;color:#8a8677;margin-top:2px;">{peso_line(r)}</div></td>
               <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;text-align:right;color:{color(chg1d)};">{pct(chg1d)}</td>
               <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;text-align:right;">{precio_fmt}</td>
               <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;text-align:right;color:{color(vs52)};">{pct(vs52)} vs máx. 52 sem.</td>
             </tr>''')
+        rows.append(subtotal_row(4, g["total"], grand_total))
     return f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-top:6px;">
       <tr><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;">Posición</td><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;text-align:right;">1D</td><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;text-align:right;">Precio</td><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;text-align:right;">vs. máx. 52 sem.</td></tr>
       {"".join(rows)}
     </table>'''
 
 
-def hist_returns_table(market, positions):
+def hist_returns_table(market, positions, eur_usd):
+    grupos, grand_total = compute_portfolio_weights(market, positions, eur_usd)
     periods = ["1D", "5D", "1M", "3M", "6M", "YTD", "1Y"]
     rows = []
-    grupos = [("Capas sectoriales IA", positions["IA"]),
-              ("Equity — DEGIRO", positions["Equity_DEGIRO"]),
-              ("Equity — GBM México", positions["Equity_GBM"])]
     header_cells = "".join(f'<td style="padding:4px 6px;{FONT}font-size:11px;color:#8a8677;text-align:right;">{p}</td>' for p in periods)
     rows.append(f'<tr><td style="padding:4px 6px;{FONT}font-size:11px;color:#8a8677;">Posición</td>{header_cells}</tr>')
-    for grupo_label, pos in grupos:
+    for grupo_label, g in grupos.items():
         rows.append(f'<tr><td colspan="{1+len(periods)}" style="padding:10px 6px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:#8a8677;{FONT}">{grupo_label}</td></tr>')
-        for t in pos:
-            info = market.get(t)
+        for r in g["rows"]:
+            t, info = r["ticker"], r["info"]
             if not info:
                 rows.append(f'<tr><td style="padding:5px 6px;{FONT}font-size:12.5px;">{NOMBRES.get(t,t)}</td><td colspan="{len(periods)}" style="padding:5px 6px;color:#8a8677;{FONT}font-size:12.5px;">sin datos</td></tr>')
                 continue
             cells = "".join(f'<td style="padding:5px 6px;border-bottom:1px solid #eee;{FONT}font-size:12.5px;text-align:right;color:{color(info["chg"].get(p))};">{pct(info["chg"].get(p))}</td>' for p in periods)
-            rows.append(f'<tr><td style="padding:5px 6px;border-bottom:1px solid #eee;{FONT}font-size:12.5px;">{NOMBRES.get(t,t)} ({t})</td>{cells}</tr>')
+            rows.append(f'<tr><td style="padding:5px 6px;border-bottom:1px solid #eee;{FONT}font-size:12.5px;">{NOMBRES.get(t,t)} ({t})<div style="font-size:10.5px;color:#8a8677;margin-top:2px;">{peso_line(r)}</div></td>{cells}</tr>')
+        rows.append(subtotal_row(1 + len(periods), g["total"], grand_total))
     return f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-top:6px;">{"".join(rows)}</table>'
 
 
@@ -310,7 +358,7 @@ def build_daily(data, content):
   {noticias_html}
 
   {h2("Performance vs. máximo de 52 semanas", "performance")}
-  {perf_vs_52w_table(market, positions)}
+  {perf_vs_52w_table(market, positions, patri["eur_usd"])}
 
   {h2("Ratios y puertas — Capas sectoriales IA", "puertas")}
   {ratios_puertas(tramos, percentiles, content)}
@@ -349,7 +397,7 @@ def build_weekly(data, content):
   {noticias_html}
 
   {h2("Rendimientos históricos por posición", "performance")}
-  {hist_returns_table(market, positions)}
+  {hist_returns_table(market, positions, patri["eur_usd"])}
 
   {h2("Ratios y puertas — Capas sectoriales IA", "puertas")}
   {ratios_puertas(tramos, percentiles, content)}
