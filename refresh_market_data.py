@@ -1,21 +1,49 @@
 """
 Refresco diario de precios y rendimientos por periodo — para el dashboard
 ===========================================================================
-No estaba en tu pedido original (solo pediste automatizar monitor_tramos y
-screen_percentiles), pero sin esto el dashboard se queda con los precios
-del día que yo los escribí a mano y nunca se actualiza — "monitorización
-cercana" con datos de hace una semana no sirve. Mismo patrón que los otros
-dos: corre en GitHub Actions (tiene salida a FMP, mi sandbox no), escribe
-JSON, Claude lo lee y lo sincroniza al dashboard.
+Corre en GitHub Actions (tiene salida libre a internet, mi sandbox no),
+escribe JSON, Claude lo lee y lo sincroniza al dashboard y al correo.
 
-Calcula, para cada ticker, precio actual y variación % en 1D/5D/3M/6M/YTD/1Y
+Calcula, para cada ticker, precio actual y variación % en varios periodos
 frente al cierre más reciente disponible en o antes de cada fecha de
-referencia (mismo criterio que usa screen_percentiles_v3.py con valor_en).
-También escribe el tipo de cambio EUR/USD del día.
+referencia (mismo criterio que usa screen_percentiles_v3.py con valor_en),
+salvo 1D (ver nota abajo). También escribe el tipo de cambio EUR/USD del día.
 
-NO cubre EQQQ/ETF S&P 500 de tu cartera Equity (tickers sin confirmar) ni
-noticias (eso sigue siendo manual). Si confirmas esos tickers, se añaden
-a TICKERS abajo y ya quedan cubiertos.
+NOTA 1D (fix 2026-09-15): antes se calculaba con "hoy - 1 dia calendario"
+como fecha de referencia. El job corre a las 06:00 UTC, antes de la
+apertura de NYSE -- a esa hora "el precio de hoy" (quote) y "el cierre de
+ayer" (historico) resuelven ambos al mismo cierre de la ultima sesion, asi
+que la resta siempre daba 0%. Fix: 1D ya no usa fechas de calendario, usa
+directamente los dos ultimos cierres de la serie historica (el ultimo
+cierre disponible vs el cierre de la sesion anterior a esa) -- funciona
+igual corra el job cuando corra, y es justo lo que pidio Mariano: "el 1D
+seria el cierre del dia anterior".
+
+NOTA EU_TICKERS (añadido 2026-09-15): EQQQ y VUSA cotizan en bolsas
+europeas (Xetra/LSE/Euronext) que el plan de FMP contratado no cubre.
+FMP no tiene API pública documentada para esas plazas en este plan; en vez
+de dar de alta un proveedor nuevo (EODHD) solo para dos ETFs que "no se
+tocan de momento", uso yfinance (gratis, sin API key, ya estaba previsto
+como complemento en el plan original del proyecto). Corren en una segunda
+pasada, con sus propias funciones de descarga, pero reutilizan el mismo
+periodo_pct/chg_ultimo_cierre/high_52w que los tickers de FMP.
+
+VUSA confirmado por Mariano (2026-09-15): Euronext Amsterdam, EUR, sufijo
+.AS -- verificado que existe en Yahoo Finance. No hace falta conversion de
+divisa para este, a diferencia de TSM/ASML en screen_percentiles_v3.py.
+
+EQQQ: OJO, sigue sin confirmar del todo. Mariano dijo "Amsterdam" para
+los dos, pero al verificar por mi cuenta la cotizacion principal de EQQQ
+en Euronext es Paris (XPAR), no Amsterdam -- Yahoo Finance no me devuelve
+resultado para EQQQ.AS en la busqueda, si para EQQQ.PA (Paris), EQQQ.DE
+(Xetra) y EQQQ.L (Londres). Dejo EQQQ.AS puesto como placeholder: si no
+existe de verdad, el script lo registra en tickers_fallidos y sigue sin
+romperse, pero muy probablemente falle cada dia hasta que se corrija.
+Pendiente de que Mariano confirme mirando el ticker exacto en su DEGIRO.
+
+NO cubre noticias (eso sigue siendo manual). Tampoco calcula nada de
+cantidades/valor de cartera -- eso vive en un fichero de posiciones aparte
+(pendiente) que se combina con estos precios en el paso de sync.
 """
 
 import os
@@ -25,6 +53,7 @@ from pathlib import Path
 
 import requests
 import pandas as pd
+import yfinance as yf
 
 API_KEY = os.environ["FMP_API_KEY"]
 
@@ -37,9 +66,15 @@ DIAS_HISTORIA = 400  # ~52 semanas + margen, cubre también 1Y
 
 TICKERS = [
     "EQIX", "ASML", "AVGO", "TSM", "PWR", "ETN", "ANET",   # Capas sectoriales IA
-    "GOOGL", "AMD", "MSFT", "PLTR",                          # Equity (acciones)
-    "VOO", "QQQ", "IVW",                                     # GBM México
+    "GOOGL", "AMD", "MSFT",                                   # Equity (acciones, DEGIRO) -- PLTR vendida 2026-09-15, ya no se pide
+    "VOO", "QQQ", "QQQM", "IVW",                              # GBM México
 ]
+
+# Sufijo .AS = Euronext Amsterdam (EUR) -- confirmado por Mariano.
+EU_TICKERS = {
+    "EQQQ": "EQQQ.AS",   # Invesco EQQQ Nasdaq-100 UCITS ETF (DEGIRO)
+    "VUSA": "VUSA.AS",   # Vanguard S&P 500 UCITS ETF (DEGIRO)
+}
 
 OUT_PATH = Path("data/market_data.json")
 
@@ -60,6 +95,24 @@ def historical_close_series(symbol, desde, hasta):
     return df.sort_values("date").reset_index(drop=True)
 
 
+def historical_close_series_yf(symbol, desde):
+    """Equivalente a historical_close_series pero via yfinance, para
+    tickers europeos que FMP no cubre en el plan contratado."""
+    hist = yf.Ticker(symbol).history(start=desde, auto_adjust=False)
+    if hist.empty:
+        raise ValueError(f"yfinance sin datos para {symbol}")
+    df = hist.reset_index()[["Date", "Close"]].rename(columns={"Date": "date", "Close": "close"})
+    df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
+    return df.sort_values("date").reset_index(drop=True)
+
+
+def quote_yf(symbol):
+    info = yf.Ticker(symbol).fast_info
+    price = float(info["last_price"])
+    currency = str(info.get("currency", "?"))
+    return price, currency
+
+
 def valor_en_o_antes(df, fecha):
     prev = df[df["date"] <= fecha]
     if len(prev) == 0:
@@ -75,11 +128,36 @@ def periodo_pct(df, hoy_precio, hoy_fecha, dias_atras=None, fecha_ref=None):
     return round((hoy_precio / ref_precio - 1) * 100, 2)
 
 
+def chg_ultimo_cierre(df):
+    """1D real: ultimo cierre vs el cierre de la sesion inmediatamente
+    anterior, sin pasar por fechas de calendario. Ver nota en la cabecera
+    del fichero -- esto es lo que corrige el bug del 1D siempre en 0%."""
+    if len(df) < 2:
+        return None
+    ultimo = float(df.iloc[-1]["close"])
+    anterior = float(df.iloc[-2]["close"])
+    if anterior == 0:
+        return None
+    return round((ultimo / anterior - 1) * 100, 2)
+
+
 def high_52w(df):
     ventana = df[df["date"] >= (df["date"].max() - pd.Timedelta(days=365))]
     if len(ventana) == 0:
         return None
     return round(float(ventana["close"].max()), 2)
+
+
+def chg_periodos(df, price, hasta, year_start):
+    return {
+        "1D": chg_ultimo_cierre(df),
+        "5D": periodo_pct(df, price, hasta, dias_atras=7),
+        "1M": periodo_pct(df, price, hasta, dias_atras=30),
+        "3M": periodo_pct(df, price, hasta, dias_atras=91),
+        "6M": periodo_pct(df, price, hasta, dias_atras=182),
+        "YTD": periodo_pct(df, price, hasta, fecha_ref=year_start),
+        "1Y": periodo_pct(df, price, hasta, dias_atras=365),
+    }
 
 
 if __name__ == "__main__":
@@ -92,20 +170,14 @@ if __name__ == "__main__":
     resultado = {}
     fallos = []
 
+    # --- Tickers US/globales via FMP ---
     for t in TICKERS:
         try:
             df = historical_close_series(t, desde, hasta_str)
             quote = get_json(EP_QUOTE, symbol=t)
             price = float(quote[0]["price"])
 
-            chg = {
-                "1D": periodo_pct(df, price, hasta, dias_atras=1),
-                "5D": periodo_pct(df, price, hasta, dias_atras=7),
-                "3M": periodo_pct(df, price, hasta, dias_atras=91),
-                "6M": periodo_pct(df, price, hasta, dias_atras=182),
-                "YTD": periodo_pct(df, price, hasta, fecha_ref=year_start),
-                "1Y": periodo_pct(df, price, hasta, dias_atras=365),
-            }
+            chg = chg_periodos(df, price, hasta, year_start)
 
             resultado[t] = {
                 "price": price,
@@ -117,6 +189,25 @@ if __name__ == "__main__":
         except Exception as e:
             fallos.append(t)
             print(f"  {t}: FALLO -> {type(e).__name__}: {e}")
+
+    # --- Tickers europeos via yfinance (FMP no los cubre en este plan) ---
+    for nombre, simbolo_yf in EU_TICKERS.items():
+        try:
+            df = historical_close_series_yf(simbolo_yf, desde)
+            price, currency = quote_yf(simbolo_yf)
+
+            chg = chg_periodos(df, price, hasta, year_start)
+
+            resultado[nombre] = {
+                "price": price,
+                "currency": currency,
+                "chg": chg,
+                "high52": high_52w(df),
+            }
+            print(f"  {nombre} ({simbolo_yf}): ok  {price:,.2f} {currency}  1D={chg['1D']}%")
+        except Exception as e:
+            fallos.append(nombre)
+            print(f"  {nombre} ({simbolo_yf}): FALLO -> {type(e).__name__}: {e}")
 
     # EUR/USD
     try:
