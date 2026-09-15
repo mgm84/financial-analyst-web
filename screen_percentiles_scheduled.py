@@ -42,7 +42,7 @@ CARTERA = {
 }
 
 CONVERSION = {
-    "TSM":  {"fx": "USDTWD", "invertir": False, "adr": 1},
+    "TSM":  {"fx": "USDTWD", "invertir": False, "adr": 5},
     "ASML": {"fx": "EURUSD", "invertir": True,  "adr": 1},
 }
 
