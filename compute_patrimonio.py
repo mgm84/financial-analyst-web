@@ -24,6 +24,18 @@ ticker que no aparece en market_data.json) se EXCLUYEN del calculo y se
 listan en "posiciones_excluidas" de cada bloque -- nunca se asumen a 0 ni
 se omiten en silencio. Mientras haya alguna excluida, el bloque se marca
 "incompleto": true para que dashboard/correo lo puedan avisar.
+
+FIX 2026-09-15 (encontrado al preparar el contenido del correo): los
+bloques combinados "Equity" (DEGIRO + GBM) y "Total" (IA + Equity) solo
+llevaban valor_eur -- nunca se les calculaba un rendimiento_pct propio,
+asi que la cabecera del correo (que pide rendimiento del patrimonio
+total y de Equity, no solo de IA) no tenia de donde sacarlo. Antes se
+calculaba cada bloque por separado y se sumaban los valor_eur a mano;
+ahora "Equity" y "Total" se calculan con la misma calcular_bloque()
+sobre el diccionario de posiciones fusionado, para que salga un
+rendimiento ponderado real (mismo criterio que los demas bloques) en
+vez de quedar sin ese dato. No hay tickers duplicados entre IA/DEGIRO/
+GBM en positions.json, así que fusionar los diccionarios es seguro.
 """
 
 import json
@@ -105,28 +117,16 @@ if __name__ == "__main__":
         for nombre_bloque, posiciones_bloque in bloques_posiciones.items():
             bloques[nombre_bloque] = calcular_bloque(posiciones_bloque, market, periodo, eur_usd)
 
-        ia = bloques["IA"]
-        eq_degiro = bloques["Equity_DEGIRO"]
-        eq_gbm = bloques["Equity_GBM"]
+        posiciones_equity = {**bloques_posiciones["Equity_DEGIRO"], **bloques_posiciones["Equity_GBM"]}
+        posiciones_total = {**bloques_posiciones["IA"], **posiciones_equity}
 
-        equity_valor = eq_degiro["valor_eur"] + eq_gbm["valor_eur"]
-        equity_incompleto = eq_degiro["incompleto"] or eq_gbm["incompleto"]
-        equity_excluidas = eq_degiro["posiciones_excluidas"] + eq_gbm["posiciones_excluidas"]
-
-        total_valor = ia["valor_eur"] + equity_valor
-        total_incompleto = ia["incompleto"] or equity_incompleto
+        equity = calcular_bloque(posiciones_equity, market, periodo, eur_usd)
+        total = calcular_bloque(posiciones_total, market, periodo, eur_usd)
 
         resultado["periodos"][etiqueta] = {
             "bloques": bloques,
-            "Equity": {
-                "valor_eur": round(equity_valor, 2),
-                "incompleto": equity_incompleto,
-                "posiciones_excluidas": equity_excluidas,
-            },
-            "Total": {
-                "valor_eur": round(total_valor, 2),
-                "incompleto": total_incompleto,
-            },
+            "Equity": equity,
+            "Total": total,
         }
 
     OUT_PATH.write_text(json.dumps(resultado, indent=2, ensure_ascii=False))
@@ -137,7 +137,7 @@ if __name__ == "__main__":
         eq = datos["Equity"]
         tot = datos["Total"]
         print(f"[{etiqueta}] IA: {ia['valor_eur']:,.2f}€ ({ia['rendimiento_pct']}%)"
-              f"  Equity: {eq['valor_eur']:,.2f}€{'  [INCOMPLETO]' if eq['incompleto'] else ''}"
-              f"  Total: {tot['valor_eur']:,.2f}€{'  [INCOMPLETO]' if tot['incompleto'] else ''}")
+              f"  Equity: {eq['valor_eur']:,.2f}€ ({eq['rendimiento_pct']}%){'  [INCOMPLETO]' if eq['incompleto'] else ''}"
+              f"  Total: {tot['valor_eur']:,.2f}€ ({tot['rendimiento_pct']}%){'  [INCOMPLETO]' if tot['incompleto'] else ''}")
         if eq["posiciones_excluidas"]:
             print(f"    excluidas de Equity: {eq['posiciones_excluidas']}")
