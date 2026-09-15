@@ -1,0 +1,50 @@
+name: Tramos y percentiles diario
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 Madrid en horario de verano (CEST).
+    # Cuando España pase a horario de invierno (CET, últ. domingo de
+    # octubre) esto pasará a correr a las 07:00 Madrid. Si quieres que
+    # se mantenga siempre a las 08:00 Madrid, hay que cambiar este
+    # cron a mano dos veces al año (GitHub Actions no ajusta DST).
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}   # permite lanzarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests pandas numpy
+
+      - name: Monitor de tramos
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python monitor_tramos_scheduled.py
+
+      - name: Screen de percentiles
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python screen_percentiles_scheduled.py
+
+      - name: Refresco de precios y rendimientos
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python refresh_market_data.py
+
+      - name: Commit resultado
+        run: |
+          git config user.name "tramos-bot"
+          git config user.email "tramos-bot@users.noreply.github.com"
+          git add data/tramos_status.json data/percentiles.json data/market_data.json
+          git diff --cached --quiet && echo "sin cambios" || git commit -m "Actualización diaria tramos/percentiles/mercado $(date -u +%Y-%m-%d)"
+          git push
