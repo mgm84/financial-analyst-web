@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Instalar dependencias
-        run: pip install requests pandas numpy
+        run: pip install requests pandas numpy yfinance
 
       - name: Monitor de tramos
         env:
@@ -41,10 +41,13 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python refresh_market_data.py
 
+      - name: Cálculo de patrimonio (total / IA / Equity)
+        run: python compute_patrimonio.py
+
       - name: Commit resultado
         run: |
           git config user.name "tramos-bot"
           git config user.email "tramos-bot@users.noreply.github.com"
-          git add data/tramos_status.json data/percentiles.json data/market_data.json
-          git diff --cached --quiet && echo "sin cambios" || git commit -m "Actualización diaria tramos/percentiles/mercado $(date -u +%Y-%m-%d)"
+          git add data/tramos_status.json data/percentiles.json data/market_data.json data/patrimonio.json
+          git diff --cached --quiet && echo "sin cambios" || git commit -m "Actualización diaria tramos/percentiles/mercado/patrimonio $(date -u +%Y-%m-%d)"
           git push
