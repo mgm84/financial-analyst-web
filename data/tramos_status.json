@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-09-15T14:18:34.203975+00:00",
+  "generado_en_utc": "2026-09-16T11:09:32.969004+00:00",
   "cesta": {
-    "caida_usd_pct": -11.0,
-    "caida_eur_pct": -11.91,
+    "caida_usd_pct": -11.44,
+    "caida_eur_pct": -12.31,
     "maximo_eur_fecha": "2026-06-22",
-    "eur_usd": 1.15469
+    "eur_usd": 1.15414
   },
   "puerta_1": {
     "umbral_pct": 10,
@@ -19,57 +19,57 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 1000.82,
+      "precio": 1006.98,
       "max_52s": 1115.94,
-      "caida_pct": -10.3,
+      "caida_pct": -9.8,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1595.32,
+      "precio": 1591.48,
       "max_52s": 1989.44,
-      "caida_pct": -19.8,
+      "caida_pct": -20.0,
       "senal_idiosincratica": false
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 416.12,
+      "precio": 413.75,
       "max_52s": 477.57,
-      "caida_pct": -12.9,
+      "caida_pct": -13.4,
       "senal_idiosincratica": false
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 621.7,
+      "precio": 613.35,
       "max_52s": 785.24,
-      "caida_pct": -20.8,
+      "caida_pct": -21.9,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 193.55,
+      "precio": 192.84,
       "max_52s": 210.5,
-      "caida_pct": -8.1,
+      "caida_pct": -8.4,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 343.52,
+      "precio": 339.27,
       "max_52s": 481.57,
-      "caida_pct": -28.7,
+      "caida_pct": -29.5,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 395.84,
+      "precio": 392.4,
       "max_52s": 459.96,
-      "caida_pct": -13.9,
+      "caida_pct": -14.7,
       "senal_idiosincratica": false
     }
   ]
