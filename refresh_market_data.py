@@ -44,6 +44,25 @@ Pendiente de que Mariano confirme mirando el ticker exacto en su DEGIRO.
 NO cubre noticias (eso sigue siendo manual). Tampoco calcula nada de
 cantidades/valor de cartera -- eso vive en un fichero de posiciones aparte
 (pendiente) que se combina con estos precios en el paso de sync.
+
+FIX 2026-09-17 (detectado por Mariano en el correo diario -- "los datos
+son del cierre de un dia antes de lo que pone"): el JSON solo llevaba
+"generado_en_utc" (el instante en que corrio el script), y
+build_emails_prod.py usaba esa fecha tal cual para el titulo "Cierre
+{fecha}". El job corre a las 06:00 UTC, horas antes de que abra
+(13:30 UTC) y cierre (20:00 UTC) el NYSE -- asi que el precio que se trae
+SIEMPRE es el del ultimo cierre ya consumado, que es el dia BURSATIL
+ANTERIOR al dia en que corre el script. Al usar la fecha de ejecucion
+como si fuera la fecha del cierre, el correo quedaba etiquetado un dia
+por delante de los precios reales.
+
+Fix: se anade "fecha_cierre" a nivel raiz del JSON (fecha real, en
+formato YYYY-MM-DD, del ultimo cierre disponible en la serie historica
+del primer ticker US que responda bien -- todos los tickers US cotizan
+en el mismo calendario NYSE/Nasdaq) y tambien "fecha" por ticker
+(informativo, por si algun dia hay que depurar un desfase puntual entre
+plazas). compute_patrimonio.py y build_emails_prod.py se actualizan para
+leer "fecha_cierre" en vez de derivar la fecha de "generado_en_utc".
 """
 
 import os
@@ -169,6 +188,7 @@ if __name__ == "__main__":
 
     resultado = {}
     fallos = []
+    fecha_cierre_us = None  # fecha real (YYYY-MM-DD) del ultimo cierre US -- ver FIX 2026-09-17 en la cabecera
 
     # --- Tickers US/globales via FMP ---
     for t in TICKERS:
@@ -178,14 +198,18 @@ if __name__ == "__main__":
             price = float(quote[0]["price"])
 
             chg = chg_periodos(df, price, hasta, year_start)
+            ultima_fecha = df.iloc[-1]["date"].strftime("%Y-%m-%d") if len(df) else None
+            if fecha_cierre_us is None:
+                fecha_cierre_us = ultima_fecha
 
             resultado[t] = {
                 "price": price,
                 "currency": "USD",
                 "chg": chg,
                 "high52": high_52w(df),
+                "fecha": ultima_fecha,
             }
-            print(f"  {t}: ok  ${price:,.2f}  1D={chg['1D']}%")
+            print(f"  {t}: ok  ${price:,.2f}  1D={chg['1D']}%  (cierre {ultima_fecha})")
         except Exception as e:
             fallos.append(t)
             print(f"  {t}: FALLO -> {type(e).__name__}: {e}")
@@ -197,14 +221,16 @@ if __name__ == "__main__":
             price, currency = quote_yf(simbolo_yf)
 
             chg = chg_periodos(df, price, hasta, year_start)
+            ultima_fecha = df.iloc[-1]["date"].strftime("%Y-%m-%d") if len(df) else None
 
             resultado[nombre] = {
                 "price": price,
                 "currency": currency,
                 "chg": chg,
                 "high52": high_52w(df),
+                "fecha": ultima_fecha,
             }
-            print(f"  {nombre} ({simbolo_yf}): ok  {price:,.2f} {currency}  1D={chg['1D']}%")
+            print(f"  {nombre} ({simbolo_yf}): ok  {price:,.2f} {currency}  1D={chg['1D']}%  (cierre {ultima_fecha})")
         except Exception as e:
             fallos.append(nombre)
             print(f"  {nombre} ({simbolo_yf}): FALLO -> {type(e).__name__}: {e}")
@@ -218,8 +244,15 @@ if __name__ == "__main__":
         eur_usd = None
         print(f"  EURUSD: FALLO -> {type(e).__name__}: {e}")
 
+    if fecha_cierre_us is None:
+        # Ningun ticker US respondio bien (dia muy malo) -- como ultimo recurso,
+        # usa la fecha de cualquier ticker que si haya salido (p.ej. uno EU),
+        # para no dejar fecha_cierre en null si hay datos utilizables.
+        fecha_cierre_us = next((v["fecha"] for v in resultado.values() if v.get("fecha")), None)
+
     salida = {
         "generado_en_utc": pd.Timestamp.utcnow().isoformat(),
+        "fecha_cierre": fecha_cierre_us,
         "eur_usd": eur_usd,
         "tickers_fallidos": fallos,
         "market": resultado,
