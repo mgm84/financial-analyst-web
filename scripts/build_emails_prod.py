@@ -15,6 +15,13 @@ para que la tarea programada sepa qué asunto poner en el envío.
 
 Diseño (fondo de titulo de seccion en <td>, no en <h2>/<div>) verificado
 contra Gmail real el 2026-09-15 -- ver notas en h2().
+
+FIX 2026-09-17: el titulo "Cierre {fecha}" usaba generado_en_utc (el
+instante en que corrio el job en GitHub Actions), no la fecha real del
+cierre bursatil que reportan los precios -- ver FIX 2026-09-17 en
+refresh_market_data.py y compute_patrimonio.py. Ahora usa
+patrimonio["fecha_cierre"] si esta presente (con fallback a
+generado_en_utc para snapshots viejos de antes del fix).
 """
 import argparse
 import json
@@ -342,7 +349,7 @@ def build_daily(data, content):
     patri = data["patrimonio"]
     diario = patri["periodos"]["diario"]
 
-    fecha_cierre = fecha_es(data["patrimonio"]["generado_en_utc"])
+    fecha_cierre = fecha_es(data["patrimonio"].get("fecha_cierre") or data["patrimonio"]["generado_en_utc"])
     news_items = (content or {}).get("daily_news", [])[:1]
     noticias_html = "".join(noticia_block(n) for n in news_items) if news_items else \
         f'<div style="{FONT}font-size:13px;color:#8a8677;padding:8px 0;">Sin noticia relevante específica de la cartera identificada hoy.</div>'
