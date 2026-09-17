@@ -36,6 +36,14 @@ sobre el diccionario de posiciones fusionado, para que salga un
 rendimiento ponderado real (mismo criterio que los demas bloques) en
 vez de quedar sin ese dato. No hay tickers duplicados entre IA/DEGIRO/
 GBM en positions.json, así que fusionar los diccionarios es seguro.
+
+FIX 2026-09-17: se propaga "fecha_cierre" desde market_data.json (fecha
+real del ultimo cierre bursatil, no la fecha de ejecucion del job -- ver
+FIX 2026-09-17 en refresh_market_data.py). build_emails_prod.py la usa
+para el titulo "Cierre {fecha}" del correo en vez de derivarla de
+generado_en_utc. Si un market_data.json viejo (de antes de este fix) no
+trae "fecha_cierre", se cae de vuelta al comportamiento anterior (fecha
+de generado_en_utc) para no romper con snapshots antiguos.
 """
 
 import json
@@ -108,6 +116,7 @@ if __name__ == "__main__":
 
     resultado = {
         "generado_en_utc": market_raw["generado_en_utc"],
+        "fecha_cierre": market_raw.get("fecha_cierre") or market_raw["generado_en_utc"][:10],
         "eur_usd": eur_usd,
         "periodos": {},
     }
