@@ -155,7 +155,7 @@ def chg_ultimo_cierre(df):
         return None
     ultimo = float(df.iloc[-1]["close"])
     anterior = float(df.iloc[-2]["close"])
-    if anterior == 0:
+    if anterior == 0 or pd.isna(ultimo) or pd.isna(anterior):
         return None
     return round((ultimo / anterior - 1) * 100, 2)
 
