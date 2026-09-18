@@ -262,9 +262,10 @@ def puerta1_html(tramos):
         aviso = (f'''<div style="margin-top:8px;padding:10px 12px;background:#fdf2f1;border:1px solid #f3c9c5;border-radius:6px;{FONT}font-size:13px;color:#7a231d;">
           ⚠ Puerta 1 disparada — hay una decisión de aceleración de tramo pendiente de confirmar. Revisa el dashboard.
         </div>''')
-    else:
+else:
+        umbral_txt = f' (umbral −{p1["umbral_pct"]}%)' if p1.get("umbral_pct") is not None else ''
         cabecera = (f'NO disparada — {pct(cesta["caida_eur_pct"])} EUR desde el máximo del '
-                    f'{fecha_es(cesta["maximo_eur_fecha"])} (umbral −{p1["umbral_pct"]}%).')
+                    f'{fecha_es(cesta["maximo_eur_fecha"])}{umbral_txt}.')
         aviso = ""
     if not p1.get("cooldown_ok", True) and p1.get("cooldown_msg"):
         aviso += f'''<div style="margin-top:8px;padding:10px 12px;background:#faf3e1;border:1px solid #ecd9a8;border-radius:6px;{FONT}font-size:13px;color:#6b530a;">
