@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-18T06:57:53.721598+00:00",
+  "generado_en_utc": "2026-09-18T07:32:01.182276+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -27,7 +27,7 @@
       "ticker": "ASML",
       "peso_pct": 16,
       "metrica": "PER",
-      "hoy": 51.3,
+      "hoy": 51.4,
       "mediana": 39.6,
       "min": 27.6,
       "max": 63.0,
