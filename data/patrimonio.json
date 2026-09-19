@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-19T08:07:00.694463+00:00",
+  "generado_en_utc": "2026-09-19T23:55:56.701945+00:00",
   "fecha_cierre": "2026-09-18",
   "eur_usd": 1.14878,
   "periodos": {
@@ -13,8 +13,8 @@
         },
         "Equity_DEGIRO": {
           "valor_eur": 124408.88,
-          "rendimiento_pct": null,
-          "incompleto": true,
+          "rendimiento_pct": 0.38,
+          "incompleto": false,
           "posiciones_excluidas": []
         },
         "Equity_GBM": {
@@ -26,14 +26,14 @@
       },
       "Equity": {
         "valor_eur": 134755.96,
-        "rendimiento_pct": null,
-        "incompleto": true,
+        "rendimiento_pct": 0.38,
+        "incompleto": false,
         "posiciones_excluidas": []
       },
       "Total": {
         "valor_eur": 160518.32,
-        "rendimiento_pct": null,
-        "incompleto": true,
+        "rendimiento_pct": 0.61,
+        "incompleto": false,
         "posiciones_excluidas": []
       }
     },
