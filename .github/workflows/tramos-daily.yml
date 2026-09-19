@@ -7,7 +7,7 @@ on:
     # octubre) esto pasará a correr a las 07:00 Madrid. Si quieres que
     # se mantenga siempre a las 08:00 Madrid, hay que cambiar este
     # cron a mano dos veces al año (GitHub Actions no ajusta DST).
-    - cron: '0 6 * * *'
+    - cron: '0 22 * * *'
   workflow_dispatch: {}   # permite lanzarlo a mano desde la pestaña Actions
 
 permissions:
