@@ -17,6 +17,14 @@ on:
                              # hora en punto, mismo motivo que en tramos-daily.yml
   workflow_dispatch: {}      # permite disparo manual desde la pestaña Actions
 
+# Sin esto, el GITHUB_TOKEN por defecto es de solo lectura en muchas
+# configuraciones de repo/organización actuales, y el "git push" del final
+# falla con 403 aunque el commit local se haya hecho bien — confirmado en
+# producción: el batch de 503 tickers (1h11min) se completó correctamente,
+# pero se perdió entero porque el push nunca llegó a subir el checkpoint.
+permissions:
+  contents: write
+
 jobs:
   calidad-barata:
     runs-on: ubuntu-latest
