@@ -40,9 +40,17 @@ HISTORIAL DE BUGS ENCONTRADOS Y CORREGIDOS EN ESTA SESIÓN (para no repetirlos)
 import time, requests
 import pandas as pd
 import numpy as np
-from google.colab import userdata, drive
+import os
 
-API_KEY = userdata.get('FMP_API_KEY')
+# API_KEY: Colab primero (userdata), con fallback a variable de entorno —
+# así el mismo script corre sin cambios en Colab (desarrollo/pruebas) y en
+# GitHub Actions (producción), donde no existe google.colab.
+try:
+    from google.colab import userdata, drive
+    API_KEY = userdata.get('FMP_API_KEY')
+except ImportError:
+    API_KEY = os.environ.get('FMP_API_KEY')
+    drive = None  # no aplica fuera de Colab; nada en este script debería llamarlo directamente
 BASE = "https://financialmodelingprep.com/stable"
 EP = {
     "income":   f"{BASE}/income-statement",
@@ -326,6 +334,62 @@ PERCENTIL_RENTABILIDAD_SECTOR = 0.667   # top tercio del propio sector
 # lo que impedía importarlos desde otros scripts del pipeline, ej. calidad_universo.py)
 UMBRAL_PCT_SOSTENIDO = 0.70       # tu propio criterio: "sostenido", no solo la mediana
 UMBRAL_VARIACION_ESTRES = -0.30   # tolerancia máxima de caída en 2020/2022
+
+# Sub-industrias GICS ya cubiertas por la cartera AI Infrastructure Stack —
+# usado para marcar "solapa_cartera_ia" en cada candidato de esta subcartera
+# nueva, de cara al tope del 10% de concentración acordado. Confirmado a
+# mano en sesión: EQIX/ASML/AVGO/TSM/PWR/ETN/ANET (cartera IA) + GOOGL/AMD/
+# MSFT (cartera preexistente DEGIRO). ASML y TSM no están en el S&P 500
+# (extranjeras) y no tienen fila propia en sp500_universo.csv, pero sus
+# sub-industrias sí están representadas aquí porque otros candidatos del
+# S&P 500 pueden pertenecer a la misma categoría.
+SUBINDUSTRIAS_CARTERA_IA = {
+    "Communications Equipment", "Construction & Engineering", "Data Center REITs",
+    "Electrical Components & Equipment", "Interactive Media & Services",
+    "Semiconductor Materials & Equipment", "Semiconductors", "Systems Software",
+}
+
+# Trayectoria de negocio — detecta "deterioro doble" (crecimiento de ingresos
+# Y margen bruto cayendo a la vez, últimos 3 años frente a los 3 anteriores):
+# señal de posible trampa de valor cuando un candidato aparece barato en el
+# ranking de precio, ver claude/subcartera-calidad-barata.md. Es información
+# para el correo, NO un filtro que excluye candidatos del universo.
+UMBRAL_DETERIORO_MARGEN_PP = 1.0   # caída de margen >1 punto porcentual para contar como deterioro
+
+def trayectoria_negocio(ticker):
+    inc = cargar("income", ticker).set_index("date")
+    revenue = col(inc, "revenue")
+    gross_margin = col(inc, "grossProfit") / col(inc, "revenue")
+
+    revenue_ttm = revenue.rolling(4).sum()
+    crecimiento_yoy = revenue_ttm.pct_change(4) * 100
+
+    reciente = crecimiento_yoy.tail(12)      # últimos 3 años en trimestres
+    anterior = crecimiento_yoy.tail(24).head(12)  # los 3 años antes de eso
+
+    margen_reciente = gross_margin.tail(12).mean()
+    margen_anterior = gross_margin.tail(24).head(12).mean()
+
+    return {
+        "crecimiento_reciente_3a": round(reciente.mean(), 1) if reciente.notna().any() else None,
+        "crecimiento_anterior_3a": round(anterior.mean(), 1) if anterior.notna().any() else None,
+        "margen_reciente": round(margen_reciente * 100, 1) if pd.notna(margen_reciente) else None,
+        "margen_anterior": round(margen_anterior * 100, 1) if pd.notna(margen_anterior) else None,
+    }
+
+
+def calcular_deterioro_doble(trayectoria):
+    """True solo si crecimiento Y margen caen a la vez — un solo síntoma
+    (solo crecimiento desacelera, o solo margen cae) no cuenta, tal como
+    se decidió en sesión al revisar CPRT/HSY frente al resto de candidatos."""
+    cr, ca = trayectoria.get("crecimiento_reciente_3a"), trayectoria.get("crecimiento_anterior_3a")
+    mr, ma = trayectoria.get("margen_reciente"), trayectoria.get("margen_anterior")
+    if cr is None or ca is None or mr is None or ma is None:
+        return None  # dato insuficiente, no se afirma nada
+    deterioro_crecimiento = cr < ca
+    deterioro_margen = mr < (ma - UMBRAL_DETERIORO_MARGEN_PP)
+    return bool(deterioro_crecimiento and deterioro_margen)
+
 
 def serie_completa(ticker, metodo):
     if metodo == "roic":
