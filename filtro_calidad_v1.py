@@ -119,7 +119,15 @@ SECTORES_SIN_GROSS_MARGIN = {"Financials", "Utilities"}  # gross margin no tiene
 
 def get(url, **params):
     params["apikey"] = API_KEY
-    r = requests.get(url, params=params, timeout=30)
+    # Diagnóstico granular: antes solo se veía "TICKER: recalculado" al
+    # terminar el ticker completo — si se cuelga a mitad de proceso (como
+    # pasó con GPN en producción, más de 10 min sin avanzar, muy por
+    # encima de lo que timeout=30 debería permitir), no había forma de
+    # saber en qué llamada concreta. Con este print, el log muestra el
+    # endpoint y ticker exactos justo antes de cada request.
+    simbolo = params.get("symbol", "?")
+    print(f"    -> {url.split('/')[-1]} [{simbolo}]", flush=True)
+    r = requests.get(url, params=params, timeout=(10, 30))
     r.raise_for_status()
     data = r.json()
     time.sleep(PAUSA)
