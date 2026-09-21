@@ -1,0 +1,51 @@
+name: Calidad + Barata — pipeline diario
+
+# Workflow INDEPENDIENTE del de la cartera IA (tramos-daily.yml) — decisión
+# explícita de sesión: si este pipeline falla (p.ej. un ticker con dato raro
+# de FMP en calidad_universo.py), no debe tumbar el pipeline de la cartera
+# IA, que sí es operativamente crítico.
+#
+# OJO DST — igual que en tramos-daily.yml: el cron de abajo está en UTC y
+# fijado para 00:00 hora de Madrid asumiendo CEST (UTC+2, horario de
+# verano). Cuando España cambie a CET (UTC+1, último domingo de octubre),
+# hay que ADELANTAR el cron 1h en UTC (22:03 -> 23:03) para que la hora
+# local de disparo siga siendo las 00:00 — y volver a atrasarlo en marzo.
+
+on:
+  schedule:
+    - cron: "3 22 * * *"   # 00:03 Madrid (CEST) — 3 min de margen sobre la
+                             # hora en punto, mismo motivo que en tramos-daily.yml
+  workflow_dispatch: {}      # permite disparo manual desde la pestaña Actions
+
+jobs:
+  calidad-barata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install requests pandas numpy
+
+      - name: Calidad Universo — recálculo por evento
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python3 calidad_universo.py
+
+      - name: Percentiles Diarios — ranking de precio
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python3 percentiles_diarios.py
+
+      - name: Commit de los JSON generados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/calidad_universo.json data/percentiles_diarios_historico.json data/ranking_hoy.json data/precios_cache.json
+          git diff --staged --quiet || git commit -m "Calidad + Barata: actualización diaria $(date -u +%Y-%m-%d)"
+          git push
