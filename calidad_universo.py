@@ -61,6 +61,7 @@ from filtro_calidad_v1 import (  # noqa: E402
     SECTORES_CORTE_RENTABILIDAD_PERCENTIL, PERCENTIL_RENTABILIDAD_SECTOR,
     SECTORES_SIN_DEUDA_EBITDA, GRUPOS_PERCENTIL_DEUDA,
     UMBRAL_DEUDA_EBITDA_ESTANDAR, PERCENTIL_DEUDA_SECTOR,
+    SUBINDUSTRIAS_CARTERA_IA, trayectoria_negocio, calcular_deterioro_doble,
 )
 # Todos los imports de filtro_calidad_v1 viven aquí arriba, no dentro de las
 # funciones — si falta una constante o función, el script falla en el primer
@@ -128,6 +129,15 @@ def actualizar_ticker(ticker, sector, subindustria, previo):
         previo is None
         or previo.get("ultima_fecha_reporte") != fecha_actual
         or previo.get("metodo") == "error"
+        or (previo.get("metodo") not in (None, "no_calculable", "error")
+            and "deterioro_doble" not in previo)
+        # ^ backfill de un único paso: si la entrada previa es de antes de
+        # que existieran estas dos campos (trayectoria de negocio /
+        # solapamiento cartera IA), fuerza el recálculo aunque no haya
+        # trimestre nuevo — así no hay que esperar hasta 3 meses (el
+        # próximo earnings real de cada ticker) para que se rellenen.
+        # Una vez recalculado una vez, el campo ya existe y esta condición
+        # deja de disparar para ese ticker.
     )
 
     if not hay_trimestre_nuevo:
@@ -152,6 +162,14 @@ def actualizar_ticker(ticker, sector, subindustria, previo):
         dims = dimensiones_extendidas(ticker, metodo, sector)
         etiqueta_val, serie_val = serie_valoracion(ticker, metodo, sector)
 
+        # Trayectoria de negocio y solapamiento con la cartera IA: no
+        # afectan a supera_filtro_calidad (no son un filtro), solo viajan
+        # como información para el correo diario (insignias "deterioro
+        # doble" y "solapa cartera IA" del ranking de precio).
+        trayectoria = trayectoria_negocio(ticker)
+        deterioro_doble = calcular_deterioro_doble(trayectoria)
+        solapa_cartera_ia = subindustria in SUBINDUSTRIAS_CARTERA_IA
+
         entrada = {
             "ticker": ticker, "sector": sector, "subindustria": subindustria,
             "metodo": metodo, "flags": flags,
@@ -159,6 +177,9 @@ def actualizar_ticker(ticker, sector, subindustria, previo):
             **dims,
             "metrica_valoracion": etiqueta_val,
             "serie_valoracion": serie_val,
+            "trayectoria_negocio": trayectoria,
+            "deterioro_doble": deterioro_doble,
+            "solapa_cartera_ia": solapa_cartera_ia,
         }
     except Exception as e:
         # Este try/except cubre SOLO el cálculo caro (llamadas a FMP). Si
@@ -219,7 +240,7 @@ def recalcular_todos_los_cortes(universo):
         if aplica_percentil:
             u["pasa_deuda"] = None  # pendiente del percentil del grupo, más abajo
         else:
-            u["pasa_deuda"] = (deuda is not None) and (deuda < UMBRAL_DEUDA_EBITDA_ESTANDAR)
+            u["pasa_deuda"] = bool((deuda is not None) and (deuda < UMBRAL_DEUDA_EBITDA_ESTANDAR))
 
     for sector, subset_filtro in GRUPOS_PERCENTIL_DEUDA.items():
         del_grupo = [
@@ -233,7 +254,7 @@ def recalcular_todos_los_cortes(universo):
         valores = [u["deuda_neta_ebitda"] for u in del_grupo]
         corte = float(np.quantile(valores, PERCENTIL_DEUDA_SECTOR))
         for u in del_grupo:
-            u["pasa_deuda"] = u["deuda_neta_ebitda"] <= corte
+            u["pasa_deuda"] = bool(u["deuda_neta_ebitda"] <= corte)
 
     # --- Rentabilidad + consistencia ---
     for u in calculables:
@@ -245,8 +266,8 @@ def recalcular_todos_los_cortes(universo):
             u["pasa_rentabilidad"] = None  # pendiente del percentil del sector
             u["pasa_consistencia"] = None
         else:
-            u["pasa_rentabilidad"] = (mediana is not None) and (mediana > UMBRAL_RENTABILIDAD_SOSTENIDO)
-            u["pasa_consistencia"] = (pct is not None) and (pct >= UMBRAL_PCT_SOSTENIDO)
+            u["pasa_rentabilidad"] = bool((mediana is not None) and (mediana > UMBRAL_RENTABILIDAD_SOSTENIDO))
+            u["pasa_consistencia"] = bool((pct is not None) and (pct >= UMBRAL_PCT_SOSTENIDO))
 
     for sector in SECTORES_CORTE_RENTABILIDAD_PERCENTIL:
         del_sector = [
@@ -260,8 +281,8 @@ def recalcular_todos_los_cortes(universo):
         corte_rent = float(np.quantile(medianas, PERCENTIL_RENTABILIDAD_SECTOR))
         corte_cons = float(np.quantile(consistencias, PERCENTIL_RENTABILIDAD_SECTOR))
         for u in del_sector:
-            u["pasa_rentabilidad"] = u["mediana_rentabilidad_8a"] >= corte_rent
-            u["pasa_consistencia"] = u["pct_trimestres_sostenido"] >= corte_cons
+            u["pasa_rentabilidad"] = bool(u["mediana_rentabilidad_8a"] >= corte_rent)
+            u["pasa_consistencia"] = bool(u["pct_trimestres_sostenido"] >= corte_cons)
 
     # --- Resiliencia 2020/2022 + combinación final ---
     for u in calculables:
