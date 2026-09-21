@@ -37,6 +37,27 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python3 calidad_universo.py
 
+      - name: Commit de seguridad del checkpoint (por si el paso de precios falla)
+        # if: always() -- IMPRESCINDIBLE: sin esto, GitHub Actions se salta
+        # este paso en cuanto el anterior falla, que es precisamente el
+        # escenario que este checkpoint está pensado para cubrir.
+        if: always()
+        # calidad_universo.py guarda calidad_universo.json.tmp ANTES de aplicar
+        # el corte final — checkpoint intermedio, mismo patrón que ya usamos en
+        # Colab. Pero a diferencia de Colab (Drive persistente), el runner de
+        # GitHub Actions se destruye al terminar el job aunque falle, así que
+        # sin este commit intermedio, un fallo aquí obliga a repetir el batch
+        # completo de FMP (~25-30 min) desde cero. Con este paso, como mucho se
+        # repite el corte final (segundos), nunca las llamadas a FMP.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -f data/calidad_universo.json.tmp ]; then
+            git add data/calidad_universo.json.tmp
+            git diff --staged --quiet || git commit -m "Checkpoint calidad_universo (previo al corte final) $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
       - name: Percentiles Diarios — ranking de precio
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
