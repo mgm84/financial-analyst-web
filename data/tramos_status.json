@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-09-22T00:36:54.941906+00:00",
+  "generado_en_utc": "2026-09-22T08:02:09.296361+00:00",
   "cesta": {
     "caida_usd_pct": -5.33,
-    "caida_eur_pct": -5.66,
+    "caida_eur_pct": -5.62,
     "maximo_eur_fecha": "2026-06-22",
-    "eur_usd": 1.14684
+    "eur_usd": 1.1464
   },
   "puerta_1": {
     "umbral_pct": null,
