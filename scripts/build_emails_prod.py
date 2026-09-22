@@ -22,6 +22,19 @@ cierre bursatil que reportan los precios -- ver FIX 2026-09-17 en
 refresh_market_data.py y compute_patrimonio.py. Ahora usa
 patrimonio["fecha_cierre"] si esta presente (con fallback a
 generado_en_utc para snapshots viejos de antes del fix).
+
+FIX 2026-09-22: cuando Yahoo falla para EQQQ/VUSA, refresh_market_data.py
+cae a un precio proxy (ETF equivalente en mercado US via FMP, convertido
+a EUR -- ver ese script) y marca la entrada con "proxy": true en
+market_data.json; compute_patrimonio.py propaga eso a cada bloque como
+"tiene_proxy"/"posiciones_proxy". Aqui se muestra esa advertencia en
+tres sitios, tal como pidio Mariano: (1) junto al nombre de la posicion
+afectada, en ambas tablas de performance; (2) junto al subtotal de la
+subcartera que la contiene; (3) en las tarjetas de cabecera (Total/IA/
+Equity) cuando el bloque incluye alguna posicion en proxy. El proxy no
+trae un maximo de 52 semanas garantizado (puede venir None si algo
+fallo tambien calculandolo) -- el "vs máx. 52 sem." se blinda contra
+eso y muestra "—" en vez de reventar con una division por None.
 """
 import argparse
 import json
@@ -44,6 +57,7 @@ FONT = "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica
 ACCENT = {
     "noticias": "#2f5fa8", "performance": "#1c7a72", "puertas": "#6a4c93",
     "puerta1": "#b3261e", "puerta2": "#a3720b", "puerta3": "#c2570e",
+    "proxy": "#a3720b",
 }
 ACCENT_LIGHT = {
     "noticias": "#eaf1fb", "performance": "#e5f4f2", "puertas": "#f0eaf7",
@@ -83,6 +97,10 @@ def banda_color(banda):
     return "#5a5748"
 
 
+def proxy_badge():
+    return f' <span style="color:{ACCENT["proxy"]};font-weight:600;">⚠ proxy</span>'
+
+
 def h2(title, key):
     # Nota (2026-09-15): un <h2>/<div> con background inline no se pinta en
     # Gmail real (aunque si en el render de Playwright usado para el mockup)
@@ -106,6 +124,7 @@ def kpi_cards(bloque_total, bloque_ia, bloque_eq, label_periodo):
           <div style="font-size:22px;font-weight:700;color:#141413;">{eur(b["valor_eur"])}</div>
           <div style="font-size:14px;font-weight:600;color:{color(b["rendimiento_pct"])};margin-top:2px;">{pct(b["rendimiento_pct"])} {label_periodo}</div>
           {f'<div style="font-size:11px;color:#b3261e;margin-top:4px;">⚠ datos incompletos: {", ".join(b["posiciones_excluidas"])}</div>' if b.get("incompleto") else ""}
+          {f'<div style="font-size:11px;color:{ACCENT["proxy"]};margin-top:4px;">⚠ incluye precio proxy: {", ".join(b["posiciones_proxy"])}</div>' if b.get("tiene_proxy") else ""}
         </td>'''
 
     return f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:16px 0;"><tr>
@@ -158,13 +177,20 @@ def peso_line(r):
     return f'{eur(r["value_eur"], 0)} · {pct(r["peso_sub"], False)} subcartera · {pct(r["peso_total"], False)} total'
 
 
-def subtotal_row(ncols, total_eur, grand_total):
+def proxy_tickers_de(grupo):
+    return [r["ticker"] for r in grupo["rows"] if r["info"] and r["info"].get("proxy")]
+
+
+def subtotal_row(ncols, total_eur, grand_total, proxy_tickers=None):
     peso_total = pct(total_eur / grand_total * 100, False) if grand_total else "—"
-    return f'''<tr>
+    fila = f'''<tr>
       <td style="padding:6px 8px;border-top:1px solid #ddd;{FONT}font-size:13px;font-weight:700;">Subtotal</td>
       <td colspan="{ncols-2}" style="padding:6px 8px;border-top:1px solid #ddd;{FONT}font-size:13px;font-weight:700;text-align:right;">{eur(total_eur)}</td>
       <td style="padding:6px 8px;border-top:1px solid #ddd;{FONT}font-size:13px;font-weight:700;text-align:right;">{peso_total} cartera</td>
     </tr>'''
+    if proxy_tickers:
+        fila += f'''<tr><td colspan="{ncols}" style="padding:2px 8px 8px;{FONT}font-size:11px;color:{ACCENT["proxy"]};">⚠ incluye precio proxy para {", ".join(proxy_tickers)} — subtotal y rendimiento de este grupo son una aproximación, ver nota al pie</td></tr>'''
+    return fila
 
 
 def perf_vs_52w_table(market, positions, eur_usd):
@@ -177,16 +203,18 @@ def perf_vs_52w_table(market, positions, eur_usd):
             if not info:
                 rows.append(f'<tr><td style="padding:6px 8px;{FONT}font-size:13px;">{NOMBRES.get(t,t)} ({t})</td><td colspan="3" style="padding:6px 8px;color:#8a8677;{FONT}font-size:13px;">sin datos de mercado</td></tr>')
                 continue
-            vs52 = round((info["price"] / info["high52"] - 1) * 100, 2)
+            high52 = info.get("high52")
+            vs52 = round((info["price"] / high52 - 1) * 100, 2) if high52 else None
             chg1d = info["chg"].get("1D")
             precio_fmt = eur(info["price"], 2) if info["currency"] == "EUR" else f'${info["price"]:,.2f}'
+            badge = proxy_badge() if info.get("proxy") else ""
             rows.append(f'''<tr>
-              <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;">{NOMBRES.get(t,t)} ({t})<div style="font-size:11px;color:#8a8677;margin-top:2px;">{peso_line(r)}</div></td>
+              <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;">{NOMBRES.get(t,t)} ({t}){badge}<div style="font-size:11px;color:#8a8677;margin-top:2px;">{peso_line(r)}</div></td>
               <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;text-align:right;color:{color(chg1d)};">{pct(chg1d)}</td>
               <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;text-align:right;">{precio_fmt}</td>
               <td style="padding:6px 8px;border-bottom:1px solid #eee;{FONT}font-size:13px;text-align:right;color:{color(vs52)};">{pct(vs52)} vs máx. 52 sem.</td>
             </tr>''')
-        rows.append(subtotal_row(4, g["total"], grand_total))
+        rows.append(subtotal_row(4, g["total"], grand_total, proxy_tickers=proxy_tickers_de(g)))
     return f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-top:6px;">
       <tr><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;">Posición</td><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;text-align:right;">1D</td><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;text-align:right;">Precio</td><td style="padding:4px 8px;{FONT}font-size:11px;color:#8a8677;text-align:right;">vs. máx. 52 sem.</td></tr>
       {"".join(rows)}
@@ -206,9 +234,10 @@ def hist_returns_table(market, positions, eur_usd):
             if not info:
                 rows.append(f'<tr><td style="padding:5px 6px;{FONT}font-size:12.5px;">{NOMBRES.get(t,t)}</td><td colspan="{len(periods)}" style="padding:5px 6px;color:#8a8677;{FONT}font-size:12.5px;">sin datos</td></tr>')
                 continue
+            badge = proxy_badge() if info.get("proxy") else ""
             cells = "".join(f'<td style="padding:5px 6px;border-bottom:1px solid #eee;{FONT}font-size:12.5px;text-align:right;color:{color(info["chg"].get(p))};">{pct(info["chg"].get(p))}</td>' for p in periods)
-            rows.append(f'<tr><td style="padding:5px 6px;border-bottom:1px solid #eee;{FONT}font-size:12.5px;">{NOMBRES.get(t,t)} ({t})<div style="font-size:10.5px;color:#8a8677;margin-top:2px;">{peso_line(r)}</div></td>{cells}</tr>')
-        rows.append(subtotal_row(1 + len(periods), g["total"], grand_total))
+            rows.append(f'<tr><td style="padding:5px 6px;border-bottom:1px solid #eee;{FONT}font-size:12.5px;">{NOMBRES.get(t,t)} ({t}){badge}<div style="font-size:10.5px;color:#8a8677;margin-top:2px;">{peso_line(r)}</div></td>{cells}</tr>')
+        rows.append(subtotal_row(1 + len(periods), g["total"], grand_total, proxy_tickers=proxy_tickers_de(g)))
     return f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-top:6px;">{"".join(rows)}</table>'
 
 
@@ -318,10 +347,17 @@ def ratios_puertas(tramos, percentiles, content):
     return puerta1_html(tramos) + puerta2_html(percentiles) + puerta3_html(content)
 
 
-def footer(patri):
+def footer(patri, tiene_proxy_en_algun_bloque):
+    aviso_proxy = ""
+    if tiene_proxy_en_algun_bloque:
+        aviso_proxy = (f'⚠ Proxy: cuando Yahoo falla al pedir el precio de EQQQ/VUSA, se usa como estimación su '
+                        f'ETF equivalente en mercado US (QQQ/VOO vía FMP, mismo índice subyacente), convertido a '
+                        f'EUR con el cambio de cierre del día anterior — es una aproximación, no el precio real '
+                        f'de la UCITS.<br>')
     return f'''<div style="margin-top:24px;padding-top:14px;border-top:1px solid #e8e5db;{FONT}font-size:11px;color:#8a8677;">
       Datos generados el {patri["generado_en_utc"][:16].replace("T"," ")} UTC · EUR/USD {patri["eur_usd"]}<br>
       Fuente: FMP (US/global) + yfinance (EQQQ.DE, VUSA.AS) · 1D = cierre del día anterior<br>
+      {aviso_proxy}
       <a href="{DASHBOARD_URL}" style="color:#8a6d3b;">Ver dashboard en vivo →</a>
     </div>'''
 
@@ -338,6 +374,14 @@ def fecha_es(iso_date):
         return d.strftime("%d/%m")
     except Exception:
         return iso_date
+
+
+def hay_proxy(periodo_datos):
+    """True si el Total, Equity o cualquier bloque de este periodo
+    (diario/semanal) incluye alguna posición en modo proxy -- controla si
+    se añade la nota explicativa al pie del correo."""
+    bloques = list(periodo_datos["bloques"].values()) + [periodo_datos["Equity"], periodo_datos["Total"]]
+    return any(b.get("tiene_proxy") for b in bloques)
 
 
 # ---------------- construccion de los correos ----------------
@@ -371,7 +415,7 @@ def build_daily(data, content):
   {h2("Ratios y puertas — Capas sectoriales IA", "puertas")}
   {ratios_puertas(tramos, percentiles, content)}
 
-  {footer(patri)}
+  {footer(patri, hay_proxy(diario))}
 </div>'''
     subject = f'Monitor de cartera — Cierre {fecha_cierre} — Total {eur(diario["Total"]["valor_eur"])} ({pct(diario["Total"]["rendimiento_pct"])})'
     return html, subject
@@ -410,7 +454,7 @@ def build_weekly(data, content):
   {h2("Ratios y puertas — Capas sectoriales IA", "puertas")}
   {ratios_puertas(tramos, percentiles, content)}
 
-  {footer(patri)}
+  {footer(patri, hay_proxy(semanal))}
 </div>'''
     subject = f'Monitor de cartera — Semana del {fecha_semana} — Total {eur(semanal["Total"]["valor_eur"])} ({pct(semanal["Total"]["rendimiento_pct"])})'
     return html, subject
