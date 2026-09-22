@@ -44,6 +44,18 @@ para el titulo "Cierre {fecha}" del correo en vez de derivarla de
 generado_en_utc. Si un market_data.json viejo (de antes de este fix) no
 trae "fecha_cierre", se cae de vuelta al comportamiento anterior (fecha
 de generado_en_utc) para no romper con snapshots antiguos.
+
+FIX 2026-09-22: refresh_market_data.py ahora puede marcar un ticker con
+"proxy": true (precio estimado desde un ETF equivalente de mercado US
+cuando Yahoo falla para EQQQ/VUSA -- ver ese script). Este script no
+necesita tratar el precio de forma distinta (ya llega convertido a EUR),
+pero SI necesita propagar que bloques incluyen una posicion en modo
+proxy, para que el correo pueda avisarlo junto al total y al
+rendimiento de ese bloque -- nuevos campos "tiene_proxy" (bool) y
+"posiciones_proxy" (lista) en cada bloque, en paralelo a "incompleto"/
+"posiciones_excluidas". Proxy NO es lo mismo que incompleto: una
+posicion en proxy SI tiene un precio utilizable (aproximado), no se
+excluye del calculo ni marca incompleto el bloque.
 """
 
 import json
@@ -70,6 +82,7 @@ def calcular_bloque(posiciones, market, periodo, eur_usd):
     total_pasado = 0.0
     incompleto = False
     excluidas = []
+    proxy_usadas = []
 
     for ticker, qty in posiciones.items():
         if qty is None:
@@ -81,6 +94,9 @@ def calcular_bloque(posiciones, market, periodo, eur_usd):
             excluidas.append(ticker)
             incompleto = True
             continue
+
+        if info.get("proxy"):
+            proxy_usadas.append(ticker)
 
         hoy_eur = valor_hoy_eur(qty, info, eur_usd)
         total_hoy += hoy_eur
@@ -100,6 +116,8 @@ def calcular_bloque(posiciones, market, periodo, eur_usd):
         "rendimiento_pct": rendimiento_pct,
         "incompleto": incompleto,
         "posiciones_excluidas": excluidas,
+        "tiene_proxy": len(proxy_usadas) > 0,
+        "posiciones_proxy": proxy_usadas,
     }
 
 
@@ -146,7 +164,7 @@ if __name__ == "__main__":
         eq = datos["Equity"]
         tot = datos["Total"]
         print(f"[{etiqueta}] IA: {ia['valor_eur']:,.2f}€ ({ia['rendimiento_pct']}%)"
-              f"  Equity: {eq['valor_eur']:,.2f}€ ({eq['rendimiento_pct']}%){'  [INCOMPLETO]' if eq['incompleto'] else ''}"
-              f"  Total: {tot['valor_eur']:,.2f}€ ({tot['rendimiento_pct']}%){'  [INCOMPLETO]' if tot['incompleto'] else ''}")
+              f"  Equity: {eq['valor_eur']:,.2f}€ ({eq['rendimiento_pct']}%){'  [INCOMPLETO]' if eq['incompleto'] else ''}{'  [PROXY: '+','.join(eq['posiciones_proxy'])+']' if eq['tiene_proxy'] else ''}"
+              f"  Total: {tot['valor_eur']:,.2f}€ ({tot['rendimiento_pct']}%){'  [INCOMPLETO]' if tot['incompleto'] else ''}{'  [PROXY: '+','.join(tot['posiciones_proxy'])+']' if tot['tiene_proxy'] else ''}")
         if eq["posiciones_excluidas"]:
             print(f"    excluidas de Equity: {eq['posiciones_excluidas']}")
