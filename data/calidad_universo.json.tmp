@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-22T04:04:53.102696+00:00",
+  "generado_en_utc": "2026-09-23T04:52:51.052041+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -8433,18 +8433,14 @@
       "subindustria": "Automotive Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-09",
-      "mediana_rentabilidad_8a": 0.404,
-      "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": 2.9,
+      "ultima_fecha_reporte": "2026-08-29",
+      "mediana_rentabilidad_8a": 0.403,
+      "pct_trimestres_sostenido": 0.97,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.37,
       "variacion_2022": 0.12,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-06",
-          "denominador": 34.2305
-        },
         {
           "fecha": "2017-08-26",
           "denominador": 35.7719
@@ -8588,20 +8584,20 @@
         {
           "fecha": "2026-05-09",
           "denominador": 96.9156
+        },
+        {
+          "fecha": "2026-08-29",
+          "denominador": 66.5343
         }
       ],
       "trayectoria_negocio": {
         "crecimiento_reciente_3a": 5.2,
-        "crecimiento_anterior_3a": 11.7,
+        "crecimiento_anterior_3a": 11.8,
         "margen_reciente": 52.7,
         "margen_anterior": 52.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "AVY",
