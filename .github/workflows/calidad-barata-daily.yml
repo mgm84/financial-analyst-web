@@ -13,7 +13,7 @@ name: Calidad + Barata — pipeline diario
 
 on:
   schedule:
-    - cron: "1 22 * * *"   # 00:03 Madrid (CEST) — 3 min de margen sobre la
+    - cron: "31 22 * * *"   # 00:03 Madrid (CEST) — 3 min de margen sobre la
                              # hora en punto, mismo motivo que en tramos-daily.yml
   workflow_dispatch: {}      # permite disparo manual desde la pestaña Actions
 
