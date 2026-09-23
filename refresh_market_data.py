@@ -158,13 +158,35 @@ def historical_close_series(symbol, desde, hasta):
 
 def historical_close_series_yf(symbol, desde):
     """Equivalente a historical_close_series pero via yfinance, para
-    tickers europeos que FMP no cubre en el plan contratado."""
+    tickers europeos que FMP no cubre en el plan contratado.
+
+    FIX 2026-09-23 (encontrado al investigar por que EQQQ/VUSA seguian
+    saliendo con 1D vacio e "incompleto" en el correo, PESE a que el fix
+    de proxy del 2026-09-22 ya estaba desplegado y funcionando): el
+    problema real NO era que Yahoo fallase del todo (eso ya lo cubre el
+    proxy) -- era que yfinance devuelve, para estos dos ETPs europeos de
+    poco volumen, una ultima fila (la del dia mas reciente) con
+    Close = NaN, sin lanzar ninguna excepcion. chg_ultimo_cierre() SI
+    detecta ese NaN (por el fix del 2026-09-18) y devuelve 1D=None
+    correctamente -- pero como no hay excepcion, el fallback a proxy
+    nunca se dispara, y el resto de periodos (5D/1M/.../high52) salen
+    bien porque no dependen de esa ultima fila exacta. Resultado:
+    EQQQ/VUSA con precio correcto pero 1D="-" e "incompleto": true en el
+    bloque, dia tras dia. Reproducido con datos sinteticos (historico
+    completo real + solo la ultima fila a NaN): mismo patron exacto que
+    el visto en produccion. Fix: descartar filas sin cierre valido nada
+    mas construir la serie, para que "el ultimo cierre" sea siempre un
+    cierre de verdad."""
     hist = yf.Ticker(symbol).history(start=desde, auto_adjust=False)
     if hist.empty:
         raise ValueError(f"yfinance sin datos para {symbol}")
     df = hist.reset_index()[["Date", "Close"]].rename(columns={"Date": "date", "Close": "close"})
     df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
-    return df.sort_values("date").reset_index(drop=True)
+    df = df.sort_values("date").reset_index(drop=True)
+    df = df.dropna(subset=["close"]).reset_index(drop=True)
+    if df.empty:
+        raise ValueError(f"yfinance solo devuelve cierres NaN para {symbol}")
+    return df
 
 
 def quote_yf(symbol):
