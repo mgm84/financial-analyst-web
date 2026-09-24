@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-09-23T07:57:51.764315+00:00",
+  "generado_en_utc": "2026-09-24T00:15:48.750304+00:00",
   "cesta": {
-    "caida_usd_pct": -4.36,
-    "caida_eur_pct": -4.66,
+    "caida_usd_pct": -5.43,
+    "caida_eur_pct": -5.05,
     "maximo_eur_fecha": "2026-06-22",
-    "eur_usd": 1.14646
+    "eur_usd": 1.13824
   },
   "puerta_1": {
     "umbral_pct": null,
@@ -19,57 +19,57 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 1059.26,
+      "precio": 1037.66,
       "max_52s": 1115.94,
-      "caida_pct": -5.1,
+      "caida_pct": -7.0,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1747.9,
+      "precio": 1744.61,
       "max_52s": 1989.44,
-      "caida_pct": -12.1,
+      "caida_pct": -12.3,
       "senal_idiosincratica": false
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 452.0,
+      "precio": 446.57,
       "max_52s": 477.57,
-      "caida_pct": -5.4,
+      "caida_pct": -6.5,
       "senal_idiosincratica": false
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 642.63,
+      "precio": 634.9,
       "max_52s": 785.24,
-      "caida_pct": -18.2,
+      "caida_pct": -19.1,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 205.19,
+      "precio": 203.47,
       "max_52s": 210.5,
-      "caida_pct": -2.5,
+      "caida_pct": -3.3,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 364.54,
+      "precio": 354.99,
       "max_52s": 481.57,
-      "caida_pct": -24.3,
-      "senal_idiosincratica": false
+      "caida_pct": -26.3,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 442.49,
+      "precio": 438.76,
       "max_52s": 459.96,
-      "caida_pct": -3.8,
+      "caida_pct": -4.6,
       "senal_idiosincratica": false
     }
   ]
