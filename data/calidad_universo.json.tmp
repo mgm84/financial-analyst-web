@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-23T04:52:51.052041+00:00",
+  "generado_en_utc": "2026-09-24T00:44:00.678668+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -8597,7 +8597,11 @@
         "margen_anterior": 52.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "AVY",
@@ -17832,18 +17836,14 @@
       "subindustria": "Diversified Support Services",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
-      "mediana_rentabilidad_8a": 0.194,
-      "pct_trimestres_sostenido": 0.81,
+      "ultima_fecha_reporte": "2026-08-31",
+      "mediana_rentabilidad_8a": 0.198,
+      "pct_trimestres_sostenido": 0.84,
       "deuda_neta_ebitda": 0.77,
       "variacion_2020": 0.06,
       "variacion_2022": 0.09,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 1.1249
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 1.3899
@@ -17987,20 +17987,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 4.6528
+        },
+        {
+          "fecha": "2026-08-31",
+          "denominador": 5.0297
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 8.8,
-        "crecimiento_anterior_3a": 6.2,
-        "margen_reciente": 49.6,
-        "margen_anterior": 46.7
+        "crecimiento_reciente_3a": 8.7,
+        "crecimiento_anterior_3a": 7.0,
+        "margen_reciente": 49.8,
+        "margen_anterior": 46.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "CSCO",
@@ -36098,18 +36098,14 @@
       "subindustria": "Packaged Foods & Meats",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
+      "ultima_fecha_reporte": "2026-08-30",
       "mediana_rentabilidad_8a": 0.116,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.08,
+      "deuda_neta_ebitda": 4.18,
       "variacion_2020": 0.24,
       "variacion_2022": 0.1,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 2.9363
-        },
         {
           "fecha": "2017-08-27",
           "denominador": 3.3841
@@ -36253,20 +36249,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 3.0291
+        },
+        {
+          "fecha": "2026-08-30",
+          "denominador": 2.8743
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -1.6,
-        "crecimiento_anterior_3a": 5.0,
-        "margen_reciente": 34.3,
+        "crecimiento_reciente_3a": -2.5,
+        "crecimiento_anterior_3a": 4.9,
+        "margen_reciente": 34.1,
         "margen_anterior": 33.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "GM",
@@ -60672,18 +60668,14 @@
       "subindustria": "Human Resource & Employment Services",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
-      "mediana_rentabilidad_8a": 0.452,
+      "ultima_fecha_reporte": "2026-08-31",
+      "mediana_rentabilidad_8a": 0.437,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": 1.17,
+      "deuda_neta_ebitda": -0.18,
       "variacion_2020": 0.01,
       "variacion_2022": 0.23,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 2.3919
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 2.5389
@@ -60827,20 +60819,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 6.4819
+        },
+        {
+          "fecha": "2026-08-31",
+          "denominador": 5.6554
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 8.3,
-        "crecimiento_anterior_3a": 6.8,
-        "margen_reciente": 72.8,
-        "margen_anterior": 70.0
+        "crecimiento_reciente_3a": 8.8,
+        "crecimiento_anterior_3a": 7.2,
+        "margen_reciente": 72.9,
+        "margen_anterior": 70.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "PYPL",
