@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-24T00:44:00.769615+00:00",
+  "generado_en_utc": "2026-09-25T00:44:29.377303+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -22036,18 +22036,14 @@
       "subindustria": "Consumer Staples Merchandise Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-10",
-      "mediana_rentabilidad_8a": 0.322,
+      "ultima_fecha_reporte": "2026-08-30",
+      "mediana_rentabilidad_8a": 0.324,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": -0.85,
+      "deuda_neta_ebitda": -1.16,
       "variacion_2020": -0.12,
       "variacion_2022": 0.02,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-07",
-          "denominador": 4.8769
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 9.5671
@@ -22191,13 +22187,17 @@
         {
           "fecha": "2026-05-10",
           "denominador": 19.8141
+        },
+        {
+          "fecha": "2026-08-30",
+          "denominador": Infinity
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.0,
-        "crecimiento_anterior_3a": 14.0,
-        "margen_reciente": 12.7,
-        "margen_anterior": 12.5
+        "crecimiento_reciente_3a": 7.2,
+        "crecimiento_anterior_3a": 13.8,
+        "margen_reciente": 14.0,
+        "margen_anterior": 12.4
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
@@ -23211,18 +23211,14 @@
       "subindustria": "Restaurants",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
+      "ultima_fecha_reporte": "2026-08-30",
       "mediana_rentabilidad_8a": 0.127,
-      "pct_trimestres_sostenido": 0.12,
-      "deuda_neta_ebitda": 2.72,
+      "pct_trimestres_sostenido": 0.09,
+      "deuda_neta_ebitda": 3.0,
       "variacion_2020": -1.02,
       "variacion_2022": 0.56,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 4.6161
-        },
         {
           "fecha": "2017-08-27",
           "denominador": 4.4022
@@ -23366,13 +23362,17 @@
         {
           "fecha": "2026-05-31",
           "denominador": 9.7144
+        },
+        {
+          "fecha": "2026-08-30",
+          "denominador": 10.7972
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.9,
-        "crecimiento_anterior_3a": 8.7,
-        "margen_reciente": 37.0,
-        "margen_anterior": 20.3
+        "crecimiento_reciente_3a": 7.7,
+        "crecimiento_anterior_3a": 10.9,
+        "margen_reciente": 41.1,
+        "margen_anterior": 20.4
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
