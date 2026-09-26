@@ -69,35 +69,66 @@ precios de EQQQ y VUSA, error de Yahoo"): yfinance/Yahoo falla de forma
 intermitente (rate limiting o caida puntual del endpoint), y hasta ahora
 eso dejaba a EQQQ/VUSA sin precio ese dia -- aparecian en
 tickers_fallidos, sin valor en el dashboard ni en el correo. Fix: cuando
-Yahoo falla para uno de los EU_TICKERS, se usa como proxy el ETF
-equivalente de mercado US que YA se pide via FMP (EQQQ -> QQQ, ambos
-Nasdaq-100; VUSA -> VOO, ambos S&P 500 -- mismo indice subyacente),
-convertido de USD a EUR.
+Yahoo no tiene un cierre de HOY fiable para uno de los EU_TICKERS, se usa
+como referencia el ETF equivalente de mercado US que YA se pide via FMP
+(EQQQ -> QQQ, ambos Nasdaq-100; VUSA -> VOO, ambos S&P 500 -- mismo indice
+subyacente).
 
-Decision tomada por Claude al construir esto, que va MAS ALLA de lo que
-pidio Mariano literalmente (el solo especifico el precio y su conversion)
-y que conviene que la revise: para el precio del DIA se usa el cambio de
-cierre del dia anterior tal como pidio ("price_eur = price_usd_proxy /
-eur_usd_cierre_anterior"), pero para las variaciones por periodo
-(1D/5D/1M/3M/6M/YTD/1Y) y el maximo de 52 semanas NO se reutiliza sin mas
-el %-cambio propio de QQQ/VOO en USD -- eso subestimaria (o sobreestimaria)
-el retorno real de EQQQ/VUSA en euros cualquier dia en que el EUR/USD se
-mueva, porque EQQQ/VUSA no estan cubiertas de divisa: su retorno en EUR es
-retorno del indice en USD + movimiento del EUR/USD, no solo lo primero.
-Para no meter ese sesgo, se construye una serie historica sintetica del
-proxy "convertida a EUR dia a dia" (cada cierre USD del proxy dividido por
-el cierre EUR/USD de ESE MISMO dia, via pd.merge_asof) y se calculan chg%
-y high52 sobre esa serie -- no solo el precio de hoy. Es mas trabajo que
-lo que pedia el mensaje original, pero es la unica forma de que el 1D/5D/
-etc. y el maximo de 52 semanas mostrados durante un dia de proxy no
-mientan. Si Mariano prefiere la version simple (reusar el %-cambio de
-QQQ/VOO tal cual, sin este ajuste), es un cambio de una linea -- avisar.
+FIX 2026-09-23, y CORRECCION real 2026-09-26 v1 y v2 (ver el historial
+completo en `claude/automatizacion-tramos-percentiles.md` del proyecto --
+aqui solo el resumen de la version final, que es la que importa):
+
+  - 23/09: encontrado que yfinance devuelve, para estos dos ETPs europeos
+    de poco volumen, una ultima fila (la del dia mas reciente) con
+    Close = NaN sin lanzar excepcion -- el "1D" salia vacio y el proxy
+    nunca se disparaba porque no habia ningun error que lo activase. El
+    primer intento de arreglo (descartar esa fila sin mas) estaba mal:
+    dejaba "el ultimo cierre" apuntando a un dia entero mas viejo, sin
+    avisar, y el 1D podia salir con el SIGNO CONTRARIO al movimiento
+    real (visto en produccion el 26/09: EQQQ/VUSA en rojo el mismo dia
+    que QQQ/VOO, mismos indices, cerraban en verde).
+
+  - 26/09 v1: se cambio a lanzar una excepcion (activar el proxy) en vez
+    de descartar la fila en silencio -- correcto en cuanto a CUANDO usar
+    el proxy, pero el proxy en si tenia un bug de fondo que hasta
+    entonces nunca se habia visto disparar de verdad: calculaba
+    "price_eur = precio_del_proxy_en_usd / tipo_de_cambio", es decir,
+    sustituia el precio ABSOLUTO del proxy (QQQ/VOO) por el de EQQQ/VUSA.
+    Esto asume que el proxy y el ticker europeo tienen el mismo valor
+    liquidativo (NAV) por participacion, ajustado solo por la divisa --
+    cierto por pura coincidencia para EQQQ/QQQ (ambos rondan niveles de
+    precio parecidos), pero FALSO para VUSA/VOO: VOO cotiza en torno a
+    $700/participacion y VUSA en torno a 125-130 EUR/participacion --
+    son estructuras de fondo distintas con el mismo indice subyacente,
+    no la misma accion en dos monedas. Al dispararse el proxy en real por
+    primera vez (26/09), esto infló el precio de VUSA a ~624 EUR (el
+    nivel de VOO convertido a EUR) en vez de ~128 EUR reales, y disparo
+    el patrimonio total de forma artificial (~+73.000 EUR de mas).
+
+  - 26/09 v2 (ESTA VERSION, la correcta): el proxy ya NO sustituye el
+    precio absoluto del proxy. En su lugar, usa el RETORNO relativo del
+    proxy (convertido a EUR dia a dia, ya construido en
+    `serie_proxy_en_eur`) entre el ULTIMO CIERRE REAL CONOCIDO de este
+    mismo ticker (no del proxy) y hoy, y aplica ese retorno sobre el
+    precio real del propio ticker: `price_eur = precio_base_real *
+    (1 + retorno_proxy_en_eur)`. Asi el precio, el 1D, el 5D/1M/etc. y el
+    high52 quedan siempre en la escala de precio REAL de EQQQ/VUSA, sea
+    cual sea la escala del proxy -- el proxy solo aporta el movimiento
+    relativo del dia, nunca un nivel absoluto. El "ultimo cierre real
+    conocido" sale de la propia serie de yfinance si esta parcialmente
+    disponible (fallo solo en la fila mas reciente), o si yfinance no
+    responde nada en absoluto, del `data/market_data.json` que ya existe
+    en el repo (el commit de ayer, antes de que este script lo
+    sobreescriba) -- la cadena de proxies encadenados dia a dia no
+    acumula el error de escala porque siempre se parte de un retorno, no
+    de un precio absoluto ajeno.
 
 Cada ticker que use proxy lleva "proxy": true, "proxy_de": <ticker US>,
-"proxy_eur_usd_cierre_anterior": <tipo usado> en su entrada de "market".
-No se anade a "tickers_fallidos" (si tiene precio, aunque sea proxy, no
-ha fallado) -- se anade a la nueva lista raiz "proxies_usados" en su
-lugar, para que sea facil detectarlo sin recorrer todos los tickers.
+"proxy_precio_base"/"proxy_fecha_base" (el ancla real usada) y
+"proxy_retorno_aplicado_pct" en su entrada de "market". No se anade a
+"tickers_fallidos" (si tiene precio, aunque sea proxy, no ha fallado) --
+se anade a la nueva lista raiz "proxies_usados" en su lugar, para que sea
+facil detectarlo sin recorrer todos los tickers.
 """
 
 import os
@@ -130,8 +161,12 @@ EU_TICKERS = {
     "VUSA": "VUSA.AS",   # Vanguard S&P 500 UCITS ETF (DEGIRO)
 }
 
-# Proxy de mercado US para cuando Yahoo falla en el equivalente europeo --
-# mismo indice subyacente, ya se pide de todas formas para GBM Mexico.
+# Proxy de mercado US para cuando Yahoo no tiene un cierre de HOY fiable
+# para el equivalente europeo -- mismo indice subyacente, ya se pide de
+# todas formas para GBM Mexico. Ver nota "CORRECCION 2026-09-26 v2" en la
+# cabecera: se usa solo como fuente del RETORNO relativo del dia, nunca
+# como sustituto del precio absoluto (QQQ y VOO NO tienen el mismo NAV
+# por participacion que EQQQ/VUSA).
 PROXY_TICKERS = {
     "EQQQ": "QQQ",   # Invesco EQQQ (Nasdaq-100 UCITS) -> Invesco QQQ (Nasdaq-100, US)
     "VUSA": "VOO",   # Vanguard S&P 500 UCITS -> Vanguard S&P 500 (US)
@@ -160,53 +195,23 @@ def historical_close_series_yf(symbol, desde):
     """Equivalente a historical_close_series pero via yfinance, para
     tickers europeos que FMP no cubre en el plan contratado.
 
-    FIX 2026-09-23 (encontrado al investigar por que EQQQ/VUSA seguian
-    saliendo con 1D vacio e "incompleto" en el correo, PESE a que el fix
-    de proxy del 2026-09-22 ya estaba desplegado y funcionando): el
-    problema real NO era que Yahoo fallase del todo (eso ya lo cubre el
-    proxy) -- era que yfinance devuelve, para estos dos ETPs europeos de
-    poco volumen, una ultima fila (la del dia mas reciente) con
-    Close = NaN, sin lanzar ninguna excepcion. chg_ultimo_cierre() SI
-    detecta ese NaN (por el fix del 2026-09-18) y devuelve 1D=None
-    correctamente -- pero como no hay excepcion, el fallback a proxy
-    nunca se dispara, y el resto de periodos (5D/1M/.../high52) salen
-    bien porque no dependen de esa ultima fila exacta.
-
-    CORRECCION 2026-09-26 (el fix del 2026-09-23 estaba MAL -- hacia
-    dropna() sin mas, y eso descartaba silenciosamente la fila mas
-    reciente y dejaba "el ultimo cierre" apuntando a un dia entero mas
-    viejo, sin avisar de nada. Consecuencia real detectada por Mariano:
-    el correo mostraba EQQQ/VUSA en NUMEROS ROJOS (-0,58%/-0,44%) el
-    mismo dia que el indice subyacente en mercado US (QQQ +0,46%,
-    VOO +0,54%, mismos indices) SUBIA -- y la propia cotizacion "price"
-    (que viene de fast_info, no de este historico) SI habia subido de un
-    dia a otro. O sea: el "1D" que salia en el correo no solo estaba
-    desfasado un dia, salia con el SIGNO CONTRARIO al movimiento real,
-    sin ningun aviso -- peor que el "1D en blanco" que el fix de antes
-    pretendia arreglar, porque un dato vacio se nota y uno erroneo con
-    apariencia normal no. La fila NaN del final NO es basura a
-    descartar: es la senal de que el cierre de HOY (el que de verdad nos
-    interesa) todavia no esta consolidado en yfinance en el momento en
-    que corre el job. Fix correcto: si la fila MAS RECIENTE viene en
-    NaN, se trata exactamente igual que un fallo de Yahoo -- se lanza
-    excepcion y se activa el proxy FMP ya construido (fix 2026-09-22),
-    en vez de fingir que tenemos un cierre de hoy que en realidad es de
-    ayer. Huecos de NaN que no sean la ultima fila (mas raros, no vistos
-    en produccion hasta ahora) si se descartan sin mas: no afectan a
-    chg_ultimo_cierre() y evitan que se cuelen en high_52w/periodo_pct."""
+    Descarta cualquier fila sin cierre valido (yfinance devuelve, para
+    estos dos ETPs de poco volumen, una fila del dia mas reciente con
+    Close = NaN cuando ese cierre todavia no esta consolidado en el
+    momento en que corre el job -- sin lanzar ninguna excepcion). NO se
+    decide aqui si el resultado es "fresco" o no: eso lo compara el
+    llamador contra fecha_cierre_us, porque solo el llamador sabe que
+    fecha se espera. Ver "CORRECCION 2026-09-26" en la cabecera del
+    fichero para el porque de este diseño (huyendo tanto de fingir un
+    cierre de hoy que no lo es, como de descartar en silencio una serie
+    que en realidad es utilizable como ancla del proxy)."""
     hist = yf.Ticker(symbol).history(start=desde, auto_adjust=False)
     if hist.empty:
         raise ValueError(f"yfinance sin datos para {symbol}")
     df = hist.reset_index()[["Date", "Close"]].rename(columns={"Date": "date", "Close": "close"})
     df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
     df = df.sort_values("date").reset_index(drop=True)
-    if pd.isna(df.iloc[-1]["close"]):
-        # El cierre mas reciente todavia no esta disponible/consolidado
-        # en yfinance -- NO lo descartamos en silencio (eso dejaria "1D"
-        # calculado con el dia anterior, sin avisar). Se trata como un
-        # fallo de Yahoo: dispara la misma excepcion que activa el proxy.
-        raise ValueError(f"{symbol}: ultimo cierre de yfinance todavia no disponible (NaN)")
-    df = df.dropna(subset=["close"]).reset_index(drop=True)  # huecos intermedios, si los hubiera
+    df = df.dropna(subset=["close"]).reset_index(drop=True)
     if df.empty:
         raise ValueError(f"yfinance solo devuelve cierres NaN para {symbol}")
     return df
@@ -217,6 +222,29 @@ def quote_yf(symbol):
     price = float(info["last_price"])
     currency = str(info.get("currency", "?"))
     return price, currency
+
+
+def ultimo_conocido_en_disco(ticker):
+    """Best-effort: lee el market_data.json que YA existe en el repo (el
+    commit de ayer, antes de que este mismo script lo sobreescriba al
+    final) y devuelve (precio, fecha) del ultimo dato que tuviera ese
+    ticker -- sea un cierre real o el resultado de un proxy de un dia
+    anterior. Esto solo hace falta como ancla del proxy cuando yfinance
+    no devuelve NADA hoy (ni siquiera una serie parcial) -- ver
+    "CORRECCION 2026-09-26 v2" en la cabecera. La cadena de proxies
+    encadenados dia a dia no acumula error de escala porque cada uno
+    parte de un RETORNO relativo, nunca del precio absoluto del proxy.
+    Devuelve (None, None) si no hay nada usable."""
+    if not OUT_PATH.exists():
+        return None, None
+    try:
+        anterior = json.loads(OUT_PATH.read_text())
+        info = anterior.get("market", {}).get(ticker)
+        if not info or info.get("price") is None or not info.get("fecha"):
+            return None, None
+        return float(info["price"]), pd.Timestamp(info["fecha"])
+    except Exception:
+        return None, None
 
 
 def valor_en_o_antes(df, fecha):
@@ -270,9 +298,11 @@ def serie_proxy_en_eur(df_proxy_usd, fx_df):
     """Convierte una serie historica de cierres USD (del ticker proxy) a
     EUR, dia a dia -- cada cierre se divide por el cierre EUR/USD de ESE
     MISMO dia (o el disponible mas reciente en o antes, via merge_asof),
-    no por un tipo de cambio unico congelado. Necesario para que chg% y
-    high52 del proxy reflejen el retorno real en EUR (indice en USD +
-    movimiento de la divisa), no solo el retorno en USD del proxy."""
+    no por un tipo de cambio unico congelado. Necesario para que el
+    RETORNO del proxy en EUR (usado para escalar el precio real de
+    EQQQ/VUSA, ver CORRECCION 2026-09-26 v2) refleje el retorno real
+    (indice en USD + movimiento de la divisa), no solo el retorno en USD
+    del proxy."""
     df_eur = pd.merge_asof(
         df_proxy_usd.sort_values("date"),
         fx_df.sort_values("date"),
@@ -320,66 +350,108 @@ if __name__ == "__main__":
             fallos.append(t)
             print(f"  {t}: FALLO -> {type(e).__name__}: {e}")
 
-    # --- EUR/USD (se pide ANTES de los tickers europeos: el fallback de
-    # proxy, si hace falta, necesita tanto el cambio en vivo como la serie
-    # historica para construir el "cierre del dia anterior") ---
+    # --- EUR/USD (se pide ANTES de los tickers europeos: el proxy, si
+    # hace falta, necesita la serie historica para construir el retorno
+    # del proxy convertido a EUR dia a dia) ---
     fx_df = None
     eur_usd = None
-    eur_usd_cierre_anterior = None
     try:
         fx_df = historical_close_series("EURUSD", desde, hasta_str)
         fx_quote = get_json(EP_QUOTE, symbol="EURUSD")
         eur_usd = float(fx_quote[0]["price"])
-        eur_usd_cierre_anterior = float(fx_df.iloc[-1]["close"])
     except Exception as e:
         print(f"  EURUSD: FALLO -> {type(e).__name__}: {e}")
 
     # --- Tickers europeos via yfinance (FMP no los cubre en este plan) ---
-    # Si Yahoo falla, se cae a un proxy de mercado US con el mismo indice
-    # subyacente (ver PROXY_TICKERS y nota FIX 2026-09-22 en la cabecera).
+    # Si el cierre de HOY no esta disponible/fresco en yfinance, se
+    # escala el ULTIMO PRECIO REAL CONOCIDO de este mismo ticker con el
+    # retorno relativo del proxy de mercado US (ver PROXY_TICKERS y
+    # "CORRECCION 2026-09-26 v2" en la cabecera -- NUNCA se sustituye por
+    # el precio absoluto del proxy, porque no comparten NAV por
+    # participacion).
     for nombre, simbolo_yf in EU_TICKERS.items():
+        df = None
+        price_hoy_yf = None
+        currency_yf = None
         try:
             df = historical_close_series_yf(simbolo_yf, desde)
-            price, currency = quote_yf(simbolo_yf)
+            price_hoy_yf, currency_yf = quote_yf(simbolo_yf)
+        except Exception as e:
+            print(f"  {nombre} ({simbolo_yf}): FALLO Yahoo -> {type(e).__name__}: {e}")
 
-            chg = chg_periodos(df, price, hasta, year_start)
-            ultima_fecha = df.iloc[-1]["date"].strftime("%Y-%m-%d") if len(df) else None
+        ultima_fecha_yf = df.iloc[-1]["date"] if df is not None and len(df) else None
+        fresco = (
+            df is not None and price_hoy_yf is not None and ultima_fecha_yf is not None
+            and fecha_cierre_us is not None
+            and ultima_fecha_yf.strftime("%Y-%m-%d") == fecha_cierre_us
+        )
 
+        if fresco:
+            chg = chg_periodos(df, price_hoy_yf, hasta, year_start)
             resultado[nombre] = {
-                "price": price,
-                "currency": currency,
+                "price": price_hoy_yf,
+                "currency": currency_yf,
                 "chg": chg,
                 "high52": high_52w(df),
-                "fecha": ultima_fecha,
+                "fecha": fecha_cierre_us,
             }
-            print(f"  {nombre} ({simbolo_yf}): ok  {price:,.2f} {currency}  1D={chg['1D']}%  (cierre {ultima_fecha})")
-        except Exception as e:
-            print(f"  {nombre} ({simbolo_yf}): FALLO Yahoo -> {type(e).__name__}: {e} -- probando proxy FMP")
-            proxy_t = PROXY_TICKERS.get(nombre)
-            df_proxy = series_us.get(proxy_t)
-            proxy_info = resultado.get(proxy_t)
-            if not proxy_t or df_proxy is None or proxy_info is None or fx_df is None or eur_usd_cierre_anterior is None:
-                fallos.append(nombre)
-                print(f"  {nombre}: proxy no disponible (falta {proxy_t or 'definicion de proxy'} o EUR/USD) -- se omite")
-                continue
+            print(f"  {nombre} ({simbolo_yf}): ok  {price_hoy_yf:,.2f} {currency_yf}  "
+                  f"1D={chg['1D']}%  (cierre {fecha_cierre_us})")
+            continue
 
-            df_eur = serie_proxy_en_eur(df_proxy, fx_df)
-            price_eur = proxy_info["price"] / eur_usd_cierre_anterior
-            chg = chg_periodos(df_eur, price_eur, hasta, year_start)
+        # No fresco: o yfinance fallo del todo, o su cierre mas reciente
+        # no es el de fecha_cierre_us (dato de hoy aun no consolidado).
+        print(f"  {nombre} ({simbolo_yf}): dato de hoy no disponible/fresco en yfinance -- probando proxy FMP")
 
-            resultado[nombre] = {
-                "price": price_eur,
-                "currency": "EUR",
-                "chg": chg,
-                "high52": high_52w(df_eur),
-                "fecha": proxy_info["fecha"],
-                "proxy": True,
-                "proxy_de": proxy_t,
-                "proxy_eur_usd_cierre_anterior": eur_usd_cierre_anterior,
-            }
-            proxies_usados.append(nombre)
-            print(f"  {nombre}: usando proxy {proxy_t} -> {price_eur:,.2f} EUR "
-                  f"(fx cierre anterior {eur_usd_cierre_anterior})  1D={chg['1D']}%")
+        if df is not None and len(df):
+            precio_base = float(df.iloc[-1]["close"])
+            fecha_base = df.iloc[-1]["date"]
+        else:
+            precio_base, fecha_base = ultimo_conocido_en_disco(nombre)
+
+        proxy_t = PROXY_TICKERS.get(nombre)
+        df_proxy = series_us.get(proxy_t)
+        proxy_info = resultado.get(proxy_t)
+        if precio_base is None or fecha_base is None or not proxy_t or df_proxy is None or proxy_info is None or fx_df is None:
+            fallos.append(nombre)
+            print(f"  {nombre}: proxy no disponible (falta precio base real o datos del proxy US) -- se omite")
+            continue
+
+        df_proxy_eur = serie_proxy_en_eur(df_proxy, fx_df)
+        proxy_en_base = valor_en_o_antes(df_proxy_eur, fecha_base)
+        proxy_hoy = valor_en_o_antes(df_proxy_eur, hasta)
+        if proxy_en_base is None or proxy_en_base == 0 or proxy_hoy is None:
+            fallos.append(nombre)
+            print(f"  {nombre}: proxy no disponible (serie del proxy no cubre las fechas necesarias) -- se omite")
+            continue
+
+        retorno = proxy_hoy / proxy_en_base - 1
+        price_eur = precio_base * (1 + retorno)
+
+        # Serie propia del ticker (cierres reales conocidos) + el punto
+        # de hoy estimado por el retorno del proxy -- asi chg%/high52
+        # salen en la escala REAL de este ticker, nunca en la del proxy.
+        fila_hoy = pd.DataFrame({"date": [hasta], "close": [price_eur]})
+        base_df = df if (df is not None and len(df)) else pd.DataFrame({"date": [fecha_base], "close": [precio_base]})
+        df_extendido = pd.concat([base_df[base_df["date"] < hasta], fila_hoy], ignore_index=True)
+
+        chg = chg_periodos(df_extendido, price_eur, hasta, year_start)
+
+        resultado[nombre] = {
+            "price": price_eur,
+            "currency": "EUR",
+            "chg": chg,
+            "high52": high_52w(df_extendido),
+            "fecha": hasta_str,
+            "proxy": True,
+            "proxy_de": proxy_t,
+            "proxy_precio_base": precio_base,
+            "proxy_fecha_base": fecha_base.strftime("%Y-%m-%d") if hasattr(fecha_base, "strftime") else str(fecha_base),
+            "proxy_retorno_aplicado_pct": round(retorno * 100, 2),
+        }
+        proxies_usados.append(nombre)
+        print(f"  {nombre}: usando proxy {proxy_t} (retorno {retorno * 100:.2f}% desde "
+              f"{fecha_base} sobre precio base {precio_base:,.2f}) -> {price_eur:,.2f} EUR  1D={chg['1D']}%")
 
     if fecha_cierre_us is None:
         # Ningun ticker US respondio bien (dia muy malo) -- como ultimo recurso,
