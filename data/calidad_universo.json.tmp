@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-25T00:44:29.327164+00:00",
+  "generado_en_utc": "2026-09-26T00:51:12.872525+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -22200,7 +22200,11 @@
         "margen_anterior": 12.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "CRH",
@@ -23371,7 +23375,11 @@
         "margen_anterior": 20.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DDOG",
