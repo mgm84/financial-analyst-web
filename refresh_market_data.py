@@ -170,20 +170,43 @@ def historical_close_series_yf(symbol, desde):
     detecta ese NaN (por el fix del 2026-09-18) y devuelve 1D=None
     correctamente -- pero como no hay excepcion, el fallback a proxy
     nunca se dispara, y el resto de periodos (5D/1M/.../high52) salen
-    bien porque no dependen de esa ultima fila exacta. Resultado:
-    EQQQ/VUSA con precio correcto pero 1D="-" e "incompleto": true en el
-    bloque, dia tras dia. Reproducido con datos sinteticos (historico
-    completo real + solo la ultima fila a NaN): mismo patron exacto que
-    el visto en produccion. Fix: descartar filas sin cierre valido nada
-    mas construir la serie, para que "el ultimo cierre" sea siempre un
-    cierre de verdad."""
+    bien porque no dependen de esa ultima fila exacta.
+
+    CORRECCION 2026-09-26 (el fix del 2026-09-23 estaba MAL -- hacia
+    dropna() sin mas, y eso descartaba silenciosamente la fila mas
+    reciente y dejaba "el ultimo cierre" apuntando a un dia entero mas
+    viejo, sin avisar de nada. Consecuencia real detectada por Mariano:
+    el correo mostraba EQQQ/VUSA en NUMEROS ROJOS (-0,58%/-0,44%) el
+    mismo dia que el indice subyacente en mercado US (QQQ +0,46%,
+    VOO +0,54%, mismos indices) SUBIA -- y la propia cotizacion "price"
+    (que viene de fast_info, no de este historico) SI habia subido de un
+    dia a otro. O sea: el "1D" que salia en el correo no solo estaba
+    desfasado un dia, salia con el SIGNO CONTRARIO al movimiento real,
+    sin ningun aviso -- peor que el "1D en blanco" que el fix de antes
+    pretendia arreglar, porque un dato vacio se nota y uno erroneo con
+    apariencia normal no. La fila NaN del final NO es basura a
+    descartar: es la senal de que el cierre de HOY (el que de verdad nos
+    interesa) todavia no esta consolidado en yfinance en el momento en
+    que corre el job. Fix correcto: si la fila MAS RECIENTE viene en
+    NaN, se trata exactamente igual que un fallo de Yahoo -- se lanza
+    excepcion y se activa el proxy FMP ya construido (fix 2026-09-22),
+    en vez de fingir que tenemos un cierre de hoy que en realidad es de
+    ayer. Huecos de NaN que no sean la ultima fila (mas raros, no vistos
+    en produccion hasta ahora) si se descartan sin mas: no afectan a
+    chg_ultimo_cierre() y evitan que se cuelen en high_52w/periodo_pct."""
     hist = yf.Ticker(symbol).history(start=desde, auto_adjust=False)
     if hist.empty:
         raise ValueError(f"yfinance sin datos para {symbol}")
     df = hist.reset_index()[["Date", "Close"]].rename(columns={"Date": "date", "Close": "close"})
     df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
     df = df.sort_values("date").reset_index(drop=True)
-    df = df.dropna(subset=["close"]).reset_index(drop=True)
+    if pd.isna(df.iloc[-1]["close"]):
+        # El cierre mas reciente todavia no esta disponible/consolidado
+        # en yfinance -- NO lo descartamos en silencio (eso dejaria "1D"
+        # calculado con el dia anterior, sin avisar). Se trata como un
+        # fallo de Yahoo: dispara la misma excepcion que activa el proxy.
+        raise ValueError(f"{symbol}: ultimo cierre de yfinance todavia no disponible (NaN)")
+    df = df.dropna(subset=["close"]).reset_index(drop=True)  # huecos intermedios, si los hubiera
     if df.empty:
         raise ValueError(f"yfinance solo devuelve cierres NaN para {symbol}")
     return df
