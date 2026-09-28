@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-27T00:18:02.916613+00:00",
+  "generado_en_utc": "2026-09-28T00:19:29.511226+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -15,7 +15,7 @@
       "ticker": "ASML",
       "peso_pct": 16,
       "metrica": "P/FCF",
-      "hoy": 59.0,
+      "hoy": 59.1,
       "mediana": 36.8,
       "min": 19.8,
       "max": 149.0,
@@ -39,7 +39,7 @@
       "ticker": "ASML",
       "peso_pct": 16,
       "metrica": "EV/EBITDA",
-      "hoy": 42.4,
+      "hoy": 42.5,
       "mediana": 30.9,
       "min": 20.5,
       "max": 48.3,
@@ -123,7 +123,7 @@
       "ticker": "TSM",
       "peso_pct": 15,
       "metrica": "P/FCF",
-      "hoy": 12.4,
+      "hoy": 12.5,
       "mediana": 9.7,
       "min": 4.4,
       "max": 14.5,
