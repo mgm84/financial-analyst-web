@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-09-29T02:13:25.516156+00:00",
+  "generado_en_utc": "2026-09-30T01:29:18.331795+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -14129,18 +14129,14 @@
       "subindustria": "Hotels, Resorts & Cruise Lines",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
+      "ultima_fecha_reporte": "2026-08-31",
       "mediana_rentabilidad_8a": 0.047,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.27,
+      "deuda_neta_ebitda": 3.28,
       "variacion_2020": -2.32,
       "variacion_2022": -0.11,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 3.2283
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 3.2782
@@ -14284,20 +14280,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 2.3055
+        },
+        {
+          "fecha": "2026-08-31",
+          "denominador": 2.3216
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 29.7,
-        "crecimiento_anterior_3a": 532.7,
-        "margen_reciente": 35.9,
-        "margen_anterior": -860.5
+        "crecimiento_reciente_3a": 21.1,
+        "crecimiento_anterior_3a": 545.9,
+        "margen_reciente": 36.1,
+        "margen_anterior": -448.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "CARR",
