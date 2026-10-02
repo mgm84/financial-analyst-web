@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-01T01:27:37.548350+00:00",
+  "generado_en_utc": "2026-10-02T01:49:23.602923+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -711,18 +711,14 @@
       "subindustria": "IT Consulting & Other Services",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
-      "mediana_rentabilidad_8a": 0.37,
+      "ultima_fecha_reporte": "2026-08-31",
+      "mediana_rentabilidad_8a": 0.359,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": -0.14,
+      "deuda_neta_ebitda": -0.15,
       "variacion_2020": -0.27,
       "variacion_2022": -0.09,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 6.9854
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 6.7698
@@ -866,20 +862,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 20.4383
+        },
+        {
+          "fecha": "2026-08-31",
+          "denominador": 19.1986
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 4.5,
-        "crecimiento_anterior_3a": 12.7,
+        "crecimiento_reciente_3a": 4.7,
+        "crecimiento_anterior_3a": 12.9,
         "margen_reciente": 32.2,
         "margen_anterior": 32.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "ADBE",
@@ -31650,7 +31646,11 @@
         "margen_anterior": 52.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FICO",
@@ -44119,7 +44119,11 @@
         "margen_anterior": 8.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "JKHY",
@@ -50986,18 +50990,14 @@
       "subindustria": "Packaged Foods & Meats",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
-      "mediana_rentabilidad_8a": 0.081,
+      "ultima_fecha_reporte": "2026-08-31",
+      "mediana_rentabilidad_8a": 0.08,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.31,
+      "deuda_neta_ebitda": 2.94,
       "variacion_2020": 0.06,
       "variacion_2022": -0.14,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 1.8093
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 1.8169
@@ -51141,20 +51141,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 4.3016
+        },
+        {
+          "fecha": "2026-08-31",
+          "denominador": 3.9239
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 3.1,
+        "crecimiento_reciente_3a": 4.0,
         "crecimiento_anterior_3a": 6.2,
-        "margen_reciente": 38.4,
-        "margen_anterior": 38.1
+        "margen_reciente": 38.6,
+        "margen_anterior": 37.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "MCD",
@@ -52922,7 +52922,11 @@
         "margen_anterior": 23.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": true
+      "solapa_cartera_ia": true,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "MSFT",
@@ -56278,10 +56282,10 @@
       "subindustria": "Apparel, Accessories & Luxury Goods",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
-      "mediana_rentabilidad_8a": 0.282,
-      "pct_trimestres_sostenido": 0.94,
-      "deuda_neta_ebitda": 0.44,
+      "ultima_fecha_reporte": "2026-08-31",
+      "mediana_rentabilidad_8a": 0.279,
+      "pct_trimestres_sostenido": 0.91,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.47,
       "variacion_2022": -0.23,
       "metrica_valoracion": "P/FCF",
@@ -56436,17 +56440,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -1.9,
-        "crecimiento_anterior_3a": 8.1,
-        "margen_reciente": 43.4,
-        "margen_anterior": 44.8
+        "crecimiento_reciente_3a": -2.8,
+        "crecimiento_anterior_3a": 9.4,
+        "margen_reciente": 43.3,
+        "margen_anterior": 44.7
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "NI",
