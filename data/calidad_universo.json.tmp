@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-02T01:49:23.602923+00:00",
+  "generado_en_utc": "2026-10-03T01:22:09.228548+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -875,7 +875,11 @@
         "margen_anterior": 32.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "ADBE",
@@ -51154,7 +51158,11 @@
         "margen_anterior": 37.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "MCD",
@@ -56446,7 +56454,11 @@
         "margen_anterior": 44.7
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NI",
