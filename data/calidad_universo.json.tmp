@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-06T02:26:19.915963+00:00",
+  "generado_en_utc": "2026-10-07T01:46:01.819635+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -20636,18 +20636,14 @@
       "subindustria": "Distillers & Vintners",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-05-31",
-      "mediana_rentabilidad_8a": 0.104,
-      "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.14,
+      "ultima_fecha_reporte": "2026-08-31",
+      "mediana_rentabilidad_8a": 0.109,
+      "pct_trimestres_sostenido": 0.03,
+      "deuda_neta_ebitda": 0.01,
       "variacion_2020": 0.1,
       "variacion_2022": 0.16,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-05-31",
-          "denominador": 3.8631
-        },
         {
           "fecha": "2017-08-31",
           "denominador": 3.5268
@@ -20791,20 +20787,20 @@
         {
           "fecha": "2026-05-31",
           "denominador": 10.6388
+        },
+        {
+          "fecha": "2026-08-31",
+          "denominador": 4.1899
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -0.6,
-        "crecimiento_anterior_3a": 4.9,
-        "margen_reciente": 51.2,
-        "margen_anterior": 51.8
+        "crecimiento_reciente_3a": -1.3,
+        "crecimiento_anterior_3a": 5.3,
+        "margen_reciente": 51.4,
+        "margen_anterior": 51.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "CEG",
