@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-07T01:46:01.819635+00:00",
+  "generado_en_utc": "2026-10-08T02:13:25.567759+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -20800,7 +20800,11 @@
         "margen_anterior": 51.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CEG",
