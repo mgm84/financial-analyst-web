@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-08T02:13:25.567759+00:00",
+  "generado_en_utc": "2026-10-09T02:27:51.484056+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -61204,18 +61204,14 @@
       "subindustria": "Soft Drinks & Non-alcoholic Beverages",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-13",
+      "ultima_fecha_reporte": "2026-09-05",
       "mediana_rentabilidad_8a": 0.168,
       "pct_trimestres_sostenido": 0.91,
-      "deuda_neta_ebitda": 2.3,
+      "deuda_neta_ebitda": 2.09,
       "variacion_2020": -0.15,
       "variacion_2022": 0.15,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-17",
-          "denominador": 4.7009
-        },
         {
           "fecha": "2017-09-09",
           "denominador": 4.8185
@@ -61359,20 +61355,20 @@
         {
           "fecha": "2026-06-13",
           "denominador": 6.7801
+        },
+        {
+          "fecha": "2026-09-05",
+          "denominador": 9.256
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 2.9,
-        "crecimiento_anterior_3a": 9.0,
+        "crecimiento_reciente_3a": 2.6,
+        "crecimiento_anterior_3a": 9.5,
         "margen_reciente": 54.4,
-        "margen_anterior": 53.8
+        "margen_anterior": 53.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "PFE",
