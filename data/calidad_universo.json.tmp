@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-09T02:27:51.484056+00:00",
+  "generado_en_utc": "2026-10-10T01:54:28.681361+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -24243,18 +24243,14 @@
       "subindustria": "Passenger Airlines",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.126,
-      "pct_trimestres_sostenido": 0.16,
-      "deuda_neta_ebitda": 2.27,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.125,
+      "pct_trimestres_sostenido": 0.12,
+      "deuda_neta_ebitda": 1.27,
       "variacion_2020": -2.17,
       "variacion_2022": -1.66,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.7784
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 1.1544
@@ -24398,20 +24394,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 9.2344
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 8.6191
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 8.1,
-        "crecimiento_anterior_3a": 33.2,
-        "margen_reciente": 26.5,
-        "margen_anterior": 3.8
+        "crecimiento_reciente_3a": 7.3,
+        "crecimiento_anterior_3a": 39.0,
+        "margen_reciente": 27.0,
+        "margen_anterior": 10.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "DVN",
@@ -61368,7 +61364,11 @@
         "margen_anterior": 53.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "PFE",
