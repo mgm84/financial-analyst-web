@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-10T01:54:28.681361+00:00",
+  "generado_en_utc": "2026-10-11T01:12:08.344289+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -24407,7 +24407,11 @@
         "margen_anterior": 10.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DVN",
