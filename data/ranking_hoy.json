@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-10-11",
-  "generado_en_utc": "2026-10-11T01:13:06.370308+00:00",
+  "fecha": "2026-10-12",
+  "generado_en_utc": "2026-10-12T01:34:48.126426+00:00",
   "universo_calculable": 73,
   "bajo_umbral": 31,
   "tickers_bajo_umbral": [
@@ -802,7 +802,7 @@
         "precio": 106.16,
         "variacion_1d": 0.66,
         "vs_max_52s": -16.49,
-        "vs_max_9a": -28.63,
+        "vs_max_9a": -28.32,
         "metrica": "P/FFO",
         "ratio_hoy": 9.87,
         "mediana_historica": 15.17,
