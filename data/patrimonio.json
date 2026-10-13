@@ -1,29 +1,32 @@
 {
-  "generado_en_utc": "2026-10-12T01:03:14.154596+00:00",
-  "fecha_cierre": "2026-10-09",
-  "eur_usd": 1.12157,
+  "generado_en_utc": "2026-10-13T02:52:07.062355+00:00",
+  "fecha_cierre": "2026-10-12",
+  "eur_usd": 1.11758,
   "periodos": {
     "diario": {
       "bloques": {
         "IA": {
-          "valor_eur": 27399.16,
-          "rendimiento_pct": 0.75,
+          "valor_eur": 27137.23,
+          "rendimiento_pct": -1.31,
           "incompleto": false,
           "posiciones_excluidas": [],
           "tiene_proxy": false,
           "posiciones_proxy": []
         },
         "Equity_DEGIRO": {
-          "valor_eur": 132842.15,
-          "rendimiento_pct": -0.21,
+          "valor_eur": 132519.91,
+          "rendimiento_pct": -0.33,
           "incompleto": false,
           "posiciones_excluidas": [],
-          "tiene_proxy": false,
-          "posiciones_proxy": []
+          "tiene_proxy": true,
+          "posiciones_proxy": [
+            "EQQQ",
+            "VUSA"
+          ]
         },
         "Equity_GBM": {
-          "valor_eur": 10915.64,
-          "rendimiento_pct": 0.56,
+          "valor_eur": 10914.65,
+          "rendimiento_pct": -0.36,
           "incompleto": false,
           "posiciones_excluidas": [],
           "tiene_proxy": false,
@@ -31,43 +34,52 @@
         }
       },
       "Equity": {
-        "valor_eur": 143757.78,
-        "rendimiento_pct": -0.15,
+        "valor_eur": 143434.56,
+        "rendimiento_pct": -0.34,
         "incompleto": false,
         "posiciones_excluidas": [],
-        "tiene_proxy": false,
-        "posiciones_proxy": []
+        "tiene_proxy": true,
+        "posiciones_proxy": [
+          "EQQQ",
+          "VUSA"
+        ]
       },
       "Total": {
-        "valor_eur": 171156.95,
-        "rendimiento_pct": -0.01,
+        "valor_eur": 170571.8,
+        "rendimiento_pct": -0.49,
         "incompleto": false,
         "posiciones_excluidas": [],
-        "tiene_proxy": false,
-        "posiciones_proxy": []
+        "tiene_proxy": true,
+        "posiciones_proxy": [
+          "EQQQ",
+          "VUSA"
+        ]
       }
     },
     "semanal": {
       "bloques": {
         "IA": {
-          "valor_eur": 27399.16,
-          "rendimiento_pct": -1.92,
+          "valor_eur": 27137.23,
+          "rendimiento_pct": -4.58,
           "incompleto": false,
           "posiciones_excluidas": [],
           "tiene_proxy": false,
           "posiciones_proxy": []
         },
         "Equity_DEGIRO": {
-          "valor_eur": 132842.15,
-          "rendimiento_pct": -0.17,
+          "valor_eur": 132519.91,
+          "rendimiento_pct": -1.3,
           "incompleto": false,
           "posiciones_excluidas": [],
-          "tiene_proxy": false,
-          "posiciones_proxy": []
+          "tiene_proxy": true,
+          "posiciones_proxy": [
+            "EQQQ",
+            "VUSA"
+          ]
         },
         "Equity_GBM": {
-          "valor_eur": 10915.64,
-          "rendimiento_pct": -0.06,
+          "valor_eur": 10914.65,
+          "rendimiento_pct": -0.92,
           "incompleto": false,
           "posiciones_excluidas": [],
           "tiene_proxy": false,
@@ -75,20 +87,26 @@
         }
       },
       "Equity": {
-        "valor_eur": 143757.78,
-        "rendimiento_pct": -0.17,
+        "valor_eur": 143434.56,
+        "rendimiento_pct": -1.27,
         "incompleto": false,
         "posiciones_excluidas": [],
-        "tiene_proxy": false,
-        "posiciones_proxy": []
+        "tiene_proxy": true,
+        "posiciones_proxy": [
+          "EQQQ",
+          "VUSA"
+        ]
       },
       "Total": {
-        "valor_eur": 171156.95,
-        "rendimiento_pct": -0.45,
+        "valor_eur": 170571.8,
+        "rendimiento_pct": -1.82,
         "incompleto": false,
         "posiciones_excluidas": [],
-        "tiene_proxy": false,
-        "posiciones_proxy": []
+        "tiene_proxy": true,
+        "posiciones_proxy": [
+          "EQQQ",
+          "VUSA"
+        ]
       }
     }
   }
