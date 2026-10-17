@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-16T00:38:20.649328+00:00",
+  "generado_en_utc": "2026-10-17T00:43:15.785247+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -2441,7 +2441,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -13593,10 +13593,10 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "COF",
@@ -18054,7 +18054,7 @@
       "subindustria": "Regional Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.08,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
@@ -18062,10 +18062,6 @@
       "variacion_2022": -0.08,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 25.5314
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 25.0459
@@ -18221,13 +18217,17 @@
         {
           "fecha": "2026-06-30",
           "denominador": 41.8532
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 39.5666
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.4,
-        "crecimiento_anterior_3a": 8.1,
-        "margen_reciente": 64.1,
-        "margen_anterior": 85.9
+        "crecimiento_reciente_3a": 3.3,
+        "crecimiento_anterior_3a": 12.1,
+        "margen_reciente": 64.7,
+        "margen_anterior": 85.0
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
@@ -24790,7 +24790,7 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": true,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -29118,10 +29118,10 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": true,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ERIE",
@@ -31857,10 +31857,10 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FDX",
@@ -37932,7 +37932,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -39355,7 +39355,7 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
       "supera_filtro_calidad": false
@@ -43102,7 +43102,7 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -49240,7 +49240,7 @@
       "subindustria": "Regional Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.098,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
@@ -49248,10 +49248,6 @@
       "variacion_2022": -0.29,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 74.6101
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 75.7601
@@ -49407,13 +49403,17 @@
         {
           "fecha": "2026-06-30",
           "denominador": 124.1305
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 135.3755
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 12.3,
-        "crecimiento_anterior_3a": 13.5,
-        "margen_reciente": 69.5,
-        "margen_anterior": 90.8
+        "crecimiento_reciente_3a": 7.6,
+        "crecimiento_anterior_3a": 19.6,
+        "margen_reciente": 69.7,
+        "margen_anterior": 89.3
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
@@ -52800,7 +52800,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -62531,18 +62531,14 @@
       "subindustria": "Industrial REITs",
       "metodo": "ffo",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.114,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.113,
       "pct_trimestres_sostenido": 0.09,
-      "deuda_neta_ebitda": 5.53,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.22,
       "variacion_2022": 0.49,
       "metrica_valoracion": "P/FFO",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 3.8072
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 4.8289
@@ -62689,14 +62685,14 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 12.6,
-        "crecimiento_anterior_3a": 22.5,
-        "margen_reciente": 59.5,
-        "margen_anterior": 74.2
+        "crecimiento_reciente_3a": 9.5,
+        "crecimiento_anterior_3a": 24.0,
+        "margen_reciente": 54.7,
+        "margen_anterior": 74.3
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -63412,10 +63408,10 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "PHM",
@@ -64988,7 +64984,7 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -65164,7 +65160,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -65351,7 +65347,7 @@
       "subindustria": "Regional Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.114,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
@@ -65359,10 +65355,6 @@
       "variacion_2022": -0.04,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 9.5982
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 9.0883
@@ -65518,15 +65510,19 @@
         {
           "fecha": "2026-06-30",
           "denominador": 14.0292
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 13.9942
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.5,
-        "crecimiento_anterior_3a": 5.8,
-        "margen_reciente": 73.2,
-        "margen_anterior": 95.3
+        "crecimiento_reciente_3a": 5.2,
+        "crecimiento_anterior_3a": 8.2,
+        "margen_reciente": 73.5,
+        "margen_anterior": 94.0
       },
-      "deterioro_doble": false,
+      "deterioro_doble": true,
       "solapa_cartera_ia": false,
       "pasa_deuda": true,
       "pasa_rentabilidad": false,
@@ -74737,18 +74733,14 @@
       "subindustria": "Property & Casualty Insurance",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.127,
-      "pct_trimestres_sostenido": 0.28,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.13,
+      "pct_trimestres_sostenido": 0.31,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.16,
       "variacion_2022": 0.15,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 71.0248
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 67.9516
@@ -74904,13 +74896,17 @@
         {
           "fecha": "2026-06-30",
           "denominador": 134.5318
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 116.8519
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 9.3,
-        "crecimiento_anterior_3a": 5.9,
-        "margen_reciente": 28.4,
-        "margen_anterior": 24.9
+        "crecimiento_reciente_3a": 8.5,
+        "crecimiento_anterior_3a": 6.7,
+        "margen_reciente": 29.6,
+        "margen_anterior": 24.1
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
@@ -76146,10 +76142,10 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ULTA",
@@ -79206,7 +79202,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -79734,10 +79730,10 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "VMC",
@@ -82398,7 +82394,7 @@
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": false,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
