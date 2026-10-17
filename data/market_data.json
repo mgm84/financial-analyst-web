@@ -1,12 +1,9 @@
 {
-  "generado_en_utc": "2026-10-17T00:11:08.627222+00:00",
+  "generado_en_utc": "2026-10-17T23:47:37.997140+00:00",
   "fecha_cierre": "2026-10-16",
-  "eur_usd": 1.12435,
+  "eur_usd": 1.12423,
   "tickers_fallidos": [],
-  "proxies_usados": [
-    "EQQQ",
-    "VUSA"
-  ],
+  "proxies_usados": [],
   "market": {
     "EQIX": {
       "price": 985.98,
@@ -219,44 +216,34 @@
       "fecha": "2026-10-16"
     },
     "EQQQ": {
-      "price": 632.763175456236,
+      "price": 641.9000244140625,
       "currency": "EUR",
       "chg": {
-        "1D": -2.65,
-        "5D": -5.92,
-        "1M": 1.02,
-        "3M": 3.68,
-        "6M": 14.42,
-        "YTD": 19.25,
-        "1Y": 23.11
+        "1D": -1.25,
+        "5D": -4.56,
+        "1M": 2.47,
+        "3M": 5.18,
+        "6M": 16.08,
+        "YTD": 20.98,
+        "1Y": 24.88
       },
       "high52": 679.8,
-      "fecha": "2026-10-17",
-      "proxy": true,
-      "proxy_de": "QQQ",
-      "proxy_precio_base": 650.0,
-      "proxy_fecha_base": "2026-10-15",
-      "proxy_retorno_aplicado_pct": -2.65
+      "fecha": "2026-10-16"
     },
     "VUSA": {
-      "price": 128.95533001566073,
+      "price": 130.08599853515625,
       "currency": "EUR",
       "chg": {
-        "1D": -1.26,
-        "5D": -2.28,
-        "1M": 2.4,
-        "3M": 4.21,
-        "6M": 12.61,
-        "YTD": 16.11,
-        "1Y": 20.01
+        "1D": -0.39,
+        "5D": -1.42,
+        "1M": 3.3,
+        "3M": 5.13,
+        "6M": 13.6,
+        "YTD": 17.13,
+        "1Y": 21.06
       },
       "high52": 132.52,
-      "fecha": "2026-10-17",
-      "proxy": true,
-      "proxy_de": "VOO",
-      "proxy_precio_base": 130.5959930419922,
-      "proxy_fecha_base": "2026-10-15",
-      "proxy_retorno_aplicado_pct": -1.26
+      "fecha": "2026-10-16"
     }
   }
 }
