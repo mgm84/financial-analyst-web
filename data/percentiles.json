@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-17T23:47:15.706459+00:00",
+  "generado_en_utc": "2026-10-18T23:56:42.500381+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -151,8 +151,8 @@
       "mediana": 2.6,
       "min": 1.2,
       "max": 4.3,
-      "percentil": 84,
-      "banda": "CARA -> escalonar",
+      "percentil": 80,
+      "banda": "normal",
       "es_clave": false
     },
     {
