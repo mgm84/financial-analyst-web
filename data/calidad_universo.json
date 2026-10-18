@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-17T00:43:15.785247+00:00",
+  "generado_en_utc": "2026-10-18T00:11:46.911445+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -75097,18 +75097,14 @@
       "subindustria": "Diversified Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.084,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.082,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.48,
       "variacion_2022": 0.15,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 22.7249
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 22.3086
@@ -75264,13 +75260,17 @@
         {
           "fecha": "2026-06-30",
           "denominador": 36.9964
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 35.2919
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.1,
-        "crecimiento_anterior_3a": 18.9,
-        "margen_reciente": 40.2,
-        "margen_anterior": 88.5
+        "crecimiento_reciente_3a": 4.4,
+        "crecimiento_anterior_3a": 15.7,
+        "margen_reciente": 40.9,
+        "margen_anterior": 86.0
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
