@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-18T00:11:46.826968+00:00",
+  "generado_en_utc": "2026-10-19T00:23:15.499067+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -75273,7 +75273,11 @@
         "margen_anterior": 86.0
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TYL",
