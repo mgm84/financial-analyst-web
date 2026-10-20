@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-19T00:23:15.499067+00:00",
+  "generado_en_utc": "2026-10-20T01:12:26.092436+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -32444,18 +32444,14 @@
       "subindustria": "Regional Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.118,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.116,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.39,
       "variacion_2022": 0.1,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 18.1278
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 17.2105
@@ -32611,20 +32607,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 25.3068
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 24.1423
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 13.3,
-        "crecimiento_anterior_3a": 4.3,
-        "margen_reciente": 63.3,
-        "margen_anterior": 87.7
+        "crecimiento_reciente_3a": 11.9,
+        "crecimiento_anterior_3a": 7.9,
+        "margen_reciente": 63.9,
+        "margen_anterior": 85.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "FSLR",
