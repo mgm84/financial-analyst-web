@@ -1,14 +1,14 @@
 {
-  "generado_en_utc": "2026-10-22T00:27:10.019057+00:00",
+  "generado_en_utc": "2026-10-23T00:25:11.773951+00:00",
   "cesta": {
-    "caida_usd_pct": -10.87,
-    "caida_eur_pct": -10.66,
+    "caida_usd_pct": -16.22,
+    "caida_eur_pct": -15.94,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.12346
+    "eur_usd": 1.12226
   },
   "puerta_1": {
-    "umbral_pct": 10,
-    "accion_sugerida": "MEDIO tramo",
+    "umbral_pct": 15,
+    "accion_sugerida": "UN tramo completo",
     "estado": "DISPARADO",
     "cooldown_ok": true,
     "cooldown_msg": "",
@@ -19,57 +19,57 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 995.0,
+      "precio": 952.62,
       "max_52s": 1115.94,
-      "caida_pct": -10.8,
+      "caida_pct": -14.6,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1676.69,
+      "precio": 1560.54,
       "max_52s": 1989.44,
-      "caida_pct": -15.7,
+      "caida_pct": -21.6,
       "senal_idiosincratica": false
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 431.89,
+      "precio": 412.35,
       "max_52s": 485.8,
-      "caida_pct": -11.1,
+      "caida_pct": -15.1,
       "senal_idiosincratica": false
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 601.14,
+      "precio": 552.44,
       "max_52s": 785.24,
-      "caida_pct": -23.4,
-      "senal_idiosincratica": false
+      "caida_pct": -29.6,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 184.33,
+      "precio": 171.07,
       "max_52s": 216.74,
-      "caida_pct": -15.0,
+      "caida_pct": -21.1,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 337.8,
+      "precio": 323.24,
       "max_52s": 481.57,
-      "caida_pct": -29.9,
+      "caida_pct": -32.9,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 393.94,
+      "precio": 368.99,
       "max_52s": 459.96,
-      "caida_pct": -14.4,
+      "caida_pct": -19.8,
       "senal_idiosincratica": false
     }
   ]
