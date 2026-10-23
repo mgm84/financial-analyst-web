@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-22T00:52:24.216235+00:00",
+  "generado_en_utc": "2026-10-23T00:53:02.390162+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -359,10 +359,10 @@
       "subindustria": "Health Care Equipment",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.101,
       "pct_trimestres_sostenido": 0.16,
-      "deuda_neta_ebitda": 2.4,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": 0.11,
       "variacion_2022": 0.12,
       "metrica_valoracion": "P/FCF",
@@ -517,17 +517,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 2.0,
-        "crecimiento_anterior_3a": 11.1,
-        "margen_reciente": 53.4,
-        "margen_anterior": 51.7
+        "crecimiento_reciente_3a": 3.8,
+        "crecimiento_anterior_3a": 9.9,
+        "margen_reciente": 54.0,
+        "margen_anterior": 51.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "ABBV",
@@ -2628,18 +2624,14 @@
       "subindustria": "Building Products",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.187,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.185,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": 1.65,
+      "deuda_neta_ebitda": 1.51,
       "variacion_2020": -0.18,
       "variacion_2022": -0.14,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 3.0542
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 3.333
@@ -2783,20 +2775,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 7.9293
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 8.674
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.1,
-        "crecimiento_anterior_3a": 6.4,
-        "margen_reciente": 44.5,
+        "crecimiento_reciente_3a": 6.6,
+        "crecimiento_anterior_3a": 8.0,
+        "margen_reciente": 44.7,
         "margen_anterior": 42.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "LNT",
@@ -7893,7 +7885,11 @@
         "margen_anterior": 42.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ATO",
@@ -10580,7 +10576,7 @@
       "subindustria": "Asset Management & Custody Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.306,
       "pct_trimestres_sostenido": 0.88,
       "deuda_neta_ebitda": NaN,
@@ -10588,10 +10584,6 @@
       "variacion_2022": -0.35,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 7.1928
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 6.7781
@@ -10747,20 +10739,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 8.9468
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 21.9927
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 29.0,
-        "crecimiento_anterior_3a": 77.9,
-        "margen_reciente": 93.3,
-        "margen_anterior": 96.4
+        "crecimiento_reciente_3a": 33.6,
+        "crecimiento_anterior_3a": 77.5,
+        "margen_reciente": 93.7,
+        "margen_anterior": 96.1
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "XYZ",
@@ -10959,7 +10951,11 @@
         "margen_anterior": 82.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "BA",
@@ -13611,7 +13607,11 @@
         "margen_anterior": 79.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CAH",
@@ -14811,18 +14811,14 @@
       "subindustria": "Real Estate Services",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.083,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.082,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.68,
+      "deuda_neta_ebitda": 3.51,
       "variacion_2020": -0.08,
       "variacion_2022": 0.14,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.5872
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 2.6099
@@ -14966,20 +14962,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 3.1584
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 0.6687
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 10.3,
-        "crecimiento_anterior_3a": 9.2,
+        "crecimiento_reciente_3a": 11.5,
+        "crecimiento_anterior_3a": 8.9,
         "margen_reciente": 25.0,
-        "margen_anterior": 21.3
+        "margen_anterior": 21.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "CDW",
@@ -18409,7 +18405,11 @@
         "margen_anterior": 83.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CMS",
@@ -19433,18 +19433,14 @@
       "subindustria": "Cable & Satellite",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.084,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 2.43,
+      "deuda_neta_ebitda": 2.38,
       "variacion_2020": -0.04,
       "variacion_2022": -0.06,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.9759
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 2.2041
@@ -19571,37 +19567,37 @@
         },
         {
           "fecha": "2025-06-30",
-          "denominador": 4.8264
+          "denominador": 4.6576
         },
         {
           "fecha": "2025-09-30",
-          "denominador": 5.4498
+          "denominador": 5.0986
         },
         {
           "fecha": "2025-12-31",
-          "denominador": 5.8498
+          "denominador": 5.2902
         },
         {
           "fecha": "2026-03-31",
-          "denominador": 5.6373
+          "denominador": 4.898
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 5.7266
+          "denominador": 4.9908
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 4.9739
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 0.9,
-        "crecimiento_anterior_3a": 4.1,
-        "margen_reciente": 70.3,
-        "margen_anterior": 67.9
+        "crecimiento_reciente_3a": 1.0,
+        "crecimiento_anterior_3a": 4.4,
+        "margen_reciente": 70.6,
+        "margen_anterior": 68.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "FIX",
@@ -19609,18 +19605,14 @@
       "subindustria": "Construction & Engineering",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.174,
       "pct_trimestres_sostenido": 0.69,
-      "deuda_neta_ebitda": -0.79,
+      "deuda_neta_ebitda": -0.81,
       "variacion_2020": 0.03,
       "variacion_2022": -0.16,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.3788
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 2.2414
@@ -19764,20 +19756,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 61.2641
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 69.4525
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 31.2,
-        "crecimiento_anterior_3a": 17.6,
-        "margen_reciente": 22.7,
+        "crecimiento_reciente_3a": 33.1,
+        "crecimiento_anterior_3a": 18.6,
+        "margen_reciente": 23.1,
         "margen_anterior": 18.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": true,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": true
     },
     {
       "ticker": "COP",
@@ -22172,7 +22164,11 @@
         "margen_anterior": 39.6
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CMI",
@@ -22696,7 +22692,11 @@
         "margen_anterior": 60.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DRI",
@@ -23208,10 +23208,10 @@
       "subindustria": "Footwear",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.5,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.508,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": -0.85,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": 0.03,
       "variacion_2022": -0.25,
       "metrica_valoracion": "P/FCF",
@@ -23358,25 +23358,21 @@
         },
         {
           "fecha": "2026-03-31",
-          "denominador": 8.3529
+          "denominador": 7.7549
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 8.6781
+          "denominador": 8.0674
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 14.8,
-        "crecimiento_anterior_3a": 19.1,
-        "margen_reciente": 57.0,
-        "margen_anterior": 51.3
+        "crecimiento_reciente_3a": 14.2,
+        "crecimiento_anterior_3a": 19.7,
+        "margen_reciente": 57.6,
+        "margen_anterior": 51.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "DE",
@@ -25448,18 +25444,14 @@
       "subindustria": "Industrial Machinery & Supplies & Components",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.126,
       "pct_trimestres_sostenido": 0.12,
-      "deuda_neta_ebitda": 0.83,
+      "deuda_neta_ebitda": 0.85,
       "variacion_2020": -0.57,
       "variacion_2022": -0.07,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 3.6282
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 3.7537
@@ -25603,20 +25595,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 8.6562
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 8.8006
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -1.0,
-        "crecimiento_anterior_3a": 6.7,
-        "margen_reciente": 38.8,
+        "crecimiento_reciente_3a": -0.3,
+        "crecimiento_anterior_3a": 7.2,
+        "margen_reciente": 39.1,
         "margen_anterior": 36.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "DOW",
@@ -25624,10 +25616,10 @@
       "subindustria": "Commodity Chemicals",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.072,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.071,
       "pct_trimestres_sostenido": 0.19,
-      "deuda_neta_ebitda": 3.47,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.41,
       "variacion_2022": 0.19,
       "metrica_valoracion": "P/FCF",
@@ -25758,17 +25750,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -9.3,
-        "crecimiento_anterior_3a": 9.2,
-        "margen_reciente": 9.2,
-        "margen_anterior": 15.0
+        "crecimiento_reciente_3a": -7.0,
+        "crecimiento_anterior_3a": 10.1,
+        "margen_reciente": 9.3,
+        "margen_anterior": 14.8
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "DHI",
@@ -26117,7 +26105,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -27700,7 +27688,11 @@
         "margen_anterior": 26.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "EME",
@@ -36486,7 +36478,11 @@
         "margen_anterior": 28.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "GDDY",
@@ -38496,18 +38492,14 @@
       "subindustria": "Industrial Conglomerates",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.17,
-      "pct_trimestres_sostenido": 0.78,
-      "deuda_neta_ebitda": 3.92,
+      "pct_trimestres_sostenido": 0.75,
+      "deuda_neta_ebitda": 2.31,
       "variacion_2020": -0.15,
       "variacion_2022": -0.03,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 13.0827
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 12.6445
@@ -38630,41 +38622,41 @@
         },
         {
           "fecha": "2025-03-31",
-          "denominador": 16.4401
+          "denominador": 16.6273
         },
         {
           "fecha": "2025-06-30",
-          "denominador": 16.2272
+          "denominador": 16.8482
         },
         {
           "fecha": "2025-09-30",
-          "denominador": 20.025
+          "denominador": 20.216
         },
         {
           "fecha": "2025-12-31",
-          "denominador": 16.699
+          "denominador": 16.9809
         },
         {
           "fecha": "2026-03-31",
-          "denominador": 12.8853
+          "denominador": 12.9762
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 12.9122
+          "denominador": 12.5705
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 5.354
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 2.1,
-        "crecimiento_anterior_3a": -0.2,
-        "margen_reciente": 37.4,
-        "margen_anterior": 34.4
+        "crecimiento_reciente_3a": -0.3,
+        "crecimiento_anterior_3a": 0.9,
+        "margen_reciente": 37.6,
+        "margen_anterior": 35.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "HRL",
@@ -40244,7 +40236,11 @@
         "margen_anterior": 54.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "IEX",
@@ -43810,7 +43806,11 @@
         "margen_anterior": 68.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "JCI",
@@ -45330,7 +45330,11 @@
         "margen_anterior": 32.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "KKR",
@@ -46562,7 +46566,11 @@
         "margen_anterior": 45.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": true
+      "solapa_cartera_ia": true,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "LVS",
@@ -46570,10 +46578,10 @@
       "subindustria": "Casinos & Gaming",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.134,
-      "pct_trimestres_sostenido": 0.34,
-      "deuda_neta_ebitda": 2.54,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.131,
+      "pct_trimestres_sostenido": 0.31,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.9,
       "variacion_2022": 0.06,
       "metrica_valoracion": "P/FCF",
@@ -46728,17 +46736,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 46.2,
-        "crecimiento_anterior_3a": -9.4,
-        "margen_reciente": 50.2,
-        "margen_anterior": 38.1
+        "crecimiento_reciente_3a": 37.6,
+        "crecimiento_anterior_3a": 5.2,
+        "margen_reciente": 47.9,
+        "margen_anterior": 41.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "LDOS",
@@ -47802,18 +47806,14 @@
       "subindustria": "Aerospace & Defense",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-28",
-      "mediana_rentabilidad_8a": 0.308,
+      "ultima_fecha_reporte": "2026-09-27",
+      "mediana_rentabilidad_8a": 0.295,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": 1.54,
+      "deuda_neta_ebitda": 1.32,
       "variacion_2020": 0.12,
       "variacion_2022": -0.24,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-25",
-          "denominador": 14.1964
-        },
         {
           "fecha": "2017-09-24",
           "denominador": 15.8172
@@ -47957,20 +47957,20 @@
         {
           "fecha": "2026-06-28",
           "denominador": 37.7715
+        },
+        {
+          "fecha": "2026-09-27",
+          "denominador": 36.203
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 4.4,
-        "crecimiento_anterior_3a": 3.1,
+        "crecimiento_reciente_3a": 4.7,
+        "crecimiento_anterior_3a": 2.6,
         "margen_reciente": 10.7,
         "margen_anterior": 13.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "L",
@@ -51185,7 +51185,11 @@
         "margen_anterior": 80.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": true
+      "solapa_cartera_ia": true,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "MET",
@@ -53473,7 +53477,11 @@
         "margen_anterior": 66.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "MS",
@@ -54036,7 +54044,7 @@
       "subindustria": "Financial Exchanges & Data",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.088,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
@@ -54044,10 +54052,6 @@
       "variacion_2022": 0.15,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.3788
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 1.4255
@@ -54191,20 +54195,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 3.4361
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 4.0085
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 11.0,
-        "crecimiento_anterior_3a": 11.5,
-        "margen_reciente": 47.1,
-        "margen_anterior": 37.8
+        "crecimiento_reciente_3a": 12.1,
+        "crecimiento_anterior_3a": 9.6,
+        "margen_reciente": 48.8,
+        "margen_anterior": 38.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "NTAP",
@@ -54564,18 +54568,14 @@
       "subindustria": "Gold",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.062,
-      "pct_trimestres_sostenido": 0.16,
-      "deuda_neta_ebitda": -0.54,
+      "pct_trimestres_sostenido": 0.19,
+      "deuda_neta_ebitda": -0.49,
       "variacion_2020": 0.5,
       "variacion_2022": -0.52,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 2.7682
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 2.5354
@@ -54710,29 +54710,29 @@
         },
         {
           "fecha": "2025-12-31",
-          "denominador": 9.3267
+          "denominador": 6.5875
         },
         {
           "fecha": "2026-03-31",
-          "denominador": 11.2907
+          "denominador": 8.4986
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 11.9663
+          "denominador": 9.1218
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 7.7659
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 26.1,
-        "crecimiento_anterior_3a": 6.3,
-        "margen_reciente": 36.9,
-        "margen_anterior": 22.3
+        "crecimiento_reciente_3a": 27.5,
+        "crecimiento_anterior_3a": 3.4,
+        "margen_reciente": 40.5,
+        "margen_anterior": 20.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "NWSA",
@@ -55256,7 +55256,11 @@
         "margen_anterior": 52.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "NKE",
@@ -55792,10 +55796,10 @@
       "subindustria": "Rail Transportation",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.108,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.104,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 2.89,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.16,
       "variacion_2022": 0.11,
       "metrica_valoracion": "P/FCF",
@@ -55950,17 +55954,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -1.0,
-        "crecimiento_anterior_3a": 5.4,
-        "margen_reciente": 37.9,
-        "margen_anterior": 34.9
+        "crecimiento_reciente_3a": -0.5,
+        "crecimiento_anterior_3a": 6.6,
+        "margen_reciente": 41.4,
+        "margen_anterior": 34.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "NTRS",
@@ -56144,7 +56144,11 @@
         "margen_anterior": 86.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NOC",
@@ -57034,10 +57038,10 @@
       "subindustria": "Homebuilding",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.482,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": -0.1,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.04,
       "variacion_2022": 0.22,
       "metrica_valoracion": "P/FCF",
@@ -57192,17 +57196,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -0.9,
+        "crecimiento_reciente_3a": -1.5,
         "crecimiento_anterior_3a": 12.2,
-        "margen_reciente": 24.0,
-        "margen_anterior": 25.4
+        "margen_reciente": 23.3,
+        "margen_anterior": 25.7
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "NXPI",
@@ -57910,10 +57910,10 @@
       "subindustria": "Advertising",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.264,
-      "pct_trimestres_sostenido": 0.91,
-      "deuda_neta_ebitda": 2.24,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.262,
+      "pct_trimestres_sostenido": 0.88,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.1,
       "variacion_2022": -0.05,
       "metrica_valoracion": "P/FCF",
@@ -58064,21 +58064,17 @@
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 11.6603
+          "denominador": 8.5387
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 9.9,
-        "crecimiento_anterior_3a": -0.6,
-        "margen_reciente": 17.5,
+        "crecimiento_reciente_3a": 14.3,
+        "crecimiento_anterior_3a": 0.3,
+        "margen_reciente": 17.7,
         "margen_anterior": 17.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "ON",
@@ -58926,10 +58922,10 @@
       "subindustria": "Paper & Plastic Packaging Products & Materials",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.144,
-      "pct_trimestres_sostenido": 0.41,
-      "deuda_neta_ebitda": 1.92,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.143,
+      "pct_trimestres_sostenido": 0.38,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.19,
       "variacion_2022": 0.22,
       "metrica_valoracion": "P/FCF",
@@ -59084,17 +59080,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 3.3,
-        "crecimiento_anterior_3a": 6.9,
-        "margen_reciente": 20.9,
-        "margen_anterior": 23.2
+        "crecimiento_reciente_3a": 5.0,
+        "crecimiento_anterior_3a": 6.6,
+        "margen_reciente": 21.1,
+        "margen_anterior": 23.3
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "PLTR",
@@ -60526,18 +60518,14 @@
       "subindustria": "Multi-Utilities",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.057,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.078,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 6.22,
+      "deuda_neta_ebitda": 6.48,
       "variacion_2020": -0.02,
       "variacion_2022": NaN,
       "metrica_valoracion": "P/E",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 4.0468
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 4.3372
@@ -60681,20 +60669,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 1.3856
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 1.3532
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 5.1,
-        "crecimiento_anterior_3a": 8.3,
-        "margen_reciente": 33.2,
-        "margen_anterior": 11.6
+        "crecimiento_reciente_3a": 5.0,
+        "crecimiento_anterior_3a": 7.8,
+        "margen_reciente": 39.1,
+        "margen_anterior": 11.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "PM",
@@ -60866,7 +60854,11 @@
         "margen_anterior": 65.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "PSX",
@@ -61954,18 +61946,14 @@
       "subindustria": "Personal Care Products",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.188,
-      "pct_trimestres_sostenido": 0.78,
-      "deuda_neta_ebitda": 1.09,
+      "pct_trimestres_sostenido": 0.81,
+      "deuda_neta_ebitda": 1.02,
       "variacion_2020": 1.51,
       "variacion_2022": -0.05,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 3.4757
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 3.5408
@@ -62072,23 +62060,23 @@
         },
         {
           "fecha": "2024-03-31",
-          "denominador": 7.0409
+          "denominador": 6.5372
         },
         {
           "fecha": "2024-06-30",
-          "denominador": 7.1871
+          "denominador": 6.6839
         },
         {
           "fecha": "2024-09-30",
-          "denominador": 6.9335
+          "denominador": 6.429
         },
         {
           "fecha": "2024-12-31",
-          "denominador": 6.8
+          "denominador": 6.2939
         },
         {
           "fecha": "2025-03-31",
-          "denominador": 6.1332
+          "denominador": 6.1336
         },
         {
           "fecha": "2025-06-30",
@@ -62108,21 +62096,21 @@
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 6.5688
+          "denominador": 6.2526
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 6.3725
         }
       ],
       "trayectoria_negocio": {
         "crecimiento_reciente_3a": 2.1,
-        "crecimiento_anterior_3a": 5.0,
-        "margen_reciente": 50.9,
+        "crecimiento_anterior_3a": 4.9,
+        "margen_reciente": 50.7,
         "margen_anterior": 48.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "PGR",
@@ -63029,18 +63017,14 @@
       "subindustria": "Homebuilding",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.2,
       "pct_trimestres_sostenido": 0.75,
-      "deuda_neta_ebitda": 0.16,
+      "deuda_neta_ebitda": 0.36,
       "variacion_2020": 0.25,
       "variacion_2022": 0.14,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.7037
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 2.0007
@@ -63184,20 +63168,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 7.802
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 3.9415
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 1.9,
-        "crecimiento_anterior_3a": 16.1,
-        "margen_reciente": 27.3,
-        "margen_anterior": 28.2
+        "crecimiento_reciente_3a": 0.2,
+        "crecimiento_anterior_3a": 16.4,
+        "margen_reciente": 27.0,
+        "margen_anterior": 28.6
       },
-      "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "deterioro_doble": true,
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "PWR",
@@ -63557,18 +63541,14 @@
       "subindustria": "Health Care Services",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.088,
       "pct_trimestres_sostenido": 0.19,
-      "deuda_neta_ebitda": 2.6,
+      "deuda_neta_ebitda": 2.37,
       "variacion_2020": 0.19,
       "variacion_2022": -0.24,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 5.7071
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 6.1286
@@ -63712,20 +63692,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 10.8929
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 12.2768
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 4.7,
-        "crecimiento_anterior_3a": 10.3,
-        "margen_reciente": 33.0,
-        "margen_anterior": 37.3
+        "crecimiento_reciente_3a": 6.3,
+        "crecimiento_anterior_3a": 8.7,
+        "margen_reciente": 33.1,
+        "margen_anterior": 36.4
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "Q",
@@ -66113,7 +66093,11 @@
         "margen_anterior": 51.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ROP",
@@ -66121,18 +66105,14 @@
       "subindustria": "Electronic Equipment & Instruments",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.058,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.38,
+      "deuda_neta_ebitda": 2.86,
       "variacion_2020": -0.15,
       "variacion_2022": 0.08,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 10.49
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 10.4073
@@ -66276,20 +66256,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 25.5595
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 25.9054
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 13.5,
-        "crecimiento_anterior_3a": 0.7,
+        "crecimiento_reciente_3a": 13.0,
+        "crecimiento_anterior_3a": 2.2,
         "margen_reciente": 69.4,
-        "margen_anterior": 69.4
+        "margen_anterior": 69.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "ROST",
@@ -68491,18 +68471,14 @@
       "subindustria": "Industrial Machinery & Supplies & Components",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-28",
+      "ultima_fecha_reporte": "2026-10-03",
       "mediana_rentabilidad_8a": 0.18,
       "pct_trimestres_sostenido": 0.94,
-      "deuda_neta_ebitda": -0.3,
+      "deuda_neta_ebitda": -0.31,
       "variacion_2020": -0.13,
       "variacion_2022": 0.01,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-01",
-          "denominador": 8.7186
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 8.4322
@@ -68616,7 +68592,7 @@
           "denominador": 21.3269
         },
         {
-          "fecha": "2024-09-28",
+          "fecha": "2024-09-30",
           "denominador": 21.2434
         },
         {
@@ -68646,20 +68622,20 @@
         {
           "fecha": "2026-06-28",
           "denominador": 19.9068
+        },
+        {
+          "fecha": "2026-10-03",
+          "denominador": 19.3149
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 4.1,
-        "crecimiento_anterior_3a": 7.7,
-        "margen_reciente": 51.1,
+        "crecimiento_reciente_3a": 3.6,
+        "crecimiento_anterior_3a": 8.5,
+        "margen_reciente": 51.3,
         "margen_anterior": 49.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": true
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "SOLV",
@@ -69095,7 +69071,11 @@
         "margen_anterior": 17.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "SWK",
@@ -72131,18 +72111,14 @@
       "subindustria": "Electronic Equipment & Instruments",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-28",
+      "ultima_fecha_reporte": "2026-09-27",
       "mediana_rentabilidad_8a": 0.066,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 1.07,
+      "deuda_neta_ebitda": 0.89,
       "variacion_2020": 0.0,
       "variacion_2022": 0.21,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-02",
-          "denominador": 6.1519
-        },
         {
           "fecha": "2017-10-01",
           "denominador": 6.3571
@@ -72286,20 +72262,20 @@
         {
           "fecha": "2026-06-28",
           "denominador": 24.3518
+        },
+        {
+          "fecha": "2026-09-27",
+          "denominador": 24.4712
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 4.0,
-        "crecimiento_anterior_3a": 22.4,
-        "margen_reciente": 41.7,
-        "margen_anterior": 41.2
+        "crecimiento_reciente_3a": 4.4,
+        "crecimiento_anterior_3a": 22.6,
+        "margen_reciente": 41.5,
+        "margen_anterior": 41.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "TER",
@@ -72483,18 +72459,14 @@
       "subindustria": "Automobile Manufacturers",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.097,
       "pct_trimestres_sostenido": 0.31,
-      "deuda_neta_ebitda": -3.15,
+      "deuda_neta_ebitda": -2.85,
       "variacion_2020": NaN,
       "variacion_2022": 1.44,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": -1.2727
-        },
         {
           "fecha": "2017-09-30",
           "denominador": -1.9428
@@ -72638,20 +72610,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 1.6277
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 0.9328
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 5.7,
-        "crecimiento_anterior_3a": 50.4,
-        "margen_reciente": 18.0,
-        "margen_anterior": 23.6
+        "crecimiento_reciente_3a": 4.1,
+        "crecimiento_anterior_3a": 51.4,
+        "margen_reciente": 18.2,
+        "margen_anterior": 23.1
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "TXN",
@@ -72823,7 +72795,11 @@
         "margen_anterior": 66.8
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": true
+      "solapa_cartera_ia": true,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "TPL",
@@ -73335,7 +73311,11 @@
         "margen_anterior": 44.4
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TJX",
@@ -75923,18 +75903,14 @@
       "subindustria": "Rail Transportation",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.15,
-      "pct_trimestres_sostenido": 0.47,
-      "deuda_neta_ebitda": 2.3,
+      "pct_trimestres_sostenido": 0.44,
+      "deuda_neta_ebitda": -0.0,
       "variacion_2020": -0.07,
       "variacion_2022": 0.08,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 4.8997
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 5.2357
@@ -76078,20 +76054,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 10.9495
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 3.3187
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 0.0,
-        "crecimiento_anterior_3a": 5.5,
-        "margen_reciente": 45.3,
-        "margen_anterior": 46.3
+        "crecimiento_reciente_3a": -6.1,
+        "crecimiento_anterior_3a": 6.4,
+        "margen_reciente": 45.5,
+        "margen_anterior": 46.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "UAL",
@@ -76615,7 +76591,11 @@
         "margen_anterior": 37.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "UNH",
@@ -76975,10 +76955,10 @@
       "subindustria": "Oil & Gas Refining & Marketing",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.103,
-      "pct_trimestres_sostenido": 0.31,
-      "deuda_neta_ebitda": 0.26,
+      "pct_trimestres_sostenido": 0.34,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.75,
       "variacion_2022": NaN,
       "metrica_valoracion": "P/FCF",
@@ -77133,17 +77113,13 @@
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -9.0,
-        "crecimiento_anterior_3a": 29.1,
-        "margen_reciente": 6.6,
-        "margen_anterior": 5.2
+        "crecimiento_reciente_3a": -6.5,
+        "crecimiento_anterior_3a": 30.7,
+        "margen_reciente": 7.5,
+        "margen_anterior": 6.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "VEEV",
@@ -77591,18 +77567,14 @@
       "subindustria": "Internet Services & Infrastructure",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": -0.911,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": -0.919,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 1.1,
+      "deuda_neta_ebitda": 1.09,
       "variacion_2020": 0.16,
       "variacion_2022": 0.2,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 4.1738
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 5.2529
@@ -77746,20 +77718,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 11.7025
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 11.3252
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 5.2,
-        "crecimiento_anterior_3a": 5.0,
-        "margen_reciente": 87.9,
-        "margen_anterior": 85.8
+        "crecimiento_reciente_3a": 5.3,
+        "crecimiento_anterior_3a": 5.4,
+        "margen_reciente": 88.0,
+        "margen_anterior": 85.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "VRSK",
@@ -79874,7 +79846,11 @@
         "margen_anterior": 29.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "WMT",
@@ -81478,18 +81454,14 @@
       "subindustria": "Technology Hardware, Storage & Peripherals",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-07-03",
+      "ultima_fecha_reporte": "2026-10-02",
       "mediana_rentabilidad_8a": 0.034,
-      "pct_trimestres_sostenido": 0.16,
-      "deuda_neta_ebitda": -0.11,
+      "pct_trimestres_sostenido": 0.19,
+      "deuda_neta_ebitda": -0.09,
       "variacion_2020": NaN,
       "variacion_2022": 0.62,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 9.5681
-        },
         {
           "fecha": "2017-09-29",
           "denominador": 11.768
@@ -81633,20 +81605,20 @@
         {
           "fecha": "2026-07-03",
           "denominador": 8.5665
+        },
+        {
+          "fecha": "2026-10-02",
+          "denominador": 10.4141
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -4.8,
-        "crecimiento_anterior_3a": -1.1,
-        "margen_reciente": 36.9,
-        "margen_anterior": 23.9
+        "crecimiento_reciente_3a": -0.2,
+        "crecimiento_anterior_3a": -4.6,
+        "margen_reciente": 41.4,
+        "margen_anterior": 22.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "WY",
