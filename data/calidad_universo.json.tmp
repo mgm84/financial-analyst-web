@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-23T00:53:02.390162+00:00",
+  "generado_en_utc": "2026-10-24T00:59:02.110217+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -523,7 +523,11 @@
         "margen_anterior": 51.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ABBV",
@@ -2788,7 +2792,11 @@
         "margen_anterior": 42.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "LNT",
@@ -4392,26 +4400,22 @@
       "subindustria": "Consumer Finance",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.31,
-      "pct_trimestres_sostenido": 0.97,
+      "pct_trimestres_sostenido": 0.94,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.43,
       "variacion_2022": 0.11,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": null,
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 12.7,
-        "crecimiento_anterior_3a": 9.3,
-        "margen_reciente": 82.9,
-        "margen_anterior": 93.3
+        "crecimiento_reciente_3a": 11.5,
+        "crecimiento_anterior_3a": 12.2,
+        "margen_reciente": 83.2,
+        "margen_anterior": 92.9
       },
-      "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": true,
-      "supera_filtro_calidad": false
+      "deterioro_doble": true,
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "AIG",
@@ -10752,7 +10756,11 @@
         "margen_anterior": 96.1
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "XYZ",
@@ -14975,7 +14983,11 @@
         "margen_anterior": 21.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CDW",
@@ -19597,7 +19609,11 @@
         "margen_anterior": 68.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FIX",
@@ -19769,7 +19785,11 @@
         "margen_anterior": 18.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": true
+      "solapa_cartera_ia": true,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "COP",
@@ -23372,7 +23392,11 @@
         "margen_anterior": 51.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DE",
@@ -25608,7 +25632,11 @@
         "margen_anterior": 36.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DOW",
@@ -25756,7 +25784,11 @@
         "margen_anterior": 14.8
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DHI",
@@ -38656,7 +38688,11 @@
         "margen_anterior": 35.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "HRL",
@@ -39708,18 +39744,14 @@
       "subindustria": "Regional Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.098,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.097,
       "pct_trimestres_sostenido": 0.0,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.43,
       "variacion_2022": 0.58,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 8.1639
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 6.9606
@@ -39875,20 +39907,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 10.8385
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 10.2218
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 16.6,
-        "crecimiento_anterior_3a": 15.9,
-        "margen_reciente": 60.8,
-        "margen_anterior": 87.6
+        "crecimiento_reciente_3a": 15.0,
+        "crecimiento_anterior_3a": 20.0,
+        "margen_reciente": 60.9,
+        "margen_anterior": 86.1
       },
-      "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "deterioro_doble": true,
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "HII",
@@ -46742,7 +46774,11 @@
         "margen_anterior": 41.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "LDOS",
@@ -47970,7 +48006,11 @@
         "margen_anterior": 13.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "L",
@@ -54208,7 +54248,11 @@
         "margen_anterior": 38.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NTAP",
@@ -54732,7 +54776,11 @@
         "margen_anterior": 20.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NWSA",
@@ -55960,7 +56008,11 @@
         "margen_anterior": 34.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NTRS",
@@ -57202,7 +57254,11 @@
         "margen_anterior": 25.7
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NXPI",
@@ -58074,7 +58130,11 @@
         "margen_anterior": 17.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ON",
@@ -59086,7 +59146,11 @@
         "margen_anterior": 23.3
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "PLTR",
@@ -60682,7 +60746,11 @@
         "margen_anterior": 11.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "PM",
@@ -62110,7 +62178,11 @@
         "margen_anterior": 48.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "PGR",
@@ -63181,7 +63253,11 @@
         "margen_anterior": 28.6
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "PWR",
@@ -63705,7 +63781,11 @@
         "margen_anterior": 36.4
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "Q",
@@ -66269,7 +66349,11 @@
         "margen_anterior": 69.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ROST",
@@ -67052,18 +67136,14 @@
       "subindustria": "Oil & Gas Equipment & Services",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
+      "ultima_fecha_reporte": "2026-09-30",
       "mediana_rentabilidad_8a": 0.096,
       "pct_trimestres_sostenido": 0.12,
-      "deuda_neta_ebitda": 1.14,
+      "deuda_neta_ebitda": 1.24,
       "variacion_2020": 0.26,
       "variacion_2022": 0.47,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 1.8061
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 2.107
@@ -67207,20 +67287,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 3.0059
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 1.98
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 7.8,
-        "crecimiento_anterior_3a": -0.7,
-        "margen_reciente": 18.9,
-        "margen_anterior": 16.6
+        "crecimiento_reciente_3a": 6.4,
+        "crecimiento_anterior_3a": 2.7,
+        "margen_reciente": 18.5,
+        "margen_anterior": 17.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "STX",
@@ -68635,7 +68715,11 @@
         "margen_anterior": 49.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "SOLV",
@@ -72275,7 +72359,11 @@
         "margen_anterior": 41.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TER",
@@ -72623,7 +72711,11 @@
         "margen_anterior": 23.1
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TXN",
@@ -73779,18 +73871,14 @@
       "subindustria": "Other Specialty Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-27",
-      "mediana_rentabilidad_8a": 0.17,
-      "pct_trimestres_sostenido": 0.66,
-      "deuda_neta_ebitda": 3.3,
+      "ultima_fecha_reporte": "2026-09-26",
+      "mediana_rentabilidad_8a": 0.167,
+      "pct_trimestres_sostenido": 0.62,
+      "deuda_neta_ebitda": 3.46,
       "variacion_2020": 0.34,
       "variacion_2022": -0.06,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-01",
-          "denominador": 0.5857
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 0.7802
@@ -73934,20 +74022,20 @@
         {
           "fecha": "2026-06-27",
           "denominador": 0.5852
+        },
+        {
+          "fecha": "2026-09-26",
+          "denominador": 0.5566
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 3.1,
-        "crecimiento_anterior_3a": 18.5,
-        "margen_reciente": 34.8,
+        "crecimiento_reciente_3a": 2.5,
+        "crecimiento_anterior_3a": 17.7,
+        "margen_reciente": 34.5,
         "margen_anterior": 35.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "TT",
@@ -76067,7 +76155,11 @@
         "margen_anterior": 46.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "UAL",
@@ -77119,7 +77211,11 @@
         "margen_anterior": 6.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "VEEV",
@@ -77731,7 +77827,11 @@
         "margen_anterior": 85.9
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "VRSK",
@@ -81618,7 +81718,11 @@
         "margen_anterior": 22.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "WY",
