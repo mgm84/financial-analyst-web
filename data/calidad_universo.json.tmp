@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-24T00:59:02.110217+00:00",
+  "generado_en_utc": "2026-10-25T00:30:12.317606+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -4415,7 +4415,11 @@
         "margen_anterior": 92.9
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "AIG",
@@ -39920,7 +39924,11 @@
         "margen_anterior": 86.1
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "HII",
@@ -67300,7 +67308,11 @@
         "margen_anterior": 17.3
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "STX",
@@ -74035,7 +74047,11 @@
         "margen_anterior": 35.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TT",
