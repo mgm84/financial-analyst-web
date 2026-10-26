@@ -44,7 +44,7 @@ from datetime import datetime, timedelta, timezone
 NOMBRES = {
     "EQIX": "Equinix", "ASML": "ASML Holding", "AVGO": "Broadcom", "TSM": "TSMC",
     "PWR": "Quanta Services", "ETN": "Eaton", "ANET": "Arista Networks",
-    "GOOGL": "Alphabet", "MSFT": "Microsoft", "AMD": "AMD",
+    "GOOGL": "Alphabet", "MSFT": "Microsoft", "AMD": "AMD", "MU": "Micron Technology",
     "EQQQ": "EQQQ (Nasdaq-100 UCITS)", "VUSA": "VUSA (S&P 500 UCITS)",
     "VOO": "Vanguard S&P 500", "QQQ": "Invesco QQQ", "QQQM": "Invesco NASDAQ 100",
     "IVW": "iShares S&P 500 Growth",
