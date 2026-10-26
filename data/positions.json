@@ -14,7 +14,8 @@
     "MSFT": 15,
     "AMD": 20,
     "EQQQ": 117,
-    "VUSA": 148
+    "VUSA": 148,
+    "MU": 5
   },
   "Equity_GBM": {
     "VOO": 9,
