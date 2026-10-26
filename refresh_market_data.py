@@ -151,7 +151,7 @@ DIAS_HISTORIA = 400  # ~52 semanas + margen, cubre también 1Y
 
 TICKERS = [
     "EQIX", "ASML", "AVGO", "TSM", "PWR", "ETN", "ANET",   # Capas sectoriales IA
-    "GOOGL", "AMD", "MSFT",                                   # Equity (acciones, DEGIRO) -- PLTR vendida 2026-09-15, ya no se pide
+    "GOOGL", "AMD", "MSFT", "MU",                             # Equity (acciones, DEGIRO) -- PLTR vendida 2026-09-15, ya no se pide
     "VOO", "QQQ", "QQQM", "IVW",                              # GBM México
 ]
 
