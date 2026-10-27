@@ -44,10 +44,30 @@ jobs:
       - name: Cálculo de patrimonio (total / IA / Equity)
         run: python compute_patrimonio.py
 
+      # NUEVO (2026-10-27): renderiza aquí, en CI (entorno de confianza),
+      # el HTML base de los correos diario y semanal -- todo lo que NO
+      # depende de la investigación de la tarea programada de Claude
+      # (KPIs, tablas de performance, Puerta 1, Puerta 2, pie de página).
+      # Sin --content, build_emails_prod.py usa content={} y renderiza
+      # los dos placeholders neutros de siempre ("Sin noticia relevante
+      # específica de la cartera identificada hoy." / mismo para
+      # "esta semana" / Puerta 3 "sin activar" con el texto por defecto).
+      # La tarea programada de Claude descarga estos 3 ficheros como
+      # DATOS (nunca los ejecuta) y sustituye esos dos placeholders por
+      # la noticia real y el estado real de Puerta 3 que investiga cada
+      # día por WebSearch, antes de enviar el correo. Esto evita que el
+      # sandbox de Claude tenga que ejecutar código bajado de internet
+      # (bloqueado por una restricción de plataforma, ver
+      # claude/automatizacion-tramos-percentiles.md).
+      - name: Render base del correo (sin noticias ni Puerta 3)
+        run: |
+          mkdir -p data/email
+          python scripts/build_emails_prod.py --data-dir data --out-dir data/email --weekly
+
       - name: Commit resultado
         run: |
           git config user.name "tramos-bot"
           git config user.email "tramos-bot@users.noreply.github.com"
-          git add data/tramos_status.json data/percentiles.json data/market_data.json data/patrimonio.json
-          git diff --cached --quiet && echo "sin cambios" || git commit -m "Actualización diaria tramos/percentiles/mercado/patrimonio $(date -u +%Y-%m-%d)"
+          git add data/tramos_status.json data/percentiles.json data/market_data.json data/patrimonio.json data/email/daily.html data/email/weekly.html data/email/meta.json
+          git diff --cached --quiet && echo "sin cambios" || git commit -m "Actualización diaria tramos/percentiles/mercado/patrimonio/correo-base $(date -u +%Y-%m-%d)"
           git push
