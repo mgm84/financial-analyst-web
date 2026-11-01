@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-31T01:49:43.349549+00:00",
+  "generado_en_utc": "2026-11-01T01:24:38.530427+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -535,10 +535,10 @@
       "subindustria": "Biotechnology",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.166,
-      "pct_trimestres_sostenido": 0.66,
-      "deuda_neta_ebitda": 2.4,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.163,
+      "pct_trimestres_sostenido": 0.62,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.48,
       "variacion_2022": 0.22,
       "metrica_valoracion": "P/FCF",
@@ -677,33 +677,29 @@
         },
         {
           "fecha": "2025-09-30",
-          "denominador": 11.6078
+          "denominador": 11.1084
         },
         {
           "fecha": "2025-12-31",
-          "denominador": 10.5417
+          "denominador": 10.0428
         },
         {
           "fecha": "2026-03-31",
-          "denominador": 11.7616
+          "denominador": 11.2627
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 11.1135
+          "denominador": 10.2823
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 2.9,
-        "crecimiento_anterior_3a": 20.1,
-        "margen_reciente": 68.4,
-        "margen_anterior": 68.3
+        "crecimiento_reciente_3a": 4.2,
+        "crecimiento_anterior_3a": 17.7,
+        "margen_reciente": 71.0,
+        "margen_anterior": 67.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": true,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "ACN",
@@ -2968,7 +2964,11 @@
         "margen_anterior": 41.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ALL",
@@ -7008,7 +7008,11 @@
         "margen_anterior": 59.8
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ANET",
@@ -7368,7 +7372,11 @@
         "margen_anterior": 39.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "AIZ",
@@ -14650,7 +14658,11 @@
         "margen_anterior": 44.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CBRE",
@@ -16257,7 +16269,11 @@
         "margen_anterior": 30.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CMG",
@@ -16793,7 +16809,11 @@
         "margen_anterior": 43.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "CIEN",
@@ -19268,7 +19288,11 @@
         "margen_anterior": 58.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "CMCSA",
@@ -25007,7 +25031,11 @@
         "margen_anterior": 47.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DPZ",
@@ -25992,7 +26020,7 @@
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
-      "pasa_deuda": true,
+      "pasa_deuda": false,
       "pasa_rentabilidad": true,
       "pasa_consistencia": false,
       "supera_filtro_calidad": false
@@ -29737,7 +29765,11 @@
         "margen_anterior": 38.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "EXE",
@@ -30609,7 +30641,11 @@
         "margen_anterior": 19.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FFIV",
@@ -31485,7 +31521,11 @@
         "margen_anterior": 66.9
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FDX",
@@ -35362,7 +35402,11 @@
         "margen_anterior": 16.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "GIS",
@@ -44062,7 +44106,11 @@
         "margen_anterior": 56.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "KDP",
@@ -48662,7 +48710,11 @@
         "margen_anterior": 15.2
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "MTB",
@@ -50809,7 +50861,11 @@
         "margen_anterior": 70.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "META",
@@ -64443,7 +64499,11 @@
         "margen_anterior": 84.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "RF",
