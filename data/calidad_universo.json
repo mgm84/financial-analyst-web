@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-31T01:49:43.423366+00:00",
+  "generado_en_utc": "2026-11-01T01:24:38.620408+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -535,10 +535,10 @@
       "subindustria": "Biotechnology",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.166,
-      "pct_trimestres_sostenido": 0.66,
-      "deuda_neta_ebitda": 2.4,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.163,
+      "pct_trimestres_sostenido": 0.62,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.48,
       "variacion_2022": 0.22,
       "metrica_valoracion": "P/FCF",
@@ -677,26 +677,26 @@
         },
         {
           "fecha": "2025-09-30",
-          "denominador": 11.6078
+          "denominador": 11.1084
         },
         {
           "fecha": "2025-12-31",
-          "denominador": 10.5417
+          "denominador": 10.0428
         },
         {
           "fecha": "2026-03-31",
-          "denominador": 11.7616
+          "denominador": 11.2627
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 11.1135
+          "denominador": 10.2823
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 2.9,
-        "crecimiento_anterior_3a": 20.1,
-        "margen_reciente": 68.4,
-        "margen_anterior": 68.3
+        "crecimiento_reciente_3a": 4.2,
+        "crecimiento_anterior_3a": 17.7,
+        "margen_reciente": 71.0,
+        "margen_anterior": 67.7
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
