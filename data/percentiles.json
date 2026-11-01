@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-10-31T01:26:49.537013+00:00",
+  "generado_en_utc": "2026-11-01T00:44:09.864884+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -207,12 +207,12 @@
       "ticker": "PWR",
       "peso_pct": 14,
       "metrica": "P/FCF",
-      "hoy": 48.1,
-      "mediana": 38.1,
+      "hoy": 30.0,
+      "mediana": 36.2,
       "min": 6.1,
       "max": 1575.4,
-      "percentil": 68,
-      "banda": "normal",
+      "percentil": 36,
+      "banda": "COMODA",
       "es_clave": false
     },
     {
