@@ -10,12 +10,12 @@
     "ANET": 6
   },
   "Equity_DEGIRO": {
-    "GOOGL": 53,
+    "GOOGL": 58,
     "MSFT": 15,
     "AMD": 20,
-    "EQQQ": 117,
+    "EQQQ": 120,
     "VUSA": 148,
-    "MU": 5
+    "MU": 7
   },
   "Equity_GBM": {
     "VOO": 9,
