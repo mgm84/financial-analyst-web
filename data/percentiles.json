@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-08T01:07:59.474800+00:00",
+  "generado_en_utc": "2026-11-09T01:28:14.270717+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -135,7 +135,7 @@
       "ticker": "TSM",
       "peso_pct": 15,
       "metrica": "PER",
-      "hoy": 5.0,
+      "hoy": 5.1,
       "mediana": 5.5,
       "min": 2.4,
       "max": 7.1,
