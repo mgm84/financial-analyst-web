@@ -1,14 +1,14 @@
 {
-  "generado_en_utc": "2026-11-09T01:27:50.508683+00:00",
+  "generado_en_utc": "2026-11-10T03:58:14.730251+00:00",
   "cesta": {
-    "caida_usd_pct": -19.57,
-    "caida_eur_pct": -18.7,
+    "caida_usd_pct": -14.41,
+    "caida_eur_pct": -14.12,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.11406
+    "eur_usd": 1.12223
   },
   "puerta_1": {
-    "umbral_pct": 15,
-    "accion_sugerida": "UN tramo completo",
+    "umbral_pct": 10,
+    "accion_sugerida": "MEDIO tramo",
     "estado": "DISPARADO",
     "cooldown_ok": true,
     "cooldown_msg": "",
@@ -19,58 +19,58 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 1012.71,
+      "precio": 1054.5,
       "max_52s": 1115.94,
-      "caida_pct": -9.3,
+      "caida_pct": -5.5,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1424.75,
+      "precio": 1513.25,
       "max_52s": 1989.44,
-      "caida_pct": -28.4,
-      "senal_idiosincratica": true
+      "caida_pct": -23.9,
+      "senal_idiosincratica": false
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 375.44,
+      "precio": 388.62,
       "max_52s": 485.8,
-      "caida_pct": -22.7,
+      "caida_pct": -20.0,
       "senal_idiosincratica": false
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 540.9,
+      "precio": 591.48,
       "max_52s": 785.24,
-      "caida_pct": -31.1,
-      "senal_idiosincratica": true
+      "caida_pct": -24.7,
+      "senal_idiosincratica": false
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 170.8,
+      "precio": 186.17,
       "max_52s": 216.74,
-      "caida_pct": -21.2,
+      "caida_pct": -14.1,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 293.69,
+      "precio": 319.48,
       "max_52s": 481.57,
-      "caida_pct": -39.0,
+      "caida_pct": -33.7,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 341.72,
+      "precio": 359.3,
       "max_52s": 459.96,
-      "caida_pct": -25.7,
-      "senal_idiosincratica": true
+      "caida_pct": -21.9,
+      "senal_idiosincratica": false
     }
   ]
 }
