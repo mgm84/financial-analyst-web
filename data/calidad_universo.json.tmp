@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-10T04:20:59.239370+00:00",
+  "generado_en_utc": "2026-11-11T02:08:11.355192+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -9803,7 +9803,11 @@
         "margen_anterior": 19.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "BBY",
@@ -20283,7 +20287,11 @@
         "margen_anterior": 12.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "COO",
@@ -31860,7 +31868,11 @@
         "margen_anterior": 30.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FIS",
@@ -45340,7 +45352,11 @@
         "margen_anterior": 44.7
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "KLAC",
@@ -56512,7 +56528,11 @@
         "margen_anterior": 17.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "NUE",
@@ -57560,7 +57580,11 @@
         "margen_anterior": 34.7
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ODFL",
@@ -59304,7 +59328,11 @@
         "margen_anterior": 29.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "PH",
@@ -70806,7 +70834,11 @@
         "margen_anterior": 51.0
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TPR",
@@ -73186,7 +73218,11 @@
         "margen_anterior": 81.4
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TSCO",
@@ -73546,10 +73582,10 @@
       "subindustria": "Aerospace & Defense",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-27",
-      "mediana_rentabilidad_8a": 0.14,
-      "pct_trimestres_sostenido": 0.41,
-      "deuda_neta_ebitda": 6.05,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.142,
+      "pct_trimestres_sostenido": 0.44,
+      "deuda_neta_ebitda": NaN,
       "variacion_2020": 0.11,
       "variacion_2022": 0.3,
       "metrica_valoracion": "P/FCF",
@@ -73700,21 +73736,17 @@
         },
         {
           "fecha": "2026-06-27",
-          "denominador": 33.2815
+          "denominador": 33.5714
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 17.4,
-        "crecimiento_anterior_3a": 2.3,
+        "crecimiento_reciente_3a": 17.3,
+        "crecimiento_anterior_3a": 4.3,
         "margen_reciente": 59.4,
-        "margen_anterior": 54.7
+        "margen_anterior": 55.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "TRV",
