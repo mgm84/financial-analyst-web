@@ -13,9 +13,10 @@
     "GOOGL": 58,
     "MSFT": 15,
     "AMD": 23,
-    "EQQQ": 120,
+    "EQQQ": 111,
     "VUSA": 148,
-    "MU": 7
+    "MU": 7,
+    "NVDA": 27
   },
   "Equity_GBM": {
     "VOO": 9,
