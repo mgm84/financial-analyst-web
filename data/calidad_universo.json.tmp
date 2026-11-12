@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-11T02:08:11.355192+00:00",
+  "generado_en_utc": "2026-11-12T03:16:35.334161+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -73746,7 +73746,11 @@
         "margen_anterior": 55.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TRV",
