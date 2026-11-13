@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-12T03:16:35.401740+00:00",
+  "generado_en_utc": "2026-11-13T02:48:11.538428+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -6100,18 +6100,14 @@
       "subindustria": "Semiconductor Materials & Equipment",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-07-26",
-      "mediana_rentabilidad_8a": 0.358,
+      "ultima_fecha_reporte": "2026-10-25",
+      "mediana_rentabilidad_8a": 0.354,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": -0.19,
+      "deuda_neta_ebitda": -0.24,
       "variacion_2020": -0.03,
       "variacion_2022": 0.13,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-30",
-          "denominador": 3.1376
-        },
         {
           "fecha": "2017-10-29",
           "denominador": 3.0335
@@ -6161,7 +6157,7 @@
           "denominador": 3.2082
         },
         {
-          "fecha": "2020-10-25",
+          "fecha": "2020-10-31",
           "denominador": 3.6721
         },
         {
@@ -6245,7 +6241,7 @@
           "denominador": 7.1404
         },
         {
-          "fecha": "2026-01-25",
+          "fecha": "2026-01-31",
           "denominador": 7.7522
         },
         {
@@ -6255,13 +6251,17 @@
         {
           "fecha": "2026-07-26",
           "denominador": 7.0287
+        },
+        {
+          "fecha": "2026-10-25",
+          "denominador": 7.0375
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 3.4,
-        "crecimiento_anterior_3a": 20.2,
-        "margen_reciente": 48.4,
-        "margen_anterior": 46.7
+        "crecimiento_reciente_3a": 5.0,
+        "crecimiento_anterior_3a": 18.9,
+        "margen_reciente": 48.7,
+        "margen_anterior": 46.8
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": true,
@@ -17319,18 +17319,14 @@
       "subindustria": "Communications Equipment",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-07-25",
-      "mediana_rentabilidad_8a": 0.361,
+      "ultima_fecha_reporte": "2026-10-24",
+      "mediana_rentabilidad_8a": 0.358,
       "pct_trimestres_sostenido": 0.88,
-      "deuda_neta_ebitda": 0.76,
+      "deuda_neta_ebitda": 1.1,
       "variacion_2020": 0.06,
       "variacion_2022": -0.02,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-31",
-          "denominador": 2.568
-        },
         {
           "fecha": "2017-10-28",
           "denominador": 2.677
@@ -17465,22 +17461,26 @@
         },
         {
           "fecha": "2026-01-24",
-          "denominador": 3.2222
+          "denominador": 3.0702
         },
         {
           "fecha": "2026-04-25",
-          "denominador": 3.1643
+          "denominador": 2.9566
         },
         {
           "fecha": "2026-07-25",
-          "denominador": 3.4098
+          "denominador": 3.2022
+        },
+        {
+          "fecha": "2026-10-24",
+          "denominador": 3.4522
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 3.7,
-        "crecimiento_anterior_3a": 2.4,
-        "margen_reciente": 64.7,
-        "margen_anterior": 63.0
+        "crecimiento_reciente_3a": 4.1,
+        "crecimiento_anterior_3a": 3.9,
+        "margen_reciente": 64.6,
+        "margen_anterior": 63.2
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": true,
@@ -21003,10 +21003,10 @@
       "subindustria": "Fertilizers & Agricultural Chemicals",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.052,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.053,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 0.59,
+      "deuda_neta_ebitda": -0.19,
       "variacion_2020": 0.06,
       "variacion_2022": 0.45,
       "metrica_valoracion": "P/FCF",
@@ -21029,7 +21029,7 @@
         },
         {
           "fecha": "2018-12-31",
-          "denominador": -Infinity
+          "denominador": -1.3584
         },
         {
           "fecha": "2019-03-31",
@@ -21149,14 +21149,18 @@
         },
         {
           "fecha": "2026-06-30",
-          "denominador": 0.9366
+          "denominador": 0.9391
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": -0.2231
         }
       ],
       "trayectoria_negocio": {
         "crecimiento_reciente_3a": 0.4,
-        "crecimiento_anterior_3a": 4.8,
-        "margen_reciente": 43.8,
-        "margen_anterior": 39.1
+        "crecimiento_anterior_3a": 6.2,
+        "margen_reciente": 43.9,
+        "margen_anterior": 39.6
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
