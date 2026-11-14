@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-13T02:48:11.538428+00:00",
+  "generado_en_utc": "2026-11-14T02:40:02.403481+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -33808,18 +33808,14 @@
       "subindustria": "Asset Management & Custody Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.08,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.084,
       "pct_trimestres_sostenido": 0.16,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": -0.34,
       "variacion_2022": -0.07,
       "metrica_valoracion": "P/TBV",
       "serie_valoracion": [
-        {
-          "fecha": "2016-09-30",
-          "denominador": 17.0128
-        },
         {
           "fecha": "2016-12-31",
           "denominador": 17.276
@@ -33975,13 +33971,17 @@
         {
           "fecha": "2026-06-30",
           "denominador": 2.7568
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 3.1852
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 4.1,
+        "crecimiento_reciente_3a": 5.1,
         "crecimiento_anterior_3a": 14.5,
-        "margen_reciente": 76.0,
-        "margen_anterior": 84.1
+        "margen_reciente": 76.1,
+        "margen_anterior": 82.2
       },
       "deterioro_doble": true,
       "solapa_cartera_ia": false,
