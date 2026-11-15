@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-14T02:40:02.321748+00:00",
+  "generado_en_utc": "2026-11-15T02:04:49.459192+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -33984,7 +33984,11 @@
         "margen_anterior": 82.2
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "FCX",
