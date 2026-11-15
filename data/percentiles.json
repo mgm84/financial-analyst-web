@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-14T01:59:23.288558+00:00",
+  "generado_en_utc": "2026-11-15T01:32:08.542324+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -7,6 +7,7 @@
     "AVGO": "USD",
     "TSM": "TWD",
     "EQIX": "USD",
+    "PWR": "USD",
     "ANET": "USD"
   },
   "metricas": [
@@ -175,6 +176,42 @@
       "min": 22.9,
       "max": 36.5,
       "percentil": 48,
+      "banda": "COMODA",
+      "es_clave": false
+    },
+    {
+      "ticker": "PWR",
+      "peso_pct": 14,
+      "metrica": "EV/EBITDA",
+      "hoy": 26.5,
+      "mediana": 19.9,
+      "min": 9.9,
+      "max": 37.4,
+      "percentil": 80,
+      "banda": "normal",
+      "es_clave": true
+    },
+    {
+      "ticker": "PWR",
+      "peso_pct": 14,
+      "metrica": "PER",
+      "hoy": 54.3,
+      "mediana": 43.4,
+      "min": 19.4,
+      "max": 82.1,
+      "percentil": 72,
+      "banda": "normal",
+      "es_clave": false
+    },
+    {
+      "ticker": "PWR",
+      "peso_pct": 14,
+      "metrica": "P/FCF",
+      "hoy": 29.1,
+      "mediana": 36.2,
+      "min": 6.1,
+      "max": 1575.4,
+      "percentil": 28,
       "banda": "COMODA",
       "es_clave": false
     },
