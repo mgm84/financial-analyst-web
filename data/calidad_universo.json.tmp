@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-16T02:20:42.243399+00:00",
+  "generado_en_utc": "2026-11-17T04:44:01.311997+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -7691,18 +7691,14 @@
       "subindustria": "Gas Utilities",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-30",
-      "mediana_rentabilidad_8a": 0.088,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.087,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 3.75,
+      "deuda_neta_ebitda": 3.74,
       "variacion_2020": 0.02,
       "variacion_2022": -0.04,
       "metrica_valoracion": "P/E",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 3.7119
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 3.7113
@@ -7846,20 +7842,20 @@
         {
           "fecha": "2026-06-30",
           "denominador": 8.2807
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 8.4911
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 3.3,
-        "crecimiento_anterior_3a": 16.6,
-        "margen_reciente": 60.7,
-        "margen_anterior": 48.7
+        "crecimiento_reciente_3a": 3.6,
+        "crecimiento_anterior_3a": 17.0,
+        "margen_reciente": 55.1,
+        "margen_anterior": 49.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "ADSK",
@@ -10734,26 +10730,183 @@
       "subindustria": "Asset Management & Custody Banks",
       "metodo": "roe",
       "flags": [],
-      "ultima_fecha_reporte": "2026-12-31",
-      "mediana_rentabilidad_8a": 0.088,
-      "pct_trimestres_sostenido": 0.0,
+      "ultima_fecha_reporte": "2026-09-30",
+      "mediana_rentabilidad_8a": 0.092,
+      "pct_trimestres_sostenido": 0.03,
       "deuda_neta_ebitda": NaN,
       "variacion_2020": 0.03,
       "variacion_2022": -0.05,
       "metrica_valoracion": "P/TBV",
-      "serie_valoracion": null,
+      "serie_valoracion": [
+        {
+          "fecha": "2017-03-31",
+          "denominador": 16.0115
+        },
+        {
+          "fecha": "2017-06-30",
+          "denominador": 16.8263
+        },
+        {
+          "fecha": "2017-09-30",
+          "denominador": 17.2945
+        },
+        {
+          "fecha": "2017-12-31",
+          "denominador": 18.2229
+        },
+        {
+          "fecha": "2018-03-31",
+          "denominador": 18.8376
+        },
+        {
+          "fecha": "2018-06-30",
+          "denominador": 18.9568
+        },
+        {
+          "fecha": "2018-09-30",
+          "denominador": 19.2624
+        },
+        {
+          "fecha": "2018-12-31",
+          "denominador": 17.8726
+        },
+        {
+          "fecha": "2019-03-31",
+          "denominador": 19.6623
+        },
+        {
+          "fecha": "2019-06-30",
+          "denominador": 20.2594
+        },
+        {
+          "fecha": "2019-09-30",
+          "denominador": 20.351
+        },
+        {
+          "fecha": "2019-12-31",
+          "denominador": 21.2082
+        },
+        {
+          "fecha": "2020-03-31",
+          "denominador": 21.3642
+        },
+        {
+          "fecha": "2020-06-30",
+          "denominador": 24.2366
+        },
+        {
+          "fecha": "2020-09-30",
+          "denominador": 25.3972
+        },
+        {
+          "fecha": "2020-12-31",
+          "denominador": 26.2478
+        },
+        {
+          "fecha": "2021-03-31",
+          "denominador": 25.5467
+        },
+        {
+          "fecha": "2021-06-30",
+          "denominador": 26.2011
+        },
+        {
+          "fecha": "2021-09-30",
+          "denominador": 25.018
+        },
+        {
+          "fecha": "2021-12-31",
+          "denominador": 25.0017
+        },
+        {
+          "fecha": "2022-03-31",
+          "denominador": 23.654
+        },
+        {
+          "fecha": "2022-06-30",
+          "denominador": 22.901
+        },
+        {
+          "fecha": "2022-09-30",
+          "denominador": 22.3851
+        },
+        {
+          "fecha": "2022-12-31",
+          "denominador": 23.8072
+        },
+        {
+          "fecha": "2023-03-31",
+          "denominador": 23.866
+        },
+        {
+          "fecha": "2023-06-30",
+          "denominador": 24.5964
+        },
+        {
+          "fecha": "2023-09-30",
+          "denominador": 25.0236
+        },
+        {
+          "fecha": "2023-12-31",
+          "denominador": 24.8996
+        },
+        {
+          "fecha": "2024-03-31",
+          "denominador": 24.9873
+        },
+        {
+          "fecha": "2024-06-30",
+          "denominador": 25.6827
+        },
+        {
+          "fecha": "2024-09-30",
+          "denominador": 27.3798
+        },
+        {
+          "fecha": "2024-12-31",
+          "denominador": 26.1585
+        },
+        {
+          "fecha": "2025-03-31",
+          "denominador": 28.7958
+        },
+        {
+          "fecha": "2025-06-30",
+          "denominador": 33.7191
+        },
+        {
+          "fecha": "2025-09-30",
+          "denominador": 30.61
+        },
+        {
+          "fecha": "2025-12-31",
+          "denominador": 35.0826
+        },
+        {
+          "fecha": "2026-03-31",
+          "denominador": 32.2689
+        },
+        {
+          "fecha": "2026-06-30",
+          "denominador": 35.9987
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 35.0204
+        },
+        {
+          "fecha": "2026-09-30",
+          "denominador": 31.0068
+        }
+      ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 19.1,
-        "crecimiento_anterior_3a": 11.9,
-        "margen_reciente": 53.1,
-        "margen_anterior": 82.6
+        "crecimiento_reciente_3a": 13.9,
+        "crecimiento_anterior_3a": 19.4,
+        "margen_reciente": 50.4,
+        "margen_anterior": 78.4
       },
-      "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": true,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "deterioro_doble": true,
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "BA",
@@ -74490,18 +74643,14 @@
       "subindustria": "Packaged Foods & Meats",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-27",
-      "mediana_rentabilidad_8a": 0.08,
+      "ultima_fecha_reporte": "2026-10-03",
+      "mediana_rentabilidad_8a": 0.077,
       "pct_trimestres_sostenido": 0.09,
-      "deuda_neta_ebitda": 2.65,
+      "deuda_neta_ebitda": 2.77,
       "variacion_2020": -0.1,
-      "variacion_2022": 0.57,
+      "variacion_2022": 0.58,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-01",
-          "denominador": 3.5946
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 4.1463
@@ -74572,93 +74721,93 @@
         },
         {
           "fecha": "2022-01-01",
-          "denominador": 7.011
+          "denominador": 8.6746
         },
         {
           "fecha": "2022-04-02",
-          "denominador": 6.0879
+          "denominador": 7.5374
         },
         {
           "fecha": "2022-07-02",
-          "denominador": 3.8702
+          "denominador": 4.7979
         },
         {
           "fecha": "2022-09-30",
-          "denominador": 2.2161
+          "denominador": 2.7491
         },
         {
           "fecha": "2022-12-31",
-          "denominador": -0.1425
+          "denominador": -0.1771
         },
         {
           "fecha": "2023-04-01",
-          "denominador": 0.2684
+          "denominador": 0.3345
         },
         {
           "fecha": "2023-07-01",
-          "denominador": 0.2768
+          "denominador": 0.3451
         },
         {
           "fecha": "2023-09-30",
-          "denominador": -0.537
+          "denominador": -0.6631
         },
         {
           "fecha": "2023-12-30",
-          "denominador": 1.6507
+          "denominador": 2.0561
         },
         {
           "fecha": "2024-03-30",
-          "denominador": 1.9634
+          "denominador": 2.4456
         },
         {
           "fecha": "2024-06-29",
-          "denominador": 2.9129
+          "denominador": 3.6259
         },
         {
           "fecha": "2024-09-28",
-          "denominador": 4.084
+          "denominador": 5.0979
         },
         {
           "fecha": "2024-12-28",
-          "denominador": 3.563
+          "denominador": 4.4321
         },
         {
           "fecha": "2025-03-29",
-          "denominador": 3.5966
+          "denominador": 4.4739
         },
         {
           "fecha": "2025-06-28",
-          "denominador": 3.7299
+          "denominador": 4.5226
         },
         {
           "fecha": "2025-09-27",
-          "denominador": 3.3822
+          "denominador": 4.101
         },
         {
           "fecha": "2025-12-27",
-          "denominador": 3.2087
+          "denominador": 3.8979
         },
         {
           "fecha": "2026-03-28",
-          "denominador": 3.4661
+          "denominador": 4.3204
         },
         {
           "fecha": "2026-06-27",
-          "denominador": 3.3171
+          "denominador": 3.2704
+        },
+        {
+          "fecha": "2026-10-03",
+          "denominador": Infinity
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 1.1,
-        "crecimiento_anterior_3a": 7.8,
-        "margen_reciente": 6.3,
-        "margen_anterior": 11.3
+        "crecimiento_reciente_3a": 1.5,
+        "crecimiento_anterior_3a": 7.6,
+        "margen_reciente": 6.4,
+        "margen_anterior": 10.4
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "USB",
