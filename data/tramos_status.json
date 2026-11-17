@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-11-16T01:35:43.116686+00:00",
+  "generado_en_utc": "2026-11-17T04:20:13.729668+00:00",
   "cesta": {
-    "caida_usd_pct": -12.84,
-    "caida_eur_pct": -10.96,
+    "caida_usd_pct": -16.52,
+    "caida_eur_pct": -14.6,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.10216
+    "eur_usd": 1.10073
   },
   "puerta_1": {
     "umbral_pct": 10,
@@ -19,58 +19,58 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 1053.79,
+      "precio": 1043.06,
       "max_52s": 1115.94,
-      "caida_pct": -5.6,
+      "caida_pct": -6.5,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1495.16,
+      "precio": 1406.79,
       "max_52s": 1989.44,
-      "caida_pct": -24.8,
-      "senal_idiosincratica": false
+      "caida_pct": -29.3,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 398.73,
+      "precio": 373.45,
       "max_52s": 485.8,
-      "caida_pct": -17.9,
+      "caida_pct": -23.1,
       "senal_idiosincratica": false
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 602.01,
+      "precio": 585.9,
       "max_52s": 785.24,
-      "caida_pct": -23.3,
-      "senal_idiosincratica": false
+      "caida_pct": -25.4,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 197.29,
+      "precio": 187.02,
       "max_52s": 216.74,
-      "caida_pct": -9.0,
+      "caida_pct": -13.7,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 347.01,
+      "precio": 333.4,
       "max_52s": 481.57,
-      "caida_pct": -27.9,
+      "caida_pct": -30.8,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 352.97,
+      "precio": 336.88,
       "max_52s": 459.96,
-      "caida_pct": -23.3,
-      "senal_idiosincratica": false
+      "caida_pct": -26.8,
+      "senal_idiosincratica": true
     }
   ]
 }
