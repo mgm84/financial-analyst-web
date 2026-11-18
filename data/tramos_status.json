@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-11-17T04:20:13.729668+00:00",
+  "generado_en_utc": "2026-11-18T03:20:41.842881+00:00",
   "cesta": {
-    "caida_usd_pct": -16.52,
-    "caida_eur_pct": -14.6,
+    "caida_usd_pct": -16.93,
+    "caida_eur_pct": -14.88,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.10073
+    "eur_usd": 1.0989
   },
   "puerta_1": {
     "umbral_pct": 10,
@@ -19,57 +19,57 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 1043.06,
+      "precio": 1034.83,
       "max_52s": 1115.94,
-      "caida_pct": -6.5,
+      "caida_pct": -7.3,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1406.79,
+      "precio": 1383.11,
       "max_52s": 1989.44,
-      "caida_pct": -29.3,
+      "caida_pct": -30.5,
       "senal_idiosincratica": true
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 373.45,
+      "precio": 359.69,
       "max_52s": 485.8,
-      "caida_pct": -23.1,
-      "senal_idiosincratica": false
+      "caida_pct": -26.0,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 585.9,
+      "precio": 598.53,
       "max_52s": 785.24,
-      "caida_pct": -25.4,
-      "senal_idiosincratica": true
+      "caida_pct": -23.8,
+      "senal_idiosincratica": false
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 187.02,
+      "precio": 186.42,
       "max_52s": 216.74,
-      "caida_pct": -13.7,
+      "caida_pct": -14.0,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 333.4,
+      "precio": 341.6,
       "max_52s": 481.57,
-      "caida_pct": -30.8,
+      "caida_pct": -29.1,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 336.88,
+      "precio": 337.11,
       "max_52s": 459.96,
-      "caida_pct": -26.8,
+      "caida_pct": -26.7,
       "senal_idiosincratica": true
     }
   ]
