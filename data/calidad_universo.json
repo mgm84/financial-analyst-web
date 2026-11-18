@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-17T04:44:01.370685+00:00",
+  "generado_en_utc": "2026-11-18T03:51:08.278678+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -38279,18 +38279,14 @@
       "subindustria": "Home Improvement Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-08-02",
-      "mediana_rentabilidad_8a": 0.368,
+      "ultima_fecha_reporte": "2026-11-01",
+      "mediana_rentabilidad_8a": 0.36,
       "pct_trimestres_sostenido": 0.81,
-      "deuda_neta_ebitda": 2.39,
+      "deuda_neta_ebitda": 2.35,
       "variacion_2020": 0.02,
       "variacion_2022": -0.03,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-30",
-          "denominador": 7.5677
-        },
         {
           "fecha": "2017-10-29",
           "denominador": 8.3262
@@ -38434,12 +38430,16 @@
         {
           "fecha": "2026-08-02",
           "denominador": 15.1616
+        },
+        {
+          "fecha": "2026-11-01",
+          "denominador": 15.1535
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 2.2,
-        "crecimiento_anterior_3a": 11.7,
-        "margen_reciente": 33.4,
+        "crecimiento_reciente_3a": 2.7,
+        "crecimiento_anterior_3a": 10.4,
+        "margen_reciente": 33.3,
         "margen_anterior": 33.6
       },
       "deterioro_doble": false,
@@ -56881,18 +56881,14 @@
       "subindustria": "Semiconductors",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-07-26",
+      "ultima_fecha_reporte": "2026-10-25",
       "mediana_rentabilidad_8a": 0.526,
       "pct_trimestres_sostenido": 1.0,
-      "deuda_neta_ebitda": -0.3,
+      "deuda_neta_ebitda": -0.24,
       "variacion_2020": -0.01,
       "variacion_2022": 0.09,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-30",
-          "denominador": 0.0767
-        },
         {
           "fecha": "2017-10-29",
           "denominador": 0.105
@@ -57036,13 +57032,17 @@
         {
           "fecha": "2026-07-26",
           "denominador": 5.2298
+        },
+        {
+          "fecha": "2026-10-25",
+          "denominador": 6.1491
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 107.9,
-        "crecimiento_anterior_3a": 38.5,
-        "margen_reciente": 73.5,
-        "margen_anterior": 62.2
+        "crecimiento_reciente_3a": 110.9,
+        "crecimiento_anterior_3a": 39.3,
+        "margen_reciente": 73.6,
+        "margen_anterior": 63.1
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": true,
@@ -79662,18 +79662,14 @@
       "subindustria": "Movies & Entertainment",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-06-27",
+      "ultima_fecha_reporte": "2026-10-03",
       "mediana_rentabilidad_8a": 0.055,
-      "pct_trimestres_sostenido": 0.06,
-      "deuda_neta_ebitda": 1.91,
+      "pct_trimestres_sostenido": 0.03,
+      "deuda_neta_ebitda": 1.84,
       "variacion_2020": -0.44,
       "variacion_2022": NaN,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-06-30",
-          "denominador": 5.6285
-        },
         {
           "fecha": "2017-09-30",
           "denominador": 5.6367
@@ -79817,13 +79813,17 @@
         {
           "fecha": "2026-06-27",
           "denominador": 4.7579
+        },
+        {
+          "fecha": "2026-10-03",
+          "denominador": 6.0102
         }
       ],
       "trayectoria_negocio": {
         "crecimiento_reciente_3a": 4.2,
-        "crecimiento_anterior_3a": 6.9,
-        "margen_reciente": 36.9,
-        "margen_anterior": 32.7
+        "crecimiento_anterior_3a": 8.0,
+        "margen_reciente": 37.2,
+        "margen_anterior": 33.6
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
