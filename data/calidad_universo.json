@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-18T03:51:08.278678+00:00",
+  "generado_en_utc": "2026-11-19T03:49:31.296205+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -48173,24 +48173,20 @@
       "subindustria": "Home Improvement Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-07-31",
+      "ultima_fecha_reporte": "2026-10-30",
       "mediana_rentabilidad_8a": 0.342,
       "pct_trimestres_sostenido": 0.94,
-      "deuda_neta_ebitda": 3.03,
+      "deuda_neta_ebitda": 2.95,
       "variacion_2020": 0.82,
       "variacion_2022": 0.04,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
         {
-          "fecha": "2017-08-04",
-          "denominador": 5.8314
-        },
-        {
           "fecha": "2017-11-03",
           "denominador": 5.512
         },
         {
-          "fecha": "2018-01-31",
+          "fecha": "2018-02-02",
           "denominador": 4.7551
         },
         {
@@ -48206,7 +48202,7 @@
           "denominador": 6.5787
         },
         {
-          "fecha": "2019-01-31",
+          "fecha": "2019-02-01",
           "denominador": 6.2659
         },
         {
@@ -48238,7 +48234,7 @@
           "denominador": 13.1844
         },
         {
-          "fecha": "2021-01-31",
+          "fecha": "2021-01-29",
           "denominador": 12.5959
         },
         {
@@ -48254,7 +48250,7 @@
           "denominador": 9.9536
         },
         {
-          "fecha": "2022-01-31",
+          "fecha": "2022-01-28",
           "denominador": 12.2189
         },
         {
@@ -48270,7 +48266,7 @@
           "denominador": 11.9113
         },
         {
-          "fecha": "2023-01-31",
+          "fecha": "2023-02-03",
           "denominador": 11.1736
         },
         {
@@ -48286,7 +48282,7 @@
           "denominador": 9.3588
         },
         {
-          "fecha": "2024-01-31",
+          "fecha": "2024-02-02",
           "denominador": 10.7409
         },
         {
@@ -48328,11 +48324,15 @@
         {
           "fecha": "2026-07-31",
           "denominador": 12.5
+        },
+        {
+          "fecha": "2026-10-30",
+          "denominador": 14.2679
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -2.7,
-        "crecimiento_anterior_3a": 9.1,
+        "crecimiento_reciente_3a": -1.4,
+        "crecimiento_anterior_3a": 7.0,
         "margen_reciente": 33.2,
         "margen_anterior": 33.2
       },
@@ -59269,18 +59269,14 @@
       "subindustria": "Systems Software",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-07-31",
-      "mediana_rentabilidad_8a": 0.034,
-      "pct_trimestres_sostenido": 0.41,
-      "deuda_neta_ebitda": -0.31,
+      "ultima_fecha_reporte": "2026-10-31",
+      "mediana_rentabilidad_8a": 0.018,
+      "pct_trimestres_sostenido": 0.38,
+      "deuda_neta_ebitda": -0.33,
       "variacion_2020": NaN,
       "variacion_2022": 1.05,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-31",
-          "denominador": 1.2928
-        },
         {
           "fecha": "2017-10-31",
           "denominador": 1.4019
@@ -59407,30 +59403,34 @@
         },
         {
           "fecha": "2025-07-31",
-          "denominador": 5.2412
+          "denominador": 4.8939
         },
         {
           "fecha": "2025-10-31",
-          "denominador": 5.5536
+          "denominador": 5.2063
         },
         {
           "fecha": "2026-01-31",
-          "denominador": 5.7028
+          "denominador": 5.0153
         },
         {
           "fecha": "2026-04-30",
-          "denominador": 5.7711
+          "denominador": 4.736
         },
         {
           "fecha": "2026-07-31",
-          "denominador": 5.7408
+          "denominador": 5.0653
+        },
+        {
+          "fecha": "2026-10-31",
+          "denominador": 5.1969
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 17.9,
-        "crecimiento_anterior_3a": 25.6,
-        "margen_reciente": 72.8,
-        "margen_anterior": 70.3
+        "crecimiento_reciente_3a": 18.5,
+        "crecimiento_anterior_3a": 26.0,
+        "margen_reciente": 72.3,
+        "margen_anterior": 70.7
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": true,
@@ -71363,18 +71363,14 @@
       "subindustria": "Consumer Staples Merchandise Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-08-01",
-      "mediana_rentabilidad_8a": 0.142,
-      "pct_trimestres_sostenido": 0.31,
-      "deuda_neta_ebitda": 1.45,
+      "ultima_fecha_reporte": "2026-10-31",
+      "mediana_rentabilidad_8a": 0.143,
+      "pct_trimestres_sostenido": 0.34,
+      "deuda_neta_ebitda": 1.43,
       "variacion_2020": 0.16,
       "variacion_2022": -0.3,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-29",
-          "denominador": 8.7063
-        },
         {
           "fecha": "2017-10-28",
           "denominador": 8.4541
@@ -71509,22 +71505,26 @@
         },
         {
           "fecha": "2026-01-31",
-          "denominador": 6.4381
+          "denominador": 6.2294
         },
         {
           "fecha": "2026-05-02",
-          "denominador": 6.8583
+          "denominador": 6.6498
         },
         {
           "fecha": "2026-08-01",
-          "denominador": 9.9671
+          "denominador": 9.7591
+        },
+        {
+          "fecha": "2026-10-31",
+          "denominador": 9.0844
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -0.8,
-        "crecimiento_anterior_3a": 11.0,
-        "margen_reciente": 28.6,
-        "margen_anterior": 27.6
+        "crecimiento_reciente_3a": -0.4,
+        "crecimiento_anterior_3a": 9.7,
+        "margen_reciente": 28.8,
+        "margen_anterior": 27.4
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
@@ -72935,18 +72935,14 @@
       "subindustria": "Apparel Retail",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-08-01",
+      "ultima_fecha_reporte": "2026-10-31",
       "mediana_rentabilidad_8a": 0.274,
       "pct_trimestres_sostenido": 0.88,
-      "deuda_neta_ebitda": 0.93,
+      "deuda_neta_ebitda": 0.94,
       "variacion_2020": -0.7,
       "variacion_2022": 0.29,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-29",
-          "denominador": 1.9459
-        },
         {
           "fecha": "2017-10-28",
           "denominador": 1.8339
@@ -73090,13 +73086,17 @@
         {
           "fecha": "2026-08-01",
           "denominador": 5.2605
+        },
+        {
+          "fecha": "2026-10-31",
+          "denominador": 5.4184
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": 6.6,
-        "crecimiento_anterior_3a": 11.6,
-        "margen_reciente": 31.0,
-        "margen_anterior": 28.5
+        "crecimiento_reciente_3a": 6.7,
+        "crecimiento_anterior_3a": 13.6,
+        "margen_reciente": 31.1,
+        "margen_anterior": 28.6
       },
       "deterioro_doble": false,
       "solapa_cartera_ia": false,
