@@ -1,14 +1,14 @@
 {
-  "generado_en_utc": "2026-11-19T02:56:47.923831+00:00",
+  "generado_en_utc": "2026-11-20T02:52:20.253607+00:00",
   "cesta": {
-    "caida_usd_pct": -15.69,
-    "caida_eur_pct": -13.44,
+    "caida_usd_pct": -17.72,
+    "caida_eur_pct": -15.55,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.09674
+    "eur_usd": 1.09712
   },
   "puerta_1": {
-    "umbral_pct": 10,
-    "accion_sugerida": "MEDIO tramo",
+    "umbral_pct": 15,
+    "accion_sugerida": "UN tramo completo",
     "estado": "DISPARADO",
     "cooldown_ok": true,
     "cooldown_msg": "",
@@ -19,57 +19,57 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 1036.5,
+      "precio": 1018.05,
       "max_52s": 1115.94,
-      "caida_pct": -7.1,
+      "caida_pct": -8.8,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1395.27,
+      "precio": 1356.2,
       "max_52s": 1989.44,
-      "caida_pct": -29.9,
+      "caida_pct": -31.8,
       "senal_idiosincratica": true
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 362.62,
+      "precio": 352.09,
       "max_52s": 485.8,
-      "caida_pct": -25.4,
+      "caida_pct": -27.5,
       "senal_idiosincratica": true
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 602.6,
+      "precio": 587.43,
       "max_52s": 785.24,
-      "caida_pct": -23.3,
-      "senal_idiosincratica": false
+      "caida_pct": -25.2,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 193.94,
+      "precio": 189.59,
       "max_52s": 216.74,
-      "caida_pct": -10.5,
+      "caida_pct": -12.5,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 354.05,
+      "precio": 346.65,
       "max_52s": 481.57,
-      "caida_pct": -26.5,
+      "caida_pct": -28.0,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 338.34,
+      "precio": 330.57,
       "max_52s": 459.96,
-      "caida_pct": -26.4,
+      "caida_pct": -28.1,
       "senal_idiosincratica": true
     }
   ]
