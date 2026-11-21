@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-20T03:41:26.578723+00:00",
+  "generado_en_utc": "2026-11-21T03:24:10.243758+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -42198,7 +42198,11 @@
         "margen_anterior": 78.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "ISRG",
@@ -44797,7 +44801,11 @@
         "margen_anterior": 63.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "KMB",
@@ -66025,7 +66033,11 @@
         "margen_anterior": 26.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "RCL",
@@ -79638,7 +79650,11 @@
         "margen_anterior": 24.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DIS",
@@ -81582,7 +81598,11 @@
         "margen_anterior": 42.6
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "WMB",
