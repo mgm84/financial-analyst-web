@@ -1,8 +1,8 @@
 {
-  "generado_en_utc": "2026-11-21T02:59:23.098755+00:00",
+  "generado_en_utc": "2026-11-22T01:55:14.351010+00:00",
   "cesta": {
-    "caida_usd_pct": -24.09,
-    "caida_eur_pct": -22.12,
+    "caida_usd_pct": -24.08,
+    "caida_eur_pct": -22.11,
     "maximo_eur_fecha": "2026-10-06",
     "eur_usd": 1.09745
   },
@@ -35,9 +35,9 @@
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 318.71,
+      "precio": 319.15,
       "max_52s": 485.8,
-      "caida_pct": -34.4,
+      "caida_pct": -34.3,
       "senal_idiosincratica": true
     },
     {
@@ -51,9 +51,9 @@
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 167.62,
+      "precio": 167.66,
       "max_52s": 216.74,
-      "caida_pct": -22.7,
+      "caida_pct": -22.6,
       "senal_idiosincratica": false
     },
     {
