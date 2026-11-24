@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-11-23T02:17:19.671460+00:00",
+  "generado_en_utc": "2026-11-24T05:45:02.710849+00:00",
   "cesta": {
-    "caida_usd_pct": -24.08,
-    "caida_eur_pct": -22.06,
+    "caida_usd_pct": -18.29,
+    "caida_eur_pct": -15.62,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.09679
+    "eur_usd": 1.0903
   },
   "puerta_1": {
     "umbral_pct": 15,
@@ -19,57 +19,57 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 968.22,
+      "precio": 999.4,
       "max_52s": 1115.94,
-      "caida_pct": -13.2,
+      "caida_pct": -10.4,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1266.22,
+      "precio": 1383.78,
       "max_52s": 1989.44,
-      "caida_pct": -36.4,
+      "caida_pct": -30.4,
       "senal_idiosincratica": true
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 319.15,
+      "precio": 363.6,
       "max_52s": 485.8,
-      "caida_pct": -34.3,
+      "caida_pct": -25.2,
       "senal_idiosincratica": true
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 559.03,
+      "precio": 609.0,
       "max_52s": 785.24,
-      "caida_pct": -28.8,
-      "senal_idiosincratica": true
+      "caida_pct": -22.4,
+      "senal_idiosincratica": false
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 167.66,
+      "precio": 178.31,
       "max_52s": 216.74,
-      "caida_pct": -22.6,
+      "caida_pct": -17.7,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 304.41,
+      "precio": 313.55,
       "max_52s": 481.57,
-      "caida_pct": -36.8,
+      "caida_pct": -34.9,
       "senal_idiosincratica": true
     },
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 311.33,
+      "precio": 336.34,
       "max_52s": 459.96,
-      "caida_pct": -32.3,
+      "caida_pct": -26.9,
       "senal_idiosincratica": true
     }
   ]
