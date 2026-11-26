@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-25T05:04:35.436706+00:00",
+  "generado_en_utc": "2026-11-26T04:19:21.147660+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -5364,7 +5364,11 @@
         "margen_anterior": 65.2
       },
       "deterioro_doble": true,
-      "solapa_cartera_ia": true
+      "solapa_cartera_ia": true,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "AON",
@@ -8031,7 +8035,11 @@
         "margen_anterior": 90.5
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": true
     },
     {
       "ticker": "ADP",
@@ -9975,7 +9983,11 @@
         "margen_anterior": 22.2
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "TECH",
@@ -23735,7 +23747,11 @@
         "margen_anterior": 20.8
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "DAL",
@@ -24959,7 +24975,11 @@
         "margen_anterior": 30.4
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "D",
@@ -39331,7 +39351,11 @@
         "margen_anterior": 20.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": true,
+      "pasa_consistencia": true,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "HUBB",
@@ -50824,7 +50848,11 @@
         "margen_anterior": 66.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": false,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "MRK",
@@ -67859,7 +67887,11 @@
         "margen_anterior": 34.7
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "SW",
@@ -82114,7 +82146,11 @@
         "margen_anterior": 73.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false
+      "solapa_cartera_ia": false,
+      "pasa_deuda": true,
+      "pasa_rentabilidad": false,
+      "pasa_consistencia": false,
+      "supera_filtro_calidad": false
     },
     {
       "ticker": "WYNN",
