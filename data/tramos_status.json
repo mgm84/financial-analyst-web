@@ -1,10 +1,10 @@
 {
-  "generado_en_utc": "2026-11-25T04:47:20.505838+00:00",
+  "generado_en_utc": "2026-11-26T03:58:11.087660+00:00",
   "cesta": {
-    "caida_usd_pct": -21.3,
-    "caida_eur_pct": -19.04,
+    "caida_usd_pct": -22.88,
+    "caida_eur_pct": -20.75,
     "maximo_eur_fecha": "2026-10-06",
-    "eur_usd": 1.09457
+    "eur_usd": 1.0958
   },
   "puerta_1": {
     "umbral_pct": 15,
@@ -19,47 +19,47 @@
     {
       "ticker": "EQIX",
       "peso_pct": 17,
-      "precio": 982.77,
+      "precio": 978.22,
       "max_52s": 1115.94,
-      "caida_pct": -11.9,
+      "caida_pct": -12.3,
       "senal_idiosincratica": false
     },
     {
       "ticker": "ASML",
       "peso_pct": 16,
-      "precio": 1336.06,
+      "precio": 1303.08,
       "max_52s": 1989.44,
-      "caida_pct": -32.8,
+      "caida_pct": -34.5,
       "senal_idiosincratica": true
     },
     {
       "ticker": "TSM",
       "peso_pct": 15,
-      "precio": 349.2,
+      "precio": 342.34,
       "max_52s": 485.8,
-      "caida_pct": -28.1,
+      "caida_pct": -29.5,
       "senal_idiosincratica": true
     },
     {
       "ticker": "PWR",
       "peso_pct": 14,
-      "precio": 589.64,
+      "precio": 565.47,
       "max_52s": 785.24,
-      "caida_pct": -24.9,
-      "senal_idiosincratica": false
+      "caida_pct": -28.0,
+      "senal_idiosincratica": true
     },
     {
       "ticker": "ANET",
       "peso_pct": 14,
-      "precio": 168.56,
+      "precio": 163.99,
       "max_52s": 216.74,
-      "caida_pct": -22.2,
+      "caida_pct": -24.3,
       "senal_idiosincratica": false
     },
     {
       "ticker": "AVGO",
       "peso_pct": 13,
-      "precio": 301.08,
+      "precio": 300.86,
       "max_52s": 481.57,
       "caida_pct": -37.5,
       "senal_idiosincratica": true
@@ -67,9 +67,9 @@
     {
       "ticker": "ETN",
       "peso_pct": 11,
-      "precio": 319.27,
+      "precio": 317.81,
       "max_52s": 459.96,
-      "caida_pct": -30.6,
+      "caida_pct": -30.9,
       "senal_idiosincratica": true
     }
   ]
