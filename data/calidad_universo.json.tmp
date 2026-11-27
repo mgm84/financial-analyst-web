@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-26T04:19:21.147660+00:00",
+  "generado_en_utc": "2026-11-27T04:26:48.900810+00:00",
   "universo": [
     {
       "ticker": "MMM",
@@ -23407,18 +23407,14 @@
       "subindustria": "Agricultural & Farm Machinery",
       "metodo": "roic",
       "flags": [],
-      "ultima_fecha_reporte": "2026-08-02",
+      "ultima_fecha_reporte": "2026-11-01",
       "mediana_rentabilidad_8a": 0.086,
       "pct_trimestres_sostenido": 0.0,
-      "deuda_neta_ebitda": 4.73,
+      "deuda_neta_ebitda": 4.77,
       "variacion_2020": -0.11,
       "variacion_2022": -0.06,
       "metrica_valoracion": "P/FCF",
       "serie_valoracion": [
-        {
-          "fecha": "2017-07-30",
-          "denominador": 1.7447
-        },
         {
           "fecha": "2017-10-31",
           "denominador": -1.2047
@@ -23562,20 +23558,20 @@
         {
           "fecha": "2026-08-02",
           "denominador": 14.2852
+        },
+        {
+          "fecha": "2026-11-01",
+          "denominador": 10.303
         }
       ],
       "trayectoria_negocio": {
-        "crecimiento_reciente_3a": -5.3,
-        "crecimiento_anterior_3a": 15.7,
+        "crecimiento_reciente_3a": -6.2,
+        "crecimiento_anterior_3a": 18.0,
         "margen_reciente": 37.2,
-        "margen_anterior": 32.6
+        "margen_anterior": 33.1
       },
       "deterioro_doble": false,
-      "solapa_cartera_ia": false,
-      "pasa_deuda": false,
-      "pasa_rentabilidad": false,
-      "pasa_consistencia": false,
-      "supera_filtro_calidad": false
+      "solapa_cartera_ia": false
     },
     {
       "ticker": "DELL",
