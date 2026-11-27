@@ -1,5 +1,5 @@
 {
-  "generado_en_utc": "2026-11-26T03:58:38.084705+00:00",
+  "generado_en_utc": "2026-11-27T03:57:09.912501+00:00",
   "avisos_conversion_faltante": [],
   "monedas_reportadas": {
     "ASML": "EUR",
@@ -15,7 +15,7 @@
       "ticker": "ASML",
       "peso_pct": 16,
       "metrica": "P/FCF",
-      "hoy": 21.6,
+      "hoy": 21.5,
       "mediana": 35.7,
       "min": 19.8,
       "max": 149.0,
@@ -31,7 +31,7 @@
       "mediana": 39.6,
       "min": 27.6,
       "max": 63.0,
-      "percentil": 24,
+      "percentil": 20,
       "banda": "COMODA",
       "es_clave": false
     },
